@@ -1,11 +1,29 @@
 <div class="mdcComponent">
 	<h4>Bid Information</h4>
 
-	<div class="tabs">
-		<div class="tab active">Vehicle</div>
-		<div class="tab">Customer</div>
+	<!-- TODO: convert to directive -->
+	<div class="tabs cf">
+		<div class="tab"
+			ng-class="{active:currentTab===0,inactive:currentTab!==0}"
+			ng-click="setTab(0)">Vehicle</div>
+		<div class="tab"
+			ng-class="{active:currentTab===1,inactive:currentTab!==1}"
+			ng-click="setTab(1)">Customer</div>
 	</div>
+	<div class="paddingTop30">
+		<div class="tabContent" ng-show="isCurrentTab(0)">
+			<h5 class="headingText">Vehicle Info</h5>
 
+			<dl>
+				<dt>Series</dt>
+				<dd>Limited</dd>
+			</dl>
+			
+		</div>
+		<div class="tabContent" ng-show="isCurrentTab(1)">
+			<h5 class="headingText">Customer Info</h5>
+		</div>
+	</div>
 
 
 </div>

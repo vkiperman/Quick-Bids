@@ -58,11 +58,20 @@
 	padding-bottom: 5px;
 }
 
-.mdcComponent h4{
+.mdcComponent h4 {
 	color: #888;
 	font-weight: bold;
 	padding-bottom: 10px;
 	font-size: 18px;
+}
+
+.mdcComponent dl{
+	border-top: 1px solid #e5e5e5;
+	margin-top: 10px;
+}
+
+.headingText {
+	color: #626262;
 }
 
  #headermenu{
@@ -198,10 +207,47 @@
 
 .mdcDropDownMenuItemText {display: block;}
 
+/* TABS */
 .tabs {
-	position:relative;
+	position: relative;
 	overflow: visible;
-	border-bottom: 1px solid ;
+	border-bottom: 1px solid #e3e3e3;
+	height: 36px;
+}
+
+.tabs .tab{
+	position: relative;
+
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	padding: 10px 13px;
+	font-size: 10pt;
+	font-weight: bold;
+	float: left;
+	margin-left: 10px;
+}
+
+.tabs .tab.active{
+	cursor: default;
+	color: #626262;
+	background-color: #FFF;
+	border: 1px solid #e3e3e3;
+	border-bottom: none;
+
+}
+
+.tabs .tab.inactive{
+	cursor: pointer;
+	color: #FFF;
+	border: 1px solid #94a1aa;
+	border-bottom: none;
+	background-color: #94a1aa;
+	/*padding-bottom: 9px;*/
+
 }
 
 /* HTML selectors */
