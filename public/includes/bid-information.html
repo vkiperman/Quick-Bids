@@ -15,10 +15,10 @@
 			<h5 class="headingText">Vehicle Info</h5>
 
 			<dl>
-				<dt>Series</dt>
-				<dd>Limited</dd>
+				<dt ng-repeat-start="item in vehicleInfo">Series</dt>
+				<dd ng-repeat-end>Limited</dd>
 			</dl>
-			
+
 		</div>
 		<div class="tabContent" ng-show="isCurrentTab(1)">
 			<h5 class="headingText">Customer Info</h5>

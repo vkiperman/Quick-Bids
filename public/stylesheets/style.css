@@ -67,7 +67,20 @@
 
 .mdcComponent dl{
 	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
 	margin-top: 10px;
+}
+
+.mdcComponent dl dt{
+	float: left;
+	width: 45%;
+	padding: 10px 0;
+}
+
+.mdcComponent dl dd{
+	float: left;
+	width: 45%;
+	padding: 10px 0;
 }
 
 .headingText {
