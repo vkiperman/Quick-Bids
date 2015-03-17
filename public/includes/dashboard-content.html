@@ -1,0 +1,11 @@
+<div class="gradient borderModule paddingModule marginModule">
+	<ul class="dashboardList cf">
+		<li ng-repeat="item in dashboard">
+			<p class="dashboardValue">{{ item.value }}</p>
+			<p class="dashboardType">
+				<strong>{{ item.type.title }}</strong> {{ item.type.description }}
+			</p>
+			<p class="dashboardAge">{{ item.age }}</p>
+		</li>
+	</ul>
+</div>

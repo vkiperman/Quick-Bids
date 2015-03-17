@@ -1,0 +1,61 @@
+<div id="headermenu" class="relative">
+	    <div id="header-content">
+	        <div id="logoContainer" class="floatLeft">	
+				<div id="logo"
+					onclick="homeRedirect('...')">
+				</div>	
+	        </div>
+			<div id="menuContainer" class="nav Hidden" style="float:right; width: 820px;">
+			 
+			    <div style="width: 820px;">
+			    <!-- start the menubar -->
+			    	<div class="mdcDropDownMenu" ng-repeat="tab in navTabs.navigation">
+                        <div href="{{tab.link}}"
+                        	ng-class="{mdcDropDownMenuWithChildren:tab.subnav}"
+                        	ng-click="showDropDownMenu($event, tab.title)"
+                        	class="mdcDropDownMenuText">{{tab.title}}</div>
+
+                        <div ng-if="tab.subnav"
+                        	class="mdcDropDownMenuItemContainer"
+					    	ng-show="isDropDownMenu(tab.title)">
+
+					    	<div class="mdcDropDownMenuItem"
+					    		ng-repeat="subnav in tab.subnav">
+					    		<a href="{{subnav.link}}" class="mdcDropDownMenuItemText">
+					    			{{subnav.title}}
+					    		</a>
+					    	</div>
+					    </div>
+                    </div>
+				                           
+				     
+			                    
+			        <div class="mdcDropDownMenu mdcPinRight">                    
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren"
+				        	ng-click="showDropDownMenu($event, 'profile')">
+                            <img class="mdcProfileItem"
+                            	src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif"
+                            	width="22px" height="16px" alt="Profile" border="0"/>
+                        </div>       
+                        <div class="mdcDropDownMenuItemContainer"
+					    	ng-show="dropDownMenu === 'profile'">
+                            <div class="mdcMenuItemSeparator">
+                                <span class="mdcProfileNameText mdcDropDownMenuItemText">test_supportAdmin@cars.com</span>
+                            </div>
+                            <div class="mdcDropDownMenuItem"><a href="javascript:;" class="mdcDropDownMenuItemText">My Profile</a></div>
+							<div><a href="'/cs/cp/logout'" class="mdcDropDownMenuItemText">Logout</a></div>
+                            <div>
+                            	<a href="'/wps/portal/dealercenter/?WCM_GLOBAL_CONTEXT=/wps/wcm/connect/DealerCenter/DealerCenter/Home/FAQ'"
+                            		class="mdcDropDownMenuItemText">
+                            		Help
+                            	</a>
+                            </div>
+	                    </div>
+	                </div>
+			    
+			    </div>
+			    
+			
+			</div> <!--menu container -->
+		</div> <!--header-content -->
+	</div> <!--headerMenu -->

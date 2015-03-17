@@ -1,0 +1,260 @@
+/** ***************************************************************************
+	The goal with this style sheet from the very beginning was to keep it short.
+	Since many of the styles are already defined in MDC's many .CSSs much effort
+	was put into reusing and overwriting where absolutely necessary to meet unique
+	design considerations. The "atomic" concept (class names such as .marginRight50)
+	is also in place for reuse purposes as certain conventions repeat often while not
+	consistantly combining with other properties.
+	********************************************* **/
+
+/* module overwrites */
+.bids .module-body {
+	padding-bottom:0;
+	padding-left:0;
+	padding-right:0;
+}
+.bids .mdcModuleContainer {
+	margin-bottom:15px;
+	background: #FFF;
+}
+
+.bids label {
+	font-size: 11px;
+	margin-bottom:4px;
+}
+
+.bids .mdcModuleContainer h4{
+	font-size: 14px;
+	color: #888;
+}
+
+.bids .mdcModulePadding {
+	padding-bottom: 15px;
+}
+
+.mdcSection {
+	border-top:  1px solid #E1E1E1;
+	padding: 18px 10px;
+	padding-top: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+ /* end module overwrites */
+
+.mdcSection h3,
+.mdcSection h4 {
+	white-space: nowrap;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 0px;
+	margin: 0;
+	padding-top: 0;
+	color: #41148d;
+}
+
+.mdcSection h4 {
+	font-weight: normal;
+	padding-bottom: 5px;
+}
+
+.mdcComponent h4{
+	color: #888;
+	font-weight: bold;
+	padding-bottom: 10px;
+	font-size: 18px;
+}
+
+ #headermenu{
+ 	z-index: 1000;
+ }
+
+ .customerBanner{
+ 	margin-top:16px;
+ 	margin-bottom:26px;
+ }
+
+ .noBorder {
+ 	border: none;
+ }
+
+ .paddingHorizontal_0 {
+ 	padding-left: 0;
+ 	padding-right: 0;
+ }
+
+.gradient {
+	background: #EEF1F3; /* Old browsers */
+	background: -moz-linear-gradient(top,  #EEF1F3 0%, #FFF 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EEF1F3), color-stop(100%,#FFF)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #EEF1F3 0%,#FFF 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #EEF1F3 0%,#FFF 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #EEF1F3 0%,#FFF 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #EEF1F3 0%,#FFF 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEF1F3', endColorstr='#FFF',GradientType=0 ); /* IE6-9 */
+
+}
+
+.marginModule {
+	margin-bottom:15px;
+}
+
+.borderModule {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #e1e1e1;
+}
+
+.paddingModule {
+	padding: 18px;
+}
+
+.dashboardList {
+	margin: 0;
+}
+
+.dashboardList li {
+	float: left;
+	margin: 0;
+	background-image: none !important;
+	border-right: 1px solid #E1E1E1;
+	padding: 0;
+	padding-right: 30px;
+	margin-right: 30px;
+}
+
+.dashboardList li:last-child {
+	border-right: none;
+	padding: 0;
+	margin-right: 0;
+}
+
+.dashboardValue {
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 9px;
+}
+.dashboardType {
+	font-size: 15px;
+	margin-bottom: 4px;
+}
+.dashboardAge {
+	font-size: 12px;
+	margin: 0;
+	color: #95A1AA;
+}
+
+.arrowheadDown {
+	position: relative;
+}
+.arrowheadDown:after {
+	content: url(/images/module_arrowhead_dn.png);
+	position: absolute;
+	bottom: -14px;
+	left: 50%;
+	margin-left: -151px;
+}
+
+.marginRight20 {
+	margin-right: 20px;
+}
+
+.marginRight50 {
+	margin-right: 50px;
+}
+
+.selectSmall {width: 118px;}
+
+.selectMedium {width: 128px;}
+
+.inputLarge {width: 202px;}
+
+.columnQuarter{
+	float: left;
+	width: 25%;
+}
+.columnThreeQuarters {
+	float: left;
+	width: 75%;
+}
+
+.pager{
+	border-bottom: 1px solid #ccc;
+}
+
+.pagerContent{
+	padding: 15px 0;
+}
+
+.count-group .active {
+	font-weight: bold;
+	color: #666;
+}
+
+.mdcDropDownMenuItemContainer {position: absolute;}
+
+.mdcDropDownMenuItemContainer {top: 36px;}
+
+.mdcDropDownMenuItemText {display: block;}
+
+.tabs {
+	position:relative;
+	overflow: visible;
+	border-bottom: 1px solid ;
+}
+
+/* HTML selectors */
+[type=date] {width:89px;}
+
+input  {height: 17px;}
+select {height: 21px;}
+
+table{
+	border-top: 1px solid #ccc;
+	/*border-bottom: 1px solid #ccc;*/
+	border-bottom:1px dotted #DDD;
+	border-collapse: collapse;
+}
+
+th{
+	text-align: left;
+	padding: 17px 0 17px 12px;
+	border-bottom: 1px solid #e1e1e1;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+td{
+	text-align: left;
+	padding: 11px 0 11px 12px;
+	font-size: 12px;
+	border-bottom:1px dotted #DDD;
+}
+
+
+
+
+.ng-table th.flowRight {text-align:right;}
+
+.ng-table th.paddingRight10 {padding-right: 10px;}
+.ng-table th.flowCenter {text-align:center;}
+
+
+/*! ngTable v0.5.3 by Vitalii Savchuk(esvit666@gmail.com) - https://github.com/esvit/ng-table - New BSD License */
+
+.ng-table th{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.ng-table th.sortable{cursor:pointer}.ng-table th.sortable .sort-indicator{padding-right:18px;position:relative}.ng-table th.sortable .sort-indicator:after,.ng-table th.sortable .sort-indicator:before{content:"";border-width:0 4px 4px;border-style:solid;border-color:#000 transparent;visibility:visible;right:5px;top:50%;position:absolute;opacity:.3;margin-top:-4px}.ng-table th.sortable .sort-indicator:before{margin-top:2px;border-bottom:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid #000}.ng-table th.sortable .sort-indicator:hover:after,.ng-table th.sortable .sort-indicator:hover:before{opacity:1;visibility:visible}.ng-table th.sortable.sort-desc,.ng-table th.sortable.sort-asc{background-color:rgba(141,192,219,.25);text-shadow:0 1px 1px rgba(255,255,255,.75)}.ng-table th.sortable.sort-desc .sort-indicator:after,.ng-table th.sortable.sort-asc .sort-indicator:after{margin-top:-2px}.ng-table th.sortable.sort-desc .sort-indicator:before,.ng-table th.sortable.sort-asc .sort-indicator:before{visibility:hidden}.ng-table th.sortable.sort-asc .sort-indicator:after,.ng-table th.sortable.sort-asc .sort-indicator:hover:after{visibility:visible;filter:alpha(opacity=60);-khtml-opacity:.6;-moz-opacity:.6;opacity:.6}.ng-table th.sortable.sort-desc .sort-indicator:after{border-bottom:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid #000;visibility:visible;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;filter:alpha(opacity=60);-khtml-opacity:.6;-moz-opacity:.6;opacity:.6}.ng-table th.filter .input-filter{margin:0;display:block;width:100%;min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.ng-table+.pagination{margin-top:0}@media only screen and (max-width:800px){.ng-table-responsive{border-bottom:1px solid #999}.ng-table-responsive tr{border-top:1px solid #999;border-left:1px solid #999;border-right:1px solid #999}.ng-table-responsive td:before{position:absolute;padding:8px;left:0;top:0;width:50%;white-space:nowrap;text-align:left;font-weight:700}.ng-table-responsive thead tr th{text-align:left}.ng-table-responsive thead tr.ng-table-filters th{padding:0}.ng-table-responsive thead tr.ng-table-filters th form>div{padding:8px}.ng-table-responsive td{border:0;border-bottom:1px solid #eee;position:relative;padding-left:50%;white-space:normal;text-align:left}.ng-table-responsive td:before{content:attr(data-title-text)}.ng-table-responsive,.ng-table-responsive thead,.ng-table-responsive tbody,.ng-table-responsive th,.ng-table-responsive td,.ng-table-responsive tr{display:block}}
+
+
+.ng-table th.sortable.sort-desc,
+.ng-table th.sortable.sort-asc {
+	background: #EEF1F3; /* Old browsers */
+	background: -moz-linear-gradient(top,  #EEF1F3 0%, #FFF 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EEF1F3), color-stop(100%,#FFF)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #EEF1F3 0%,#FFF 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #EEF1F3 0%,#FFF 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #EEF1F3 0%,#FFF 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #EEF1F3 0%,#FFF 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEF1F3', endColorstr='#FFF',GradientType=0 ); /* IE6-9 */
+  	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+}

@@ -1,0 +1,17 @@
+<div id="footer" style="margin-top: 10px;">    
+    <div>
+        <footer-link ng-repeat="link in footerLinks track by $index">
+        	<a href="{{ link.href }}">{{ link.label }}</a>
+        	<span ng-show="footerLinks[$index+1]"> | </span>
+        </footer-link>
+    </div>
+
+    <div>
+        <p>
+            &copy; {{ year }} Cars.com, LLC&#0153;. 
+            All Rights Reserved. 
+            175 West Jackson Blvd., Suite 800 Chicago, IL 60604
+        </p>
+	</div>
+
+</div>

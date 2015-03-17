@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+ 
+	<head>
+		<script type="text/javascript"
+			src="https://c.la2c1cs.salesforceliveagent.com/content/g/js/30.0/deployment.js">
+		</script>
+
+	</head>
+	
+	<body style="padding:0;margin:0;">
+	    <div id="salesforceChatContainer">
+	        <a id="liveagent_button_online_57340000000GnlZ" href="javascript://Chat" style="display: none;">
+	            <img src="https://inventoryeditor.cars.com/MDC_Theme/themes/dojo/pacman07/sfchat/resources/chat.png" style="border: 0px none">
+	        </a>
+	        <div id="liveagent_button_offline_57340000000GnlZ" style="display: ;">
+	            <img src="https://inventoryeditor.cars.com/MDC_Theme/themes/dojo/pacman07/sfchat/resources/chatdisabled.png" style="border: 0px none">
+	        </div>
+	    </div>
+	
+	    <script type="text/javascript">
+	    	(function(chatType){
+		    	var supportLinkInterval = 0,
+		    		buttonOnline = document.getElementById('liveagent_button_online_' + chatType),
+		    		buttonOffline =document.getElementById('liveagent_button_offline_' + chatType),
+		    		toggleSupportLink = window.toggleSupportLink = function toggleSupportLink() {
+		                var	online = buttonOnline.css('display') !== 'none';
+		                var offline = buttonOffline.css('display') !== 'none';
+
+				        try {
+				            if (offline) {
+				                 $('#supportLinkSpan', parent.document.body).show();
+				            }
+				        } catch(e) {}
+				        
+				        return (offline || online);
+		            };
+
+	            buttonOnline.onclick = function(){
+		                liveagent.startChat(chatType);
+		            };
+	            if (!window._laq) {
+	                window._laq = [];
+	            }
+	            window._laq.push(function(){
+	                liveagent.showWhenOnline (chatType, buttonOnline);
+	                liveagent.showWhenOffline(chatType, buttonOffline);
+	                
+	                // support link trigger.
+	                supportLinkInterval = setInterval(function(){
+	                    if(toggleSupportLink()){
+	                       clearInterval(supportLinkInterval);
+	                    }
+	                }, 25);
+	            });
+
+	        })('57340000000GnlZ');
+	    </script>
+	</body>
+
+</html>

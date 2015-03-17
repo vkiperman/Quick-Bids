@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div(style='padding:12px')
+    h1= title
+    p Welcome to #{title} Templates
+
+    ul
+      li
+        a(href='/dashboard.html', target='dashboard') #{title} Dashboard
+      li
+        a(href='/quick-offer.html', target='dashboard') #{title}

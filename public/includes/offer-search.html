@@ -1,0 +1,99 @@
+<div class="mdcModuleContainer mdcModulePadding arrowheadDown cf">
+	<h3 class="paddingBottomSmall">Filter Bids and Offers</h3>
+
+	<div class="cf paddingBottom10">
+		<div class="floatLeft marginRight50">
+			<label>Region</label>
+			<select class="selectSmall"
+				ng-model="bidFilter.regionSelected"
+				ng-options="region as region.label for region in regions">
+			</select>
+		</div>
+
+		<div class="floatLeft marginRight50">
+
+			<div class="floatLeft marginRight16">
+				<label>Bid Status</label>
+				<select class="selectMedium"
+					ng-model="bidFilter.bidStatusSelected"
+					ng-options="bidStatus as bidStatus.label for bidStatus in bidStatuses">
+				</select>
+			</div>
+
+			<div class="floatLeft">
+				<label>Submission Date</label>
+				<div class="floatLeft marginRight16">
+					<input type="date" value="" ng-model="bidFilter.bidStatusDateFrom" />
+				</div>
+				<div class="floatLeft">
+					<input type="date" value="" ng-model="bidFilter.bidStatusDateTo" />
+				</div>
+			</div>
+
+		</div>
+
+		<div class="floatLeft cf">
+
+			<div class="floatLeft marginRight16">
+				<label>Bidder</label>
+				<select class="selectMedium"
+					ng-model="bidFilter.bidderSelected"
+					ng-options="bidder as bidder.label for bidder in bidders">
+				</select>
+			</div>
+			
+			<div class="floatLeft">
+				<label>Bid Date</label>
+				<div class="floatLeft marginRight16">
+					<input type="date" value="" ng-model="bidFilter.bidDateFrom" />
+				</div>
+				<div class="floatLeft">
+					<input type="date" value="" ng-model="bidFilter.bidDateTo" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div ng-show="toggleAdvanced">
+		<div class="columnQuarter">
+			<label>Customer Last Name</label>
+			<input ng-model="bidFilter.customer.lastName" class="inputLarge" />
+		</div>
+		<div class="columnQuarter">
+			<label>Customer First Name</label>
+			<input ng-model="bidFilter.customer.firstName" class="inputLarge" />
+		</div>
+		<div class="columnQuarter">
+			<label>Customer Phone Number</label>
+			<input ng-model="bidFilter.customer.phoneNumber" class="inputLarge" />
+		</div>
+		<div class="columnQuarter">
+			<label>Customer Email Address</label>
+			<input ng-model="bidFilter.customer.email" class="inputLarge" />
+		</div>
+	</div>
+
+	<div class="paddingBottom10">
+		<a href="javascript:;" ng-click="toggleAdvanced = !toggleAdvanced">
+			Hide Advanced Search Options
+		</a>
+	</div>
+
+	<div><button class="mdcActionButton">Filter</button></div>
+
+	<div ng-show="toggleAdvanced" class="paddingTop10 cf">
+		<h4>Find Individual Bid by</h4>
+		<div class="columnQuarter">
+			<label>Bid ID</label>
+			<input ng-model="bidFilter.bidId" class="inputLarge" />
+		</div>
+		<div class="columnHalf">
+			<label>VIN</label>
+			<div>
+				<input ng-model="bidFilter.vin" class="inputLarge marginRight20" />
+				<button class="secondary mdcActionButton">Find</button>
+			</div>
+		</div>
+	</div>
+
+</div>
