@@ -1,4 +1,4 @@
-<div class="mdcComponent paddingLeft15 paddingRight15">
+<div class="mdcComponent paddingLeft15 paddingRight15 mdcSeparatorLeft">
 	<h4>Vehicle Valuation</h4>
 
 	<div data-section="black_book_value">
@@ -39,7 +39,7 @@
 		</div>
 	</div>
 
-	<div data-section="black_book_value">
+	<div data-section="market_iq_summary">
 		<div class="paddingTop30 cf">
 			<h5 class="headingText floatLeft">Market IQ Summary</h5>
 			<a href="javascript:;" class="floatRight">View Full Details</a>
@@ -48,5 +48,12 @@
 			<dt ng-repeat-start="item in mmarketIqSummary">{{ item.name }}</dt>
 			<dd ng-repeat-end>{{item.value}}</dd>
 		</dl>
+	</div>
+
+	<div data-section="manheim">
+		<div class="paddingTop30 cf">
+			<h5 class="headingText">Manheim Market Report</h5>
+			<button class="mdcActionButton secondary">View Now</button>
+		</div>
 	</div>
 </div>

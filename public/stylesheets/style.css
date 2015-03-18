@@ -50,7 +50,10 @@
 }
 
 .mdcSeparatorBottom { border-bottom:  1px solid #E1E1E1; }
-.mdcSeparatorLeft { border-left:  1px solid #E1E1E1; }
+.mdcSeparatorLeft {
+	border-left:  1px solid #E1E1E1;
+	margin-left: -1px;
+}
 .mdcSeparatorRight { border-right:  1px solid #E1E1E1; }
  /* end module overwrites */
 
@@ -299,9 +302,17 @@
 
 }
 
+.carfax {
+	background: url(/images/carfax.png) center;
+}
+
 /* HTML selectors */
 [type=date] {width:89px;}
 [type=checkbox] {vertical-align:top;}
+
+textarea {
+    resize: none;
+}
 
 input  {height: 17px;}
 select {height: 21px;}

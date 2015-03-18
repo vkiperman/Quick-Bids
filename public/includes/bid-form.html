@@ -1,24 +1,34 @@
 <div class="paddingLeft15 mdcComponent">
 	<div class="gradientTop borderModule paddingModule marginModule">
 		<h4>Place Your Bid</h4>
+		<form>
+			<div class="paddingBottom10 mdcSeparatorBottom">
+				<label>Current Bid</label>
+				<!-- TODO: currency mask needed -->
+				<input type="text" ng-model="currentBid" class="fullWidth" />
 
-		<div class="paddingBottom10 mdcSeparatorBottom">
-			<label>Current Bid</label>
-			<!-- TODO: currency mask needed -->
-			<input type="text" ng-model="currentBid" class="fullWidth" />
+				<label>Recon Adjust Total</label>
+				<!-- TODO: currency mask needed -->
+				<input type="text" ng-model="raTotal" class="fullWidth" />
+			</div>
 
-			<label>Recon Adjust Total</label>
-			<!-- TODO: currency mask needed -->
-			<input type="text" ng-model="raTotal" class="fullWidth" />
-		</div>
+			<div class="paddingTop15">
+				<label class="marginBottomNone">Final Value</label>
+				<strong class="strongText">{{(currentBid - raTotal) | currency}}</strong>
+			</div>
 
-		<div class="paddingTop15">
-			<label class="marginBottomNone">Final Value</label>
-			<strong class="strongText">{{(currentBid - raTotal) | currency}}</strong>
-		</div>
-
-		<div class="paddingTop15">
-			<textarea ng-model="internalNotes"></textarea>
-		</div>
+			<div class="paddingTop15">
+				<textarea ng-model="internalNotes" class="fullWidth" rows="3"></textarea>
+				<div class="marginTopSmall">
+					<a href="javascript:;" class="cf">Request more info</a>
+				</div>
+				<div class="marginTopXXSmall">
+					<a href="javascript:;">Decline to bid</a>
+				</div>
+				<div class="marginTopSmall">
+					<button class="mdcActionButton fullWidth">Place Bid</button>
+				</div>
+			</div>
+		</form>
 	</div>
 </div>
