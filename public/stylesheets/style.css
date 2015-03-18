@@ -66,21 +66,36 @@
 }
 
 .mdcComponent dl{
+	display: table;
 	border-top: 1px solid #e5e5e5;
 	border-bottom: 1px solid #e5e5e5;
-	margin-top: 10px;
+	margin-top: 6px;
+}
+
+.mdcComponent dl dt,
+.mdcComponent dl dd{
+	float: left;
+	font-weight: bold;
+	padding: 7px 0 6px;
+	border-bottom: 1px solid #efefef;
+
 }
 
 .mdcComponent dl dt{
-	float: left;
-	width: 45%;
-	padding: 10px 0;
+	width: 48%;
 }
 
 .mdcComponent dl dd{
-	float: left;
-	width: 45%;
-	padding: 10px 0;
+	width: 52%;
+}
+
+.mdcComponent dl dt:after{
+	content: ':';
+}
+
+.mdcComponent dl dt:last-of-type,
+.mdcComponent dl dd:last-of-type{
+	border-bottom: none;
 }
 
 .headingText {

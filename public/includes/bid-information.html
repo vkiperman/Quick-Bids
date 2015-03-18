@@ -1,29 +1,53 @@
-<div class="mdcComponent">
+<div class="mdcComponent paddingRight15">
 	<h4>Bid Information</h4>
 
-	<!-- TODO: convert to directive -->
-	<div class="tabs cf">
-		<div class="tab"
-			ng-class="{active:currentTab===0,inactive:currentTab!==0}"
-			ng-click="setTab(0)">Vehicle</div>
-		<div class="tab"
-			ng-class="{active:currentTab===1,inactive:currentTab!==1}"
-			ng-click="setTab(1)">Customer</div>
-	</div>
-	<div class="paddingTop30">
-		<div class="tabContent" ng-show="isCurrentTab(0)">
-			<h5 class="headingText">Vehicle Info</h5>
+	<!-- TODO: convert to "Tabs" directive -->
+	<div>
+		<div class="tabs cf">
+			<div class="tab"
+				ng-class="{active:currentTab===0,inactive:currentTab!==0}"
+				ng-click="setTab(0)">Vehicle</div>
+			<div class="tab"
+				ng-class="{active:currentTab===1,inactive:currentTab!==1}"
+				ng-click="setTab(1)">Customer</div>
 
-			<dl>
-				<dt ng-repeat-start="item in vehicleInfo">Series</dt>
-				<dd ng-repeat-end>Limited</dd>
-			</dl>
-
+			<div class="floatRight paddingTop11"><a href="javascript:;">View Photos</a></div>
 		</div>
-		<div class="tabContent" ng-show="isCurrentTab(1)">
-			<h5 class="headingText">Customer Info</h5>
+
+		<div ng-show="isCurrentTab(0)">
+			<div class="paddingTop28">
+				<h5 class="headingText">Vehicle Info</h5>
+
+				<dl>
+					<dt ng-repeat-start="item in vehicleInfo">{{item.name}}</dt>
+					<dd ng-repeat-end class="cf">{{item.value}}</dd>
+				</dl>
+
+			</div>
+
+			<div class="paddingTop30">
+				<h5 class="headingText">Condition Summary</h5>
+
+				<dl>
+					<dt ng-repeat-start="item in conditionSummary">{{item.name}}</dt>
+					<dd ng-repeat-end class="cf">{{ item.value }}</dd>
+				</dl>
+
+			</div>
+			<div class="paddingTop11"><a href="javascript:;">View Full Condition Report</a></div>
+		</div>
+
+		<div ng-show="isCurrentTab(1)">
+			<div class="paddingTop28">
+				<h5 class="headingText">Customer Info</h5>
+
+				<dl>
+					<dt ng-repeat-start="item in customerInfo">{{item.name}}</dt>
+					<dd ng-repeat-end class="cf">{{ item.value }}</dd>
+				</dl>
+
+			</div>
 		</div>
 	</div>
-
 
 </div>
