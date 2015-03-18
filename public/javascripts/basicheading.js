@@ -11,7 +11,6 @@
 				var intervalId;
 
 				function updateTime() {
-					console.log( ( scope.futureTime - new Date().getTime() ) );
 					scope.countDown = dateFilter(( scope.futureTime - new Date().getTime() ), 'mm:ss');
 				}
 

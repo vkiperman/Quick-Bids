@@ -5,6 +5,7 @@
 		'BasicHeading',
 		'BidInformation',
 		'VehicleValuation',
+		'BidForm',
 		'GlobalFooter'
 	]);
 

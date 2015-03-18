@@ -1,0 +1,24 @@
+<div class="paddingLeft15 mdcComponent">
+	<div class="gradientTop borderModule paddingModule marginModule">
+		<h4>Place Your Bid</h4>
+
+		<div class="paddingBottom10 mdcSeparatorBottom">
+			<label>Current Bid</label>
+			<!-- TODO: currency mask needed -->
+			<input type="text" ng-model="currentBid" class="fullWidth" />
+
+			<label>Recon Adjust Total</label>
+			<!-- TODO: currency mask needed -->
+			<input type="text" ng-model="raTotal" class="fullWidth" />
+		</div>
+
+		<div class="paddingTop15">
+			<label class="marginBottomNone">Final Value</label>
+			<strong class="strongText">{{(currentBid - raTotal) | currency}}</strong>
+		</div>
+
+		<div class="paddingTop15">
+			<textarea ng-model="internalNotes"></textarea>
+		</div>
+	</div>
+</div>

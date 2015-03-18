@@ -32,14 +32,26 @@
 	padding-bottom: 15px;
 }
 
+.plus, .minus {
+	background-repeat: no-repeat;
+	background-position: -2px;
+	padding-left: 15px;
+}
+.plus {background-image: url(/images/plus_small.gif);}
+.minus {background-image: url(/images/minus_small.gif);}
+
 .mdcSection {
 	border-top:  1px solid #E1E1E1;
 	padding: 18px 10px;
 	padding-top: 16px;
 	font-family: Arial, Helvetica, sans-serif;
-	margin-top: 10px;
+
 	margin-bottom: 0px;
 }
+
+.mdcSeparatorBottom { border-bottom:  1px solid #E1E1E1; }
+.mdcSeparatorLeft { border-left:  1px solid #E1E1E1; }
+.mdcSeparatorRight { border-right:  1px solid #E1E1E1; }
  /* end module overwrites */
 
 .mdcSection h3,
@@ -67,15 +79,17 @@
 
 .mdcComponent dl{
 	display: table;
+	width: 100%;
 	border-top: 1px solid #e5e5e5;
 	border-bottom: 1px solid #e5e5e5;
 	margin-top: 6px;
 }
 
+.mdcComponent dl dt {font-weight: bold;}
+
 .mdcComponent dl dt,
-.mdcComponent dl dd{
+.mdcComponent dl dd {
 	float: left;
-	font-weight: bold;
 	padding: 7px 0 6px;
 	border-bottom: 1px solid #efefef;
 	width: 50%;
@@ -90,15 +104,18 @@
 	border-bottom: none;
 }
 
-.headingText {
-	color: #626262;
+.titleText {
+	color: #929292;
+	font-weight: bold;
 }
 
- #headermenu{
- 	z-index: 1000;
- }
+.headingText {color: #626262;}
 
- .customerBanner{
+.strongText {color: #444;font-size:14px;}
+
+ #headermenu {z-index: 1000;}
+
+ .customerBanner {
  	margin-top:16px;
  	margin-bottom:26px;
  }
@@ -122,6 +139,18 @@
 	background: linear-gradient(to bottom,  #EEF1F3 0%,#FFF 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEF1F3', endColorstr='#FFF',GradientType=0 ); /* IE6-9 */
 
+}
+
+
+.gradientTop {
+	background: #eef1f3; /* Old browsers */
+	background: -moz-linear-gradient(top,  #eef1f3 0%, #ffffff 34px); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eef1f3), color-stop(34px,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #eef1f3 0%,#ffffff 34px); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #eef1f3 0%,#ffffff 34px); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #eef1f3 0%,#ffffff 34px); /* IE10+ */
+	background: linear-gradient(to bottom,  #eef1f3 0%,#ffffff 34px); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eef1f3', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
 .marginModule {
@@ -272,6 +301,7 @@
 
 /* HTML selectors */
 [type=date] {width:89px;}
+[type=checkbox] {vertical-align:top;}
 
 input  {height: 17px;}
 select {height: 21px;}
