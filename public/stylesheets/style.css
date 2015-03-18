@@ -78,15 +78,7 @@
 	font-weight: bold;
 	padding: 7px 0 6px;
 	border-bottom: 1px solid #efefef;
-
-}
-
-.mdcComponent dl dt{
-	width: 48%;
-}
-
-.mdcComponent dl dd{
-	width: 52%;
+	width: 50%;
 }
 
 .mdcComponent dl dt:after{
