@@ -80,6 +80,11 @@
 	font-size: 18px;
 }
 
+.mdcComponent h4 + p {
+	margin-top: -6px;
+	font-size: 14px;
+}
+
 .mdcComponent dl{
 	display: table;
 	width: 100%;
