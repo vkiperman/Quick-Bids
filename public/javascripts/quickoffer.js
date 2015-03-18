@@ -6,6 +6,8 @@
 		'BidInformation',
 		'VehicleValuation',
 		'BidForm',
+		'MarketIq',
+		'VehicleReportCard',
 		'GlobalFooter'
 	]);
 
