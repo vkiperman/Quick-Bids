@@ -9,12 +9,12 @@
 
 				<label>Recon Adjust Total</label>
 				<!-- TODO: currency mask needed -->
-				<input type="text" ng-model="raTotal" class="fullWidth" />
+				<input type="text" ng-model="reconAdjustTotal" class="fullWidth" />
 			</div>
 
 			<div class="paddingTop15">
 				<label class="marginBottomNone">Final Value</label>
-				<strong class="strongText">{{(currentBid - raTotal) | currency}}</strong>
+				<strong class="strongText">{{(currentBid - reconAdjustTotal) | currency}}</strong>
 			</div>
 
 			<div class="paddingTop15">

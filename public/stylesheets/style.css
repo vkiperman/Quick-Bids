@@ -155,7 +155,6 @@
 
 }
 
-
 .gradientTop {
 	background: #eef1f3; /* Old browsers */
 	background: -moz-linear-gradient(top,  #eef1f3 0%, #ffffff 34px); /* FF3.6+ */
@@ -316,6 +315,8 @@
 .carfax {
 	background: url(/images/carfax.png) center;
 }
+
+.FlowRight{float:right !important;}
 
 /* HTML selectors */
 [type=date] {width:89px;}
