@@ -2,7 +2,7 @@
 	<div class="cf">
 		<div class="FlowRight columnQuarter">
 			<label>Recon Adjustment Total</label>
-			<input type="text" ng-model="reconAdjustmentTotal" class="fullWidth" />
+			<input type="text" ng-model="reconAdjustmentTotal" class="fullWidth marginBottomXSmall" />
 		</div>
 	</div>
 
@@ -24,7 +24,7 @@
 			<div class="width42 floatRight"><strong>{{total}}</strong></div>
 		</dd>
 
-		<dt class="width40" ng-repeat-start="item in vehicleHistory">{{item.name}}</dt>
+		<dt class="width40" ng-repeat-start="item in vehicleReportCard.vehicleHistory">{{item.name}}</dt>
 		<dd class="width60" ng-repeat-end>
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">
@@ -40,7 +40,23 @@
 			<div class="width42 floatRight"><strong>Cost in US$</strong></div>
 		</dd>
 
-		<dt class="width40" ng-repeat-start="item in exterior">{{item.name}}</dt>
+		<dt class="width40" ng-repeat-start="item in vehicleReportCard.exterior">{{item.name}}</dt>
+		<dd class="width60" ng-repeat-end>
+			<div class="columnHalf">{{item.value}}</div>
+			<div class="width42 floatRight relative">
+				<input type="text" ng-model="reconAdjustmentTotal" class="fullWidth marginBottomNone absolute" />
+			</div>
+		</dd>
+	</dl>
+
+	<dl>
+		<dt class="width40">Interior</dt>
+		<dd class="width60">
+			<div class="columnHalf"><strong>Customer Response</strong></div>
+			<div class="width42 floatRight"><strong>Cost in US$</strong></div>
+		</dd>
+
+		<dt class="width40" ng-repeat-start="item in vehicleReportCard.interior">{{item.name}}</dt>
 		<dd class="width60" ng-repeat-end>
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">

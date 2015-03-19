@@ -93,7 +93,7 @@
 	margin-top: 6px;
 }
 
-.mdcComponent dl + .mdcComponent dl {
+.mdcComponent dl + dl {
 	margin-top: 0 !important;
 	border-top: none !important;
 }
