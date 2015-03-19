@@ -9,6 +9,49 @@
 			templateUrl: '/includes/condition-report.html',
 
 			controller: function($scope){
+				$scope.totalReconAdjust = 0;
+				$scope.totalReconAdjustManual = 0;
+				$scope.lockReconAdjustment = false;
+
+				$scope.$watch(function(){
+					return $scope.$parent.totalReconAdjust;
+				}, function(newVal, oldVal){
+					$scope.totalReconAdjust = newVal;
+				});
+
+				/*$scope.$watch('totalReconAdjust', function(newVal, oldVal){
+					$scope.$parent.totalReconAdjust = newVal;
+				});*/
+
+				/*$scope.$watch('totalReconAdjustManual', function(newVal, oldVal){
+					$scope.$parent.totalReconAdjust = newVal;
+				});*/
+
+				$scope.focusManual = function(event){
+					$scope.lockReconAdjustment = true;
+					document.getElementById('manualInput').focus();
+				};
+
+				$scope.aggregate = function(){
+					var aggregate = 0;
+
+					angular.forEach($scope.vehicleReportCard, function(e, i){
+						angular.forEach(e, function(key){
+							aggregate += key.cost || 0;
+						});
+					});
+
+
+					if($scope.lockReconAdjustment) {
+						//$scope.totalReconAdjust = aggregate;
+						return aggregate;
+					}
+
+
+
+					return $scope.totalReconAdjustManual = $scope.totalReconAdjust = aggregate;
+				};
+
 				$scope.vehicleReportCard = {
 					vehicleHistory: [
 						{name:'Status of title', value:'Clear'},
@@ -29,6 +72,18 @@
 						{name:'Carpet damage', value:'No'},
 						{name:'Odor', value:'No'},
 						{name:'Interior damage', value:'No'}
+					],
+					mechanical: [
+						{name:'Engine Issues', value:'Knocks'},
+						{name:'Transmission issues', value:'Grinding or Shaking'},
+						{name:'Fluid Leaks', value:'Yes'},
+						{name:'AC/Heat issues', value:'Weak'},
+						{name:'Warning lights on', value:'Yes'},
+						{name:'Do you have spare keys?', value:'Yes'}
+					],
+					tires: [
+						{name:'Tires', value:'Recently replaced'},
+						{name:'Brakes', value:'Old'}
 					]
 				}
 

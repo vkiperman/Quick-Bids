@@ -10,7 +10,7 @@
 
 			controller: function($scope){
 				$scope.currentBid = 0;
-				$scope.reconAdjustTotal = 0;
+				$scope.totalReconAdjust = 0;
 			}
 
 		};

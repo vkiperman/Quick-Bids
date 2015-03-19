@@ -35,7 +35,7 @@
 				};
 
 				$scope.isDropDownMenu = function(menuName){
-					console.log($scope.dropDownMenu === menuName);
+					//console.log($scope.dropDownMenu === menuName);
 					return $scope.dropDownMenu === menuName;
 				}
 

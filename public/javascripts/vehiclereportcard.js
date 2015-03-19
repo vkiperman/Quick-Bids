@@ -10,6 +10,7 @@
 			scope: {currentTab: '=currentTab'},
 
 			controller: function($scope){
+				$scope.totalReconAdjust = 0;
 
 				$scope.setTab = function(currentTab){
 					if($scope.currentTab !== currentTab){

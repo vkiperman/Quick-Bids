@@ -336,6 +336,8 @@
 
 .FlowRight{float:right !important;}
 
+.red {color:red;}
+
 /* HTML selectors */
 [type=date] {width:89px;}
 [type=checkbox] {vertical-align:top;}
