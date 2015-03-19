@@ -93,6 +93,11 @@
 	margin-top: 6px;
 }
 
+.mdcComponent dl + .mdcComponent dl {
+	margin-top: 0 !important;
+	border-top: none !important;
+}
+
 .mdcComponent dl dt {font-weight: bold;}
 
 .mdcComponent dl dt,
@@ -111,6 +116,15 @@
 .mdcComponent dl dd:last-of-type{
 	border-bottom: none;
 }
+
+/*
+.mdcComponent dl.threeCol dt{
+	width: 40%;
+}
+
+.mdcComponent dl.threeCol dd{
+	width: 60%;
+} */
 
 .mdcContainer {
 	padding-left: 16px;
@@ -250,6 +264,10 @@
 	width: 75%;
 }
 
+.width60 {width: 60% !important;}
+.width40 {width: 40% !important;}
+.width42 {width: 42% !important;}
+
 .pager{
 	border-bottom: 1px solid #ccc;
 }
@@ -321,6 +339,8 @@
 /* HTML selectors */
 [type=date] {width:89px;}
 [type=checkbox] {vertical-align:top;}
+
+dl input.absolute {top:-3px;}
 
 textarea {
     resize: none;
