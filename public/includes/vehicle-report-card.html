@@ -1,3 +1,24 @@
-<div class="mdcComponent mdcSection mdcSeparatorBottom">
+<div class="mdcComponent mdcSeparatorBottom paddingTop26">
 	<h4>Vehicle Report Card</h4>
+
+	<div>
+		<div class="tabs cf">
+			<div class="tab"
+				ng-class="{active:currentTab===0,inactive:currentTab!==0}"
+				ng-click="setTab(0)">Condition Report</div>
+			<div class="tab"
+				ng-class="{active:currentTab===1,inactive:currentTab!==1}"
+				ng-click="setTab(1)">Photos</div>
+
+		</div>
+
+		<div ng-show="isCurrentTab(0)" class="mdcContainer">
+			<div class="paddingTop28">Priya is working on this...</div>
+		</div>
+		<div ng-show="isCurrentTab(1)" class="mdcContainer cf">
+			<div class="columnHalf"><--</div>
+			<div class="columnHalf flowRight">--></div>
+		</div>
+
+	</div>
 </div>

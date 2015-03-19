@@ -8,8 +8,9 @@
 			restrict: 'E',
 			templateUrl: '/includes/bid-information.html',
 
+			scope: {currentTab: '=currentTab'},
+
 			controller: function($scope){
-				$scope.currentTab = 0;
 
 				$scope.vehicleInfo = [
 					{

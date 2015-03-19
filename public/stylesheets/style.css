@@ -112,6 +112,12 @@
 	border-bottom: none;
 }
 
+.mdcContainer {
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 28px;
+}
+
 .titleText {
 	color: #929292;
 	font-weight: bold;
