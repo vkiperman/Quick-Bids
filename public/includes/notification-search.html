@@ -1,0 +1,78 @@
+<div class="mdcModuleContainer mdcModulePadding arrowheadDown cf">
+    <h3 class="paddingBottomSmall">Notification Settings</h3>
+
+    <div class="cf paddingBottom10">
+        <div class="floatLeft marginRight50">
+            <label>Report</label>
+            <select class="selectSmall"
+                ng-model="notificationFilter.reportSelected"
+                ng-options="report as report.label for report in reports">
+            </select>
+        </div>
+
+        <div >
+            <div >
+                <label>Method</label>
+                <!--Radio buttons-->
+            </div>
+        </div>        
+    </div>
+
+    <div class="cf paddingBottom10">
+        <div class="floatLeft marginRight50">
+            <label>Frequency</label>
+            <select class="selectSmall"
+                ng-model="notificationFilter.frequencySelected"
+                ng-options="frequency as frequency.label for frequency in frequencies">
+            </select>
+        </div>
+
+        <div class="floatLeft marginRight50">
+            <label></label>
+            <span >
+                Between
+            </span>
+        </div>
+
+        <div class="floatLeft marginRight50">
+            <label></label>
+            <span >
+                 TestBox
+            </span>
+        </div>
+
+        <div class="floatLeft marginRight16">
+            <label></label>
+            <select class="selectMedium"
+                ng-model="notificationFilter.ampmSelected"
+                ng-options="ampm as ampm.label for ampm in amorpm">
+            </select>
+        </div>
+
+        <div class="floatLeft marginRight50">
+            <label></label>
+            <span >
+                and
+            </span>
+        </div>
+
+        <div class="floatLeft marginRight50">
+            <label></label>
+            <span >
+                 TestBox
+            </span>
+        </div>
+
+        <div class="floatLeft marginRight16">
+            <label></label>
+            <select class="selectMedium"
+                ng-model="notificationFilter.ampmSelected"
+                ng-options="ampm as ampm.label for ampm in ampm">
+            </select>
+        </div>               
+       
+    </div>
+    <div>
+        <!--check boxes goe s here -->
+    </div>
+</div>
