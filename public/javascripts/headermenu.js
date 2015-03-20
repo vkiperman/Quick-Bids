@@ -12,7 +12,7 @@
 			    $document.bind('click', function(event){
 			    	var target = event.target;
 
-			    	while(!/mdcDropDownMenu/.test(target.className)){
+			    	while(target && !/mdcDropDownMenu/.test(target.className)){
 			    		if(target.nodeName.toLowerCase() === 'html'){			    			
 			    			scope.dropDownMenu = '';
 			        		scope.$apply();

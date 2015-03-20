@@ -32,6 +32,7 @@
 						name: 'VIN', value: '19WWA5641XA011701'
 					}
 				];
+				$scope.$parent.vehicleInfo = $scope.vehicleInfo;
 				$scope.conditionSummary = [
 					{
 						name: 'Damage', value: 'None'

@@ -1,6 +1,6 @@
 (function(){
 
-	var app = angular.module('BidForm', ['Modal']);
+	var app = angular.module('BidForm', ['Modal', 'RequestAdditionalInformation']);
 
 	app.directive('bidForm', function($filter){
 

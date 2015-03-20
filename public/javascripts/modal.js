@@ -8,6 +8,7 @@
 			restrict: 'E',
 			templateUrl: '/includes/modal.html',
 			transclude: true,
+			
             scope: {
                 isModalVisible: '@ngShow',
                 title: '@'

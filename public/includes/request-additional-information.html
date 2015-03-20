@@ -1,0 +1,152 @@
+<div>
+    <div class="marginTopLarge cf">
+        <div class="columnThird">
+            <h5 class="headingText paddingBottom12">Customer Information:</h5>
+            <p>
+                Mike Ditka <br>
+                Chicago, IL 60625 <br>
+                mditka@dabears.com <br>
+                312-345-6789
+            </p>
+        </div>
+        <div class="columnTwoThird">
+            <h5 class="headingText">Vehicle Information:</h5>
+
+            <dl>
+                <dt ng-repeat-start="item in vehicleInfo">{{item.name}}</dt>
+                <dd ng-repeat-end class="cf">{{item.value}}</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="marginTopLarge cf">
+        <div class="columnThird"><h5 class="headingText paddingBottom12">Request Pictures of Vehicles</h5></div>
+        <div class="columnTwoThird cf">
+            <label>
+                <input type="checkbox" ng-model="pictureVehicle.selectAll" />
+                Select All
+            </label>
+        </div>
+
+        <div class="columnThird">
+            <label>
+                <input type="checkbox" ng-checked="pictureVehicle.selectAll" />
+                Center Console
+            </label>
+            <label>
+                <input type="checkbox" ng-checked="pictureVehicle.selectAll" />
+                Dash
+            </label>
+            <label>
+                <input type="checkbox" ng-checked="pictureVehicle.selectAll" />
+                Odometer
+            </label>
+            <label>
+                <input type="checkbox" ng-checked="pictureVehicle.selectAll" />
+                Trunk
+            </label>
+
+        </div>
+        <div class="columnThird">
+            <label>
+                <input type="checkbox" ng-checked="pictureVehicle.allSelected" />
+                Front
+            </label>
+            <label>
+                <input type="checkbox" ng-checked="pictureVehicle.allSelected" />
+                Front Tire
+            </label>
+            <label>
+                <input type="checkbox" ng-checked="pictureVehicle.allSelected" />
+                Front Seat
+            </label>
+            <label>
+                <input type="checkbox" ng-checked="pictureVehicle.allSelected" />
+                Front Left Side (driver)
+            </label>
+        </div>
+        <div class="columnThird">
+            <label>
+                <input type="checkbox" ng-checked="pictureVehicle.allSelected" />
+                Back
+            </label>
+            <label>
+                <input type="checkbox" ng-checked="pictureVehicle.allSelected" />
+                Rear Tire
+            </label>
+            <label>
+                <input type="checkbox" ng-checked="pictureVehicle.allSelected" />
+                Rear Seat
+            </label>
+            <label>
+                <input type="checkbox" ng-checked="pictureVehicle.allSelected" />
+                Rear Right Side
+            </label>
+        </div>
+
+    </div>
+    <div class="marginTopSmall cf">
+        <div class="columnThird"><h5 class="headingText paddingBottom12">Request Pictures of Damage</h5>
+        </div>
+        <div class="columnTwoThird cf">
+            <label>
+                <input type="checkbox" ng-model="pictureDamage.selectAll" />
+                Select All
+            </label>
+        </div>
+
+        <div class="columnThird">
+            <label>
+                <input type="checkbox" ng-checked="pictureDamage.selectAll" />
+                Body Damage
+            </label>
+            <label>
+                <input type="checkbox" ng-checked="pictureDamage.selectAll" />
+                Paint Damage
+            </label>
+            <label>
+                <input type="checkbox" ng-checked="pictureDamage.selectAll" />
+                Seat Damage
+            </label>
+        </div>
+        <div class="columnThird">
+            <label>
+                <input type="checkbox" ng-checked="pictureDamage.selectAll" />
+                Glass Damage
+            </label>
+            <label>
+                <input type="checkbox" ng-checked="pictureDamage.selectAll" />
+                Carpet Damage
+            </label>
+        </div>
+        <div class="columnThird cf">
+            <label>
+                <input type="checkbox" ng-checked="pictureDamage.selectAll" />
+                Lights Damage
+            </label>
+            <label>
+                <input type="checkbox" ng-checked="pictureDamage.selectAll" />
+                Interior Damage
+            </label>
+        </div>
+    </div>
+    <div class="marginTopSmall cf">
+        <h5 class="headingText paddingBottom10">Ask Additional Question</h5>
+
+        <div ng-repeat="question in questions track by $index">
+            <textarea ng-class="{fullWidth:!$index, stackedRepeater:$index}"
+                ng-model="question.value"; rows="5"
+                placeholder="Type your question here. Add another question below."></textarea>
+
+            <a href="javascript:;" ng-click="removeQuestion($event, $index)" ng-show="$index">Remove</a>
+            
+        </div>
+
+        <a href="javascript:;" ng-click="addQuestion($event)" ng-show="questions.length < 10">Add question</a>
+
+    </div>
+    <div class="marginTopSmall cf">
+        <button class="mdcActionButton">Request</button>
+        <button class="mdcActionButton secondary">Cancel</button>
+    </div>
+</div>
