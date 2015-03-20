@@ -12,7 +12,8 @@
 				$scope.currentBid = 0;
 				$scope.totalReconAdjust = 0;
 
-				$scope.showManager = false;
+				$scope.showRequestForm = false;
+				$scope.showRequestDecline = false;
 			},
 
 			controllerAs: 'BidFormCtrl'

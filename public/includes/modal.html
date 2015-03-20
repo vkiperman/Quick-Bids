@@ -2,7 +2,20 @@
 	<div class="dijitDialogUnderlayWrapper displayBlock"
 		style="top:{{scrollTop}}px"
 	    ng-click="cancelManager($event)">
-	    <div class="dijitDialogUnderlay mdcModalStandard_underlay" style="width: 100%; height: 100%;"></div>
-	    <iframe src="javascript:;" class="dijitBackgroundIframe" style="opacity: 0.1; width: 100%; height: 100%;"></iframe>
+	    <div class="dijitDialogUnderlay mdcModalStandard_underlay"></div>
+	    <iframe src="javascript:;" class="dijitBackgroundIframe"></iframe>
+	</div>
+
+	<div class="mdcModal mdcModalStandard dijitDialogFixed modal"
+	    style="left: {{scrollLeft}}px; top: {{modalTop + 25}}px;">
+	    <div class="mdcModalTitleBar">
+	        <span id="PCCreateAmenities_title" class="mdcModalTitle">{{title}}</span>
+	        <span title="Cancel" ng-click="cancelManager($event)" class="mdcModalCloseIcon">
+	            <span title="Cancel" class="mdcModalCloseText" >&times;</span>
+	        </span>
+	    </div>
+	    <div class="mdcModalPaneContent">
+	        <ng-transclude></ng-transclude>
+	    </div>
 	</div>
 </div>

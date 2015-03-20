@@ -31,10 +31,10 @@
 			<div class="paddingTop15">
 				<textarea ng-model="internalNotes" class="fullWidth" rows="3"></textarea>
 				<div class="marginTopSmall">
-					<a href="javascript:;" class="cf" ng-click="showManager=true">Request more info</a>
+					<a href="javascript:;" class="cf" ng-click="showRequestForm=true">Request more info</a>
 				</div>
 				<div class="marginTopXXSmall">
-					<a href="javascript:;" ng-click="showManager=true">Decline to bid</a>
+					<a href="javascript:;" ng-click="showDeclineForm=true">Decline to bid</a>
 				</div>
 				<div class="marginTopSmall">
 					<button class="mdcActionButton fullWidth">Place Bid</button>
@@ -43,6 +43,11 @@
 		</form>
 	</div>
 
-	<modal ng-show="showManager"
-		show-manager="false"></modal>
+	<modal ng-show="showRequestForm"
+		title="Request more info"
+		show-manager="false">Request</modal>
+
+	<modal ng-show="showDeclineForm"
+		title="Decline to bid"
+		show-manager="false">Decline</modal>
 </div>

@@ -7,16 +7,18 @@
 		return {
 			restrict: 'E',
 			templateUrl: '/includes/modal.html',
+			transclude: true,
             scope: {
-                showManager: '@'
+                isModalVisible: '@ngShow',
+                title: '@'
             },
 
 			controller: function($scope){
-                $scope.showManager = false;
+                $scope.isModalVisible = false;
 
 				$scope.cancelManager = function(event){
-                    $scope.showManager = false;
-					$scope.$parent.showManager = false;
+                    $scope[$scope.isModalVisible] = false;
+					$scope.$parent[$scope.isModalVisible] = false;
 
                     return false;
 				};
@@ -31,7 +33,7 @@
                         scope.scrollLeft = (window.innerWidth/2)-(619/2)-20;
                         scope.scrollTop = window.scrollY;
 
-                        if(scope.showManager) return;
+                        if(scope.isModalVisible) return;
                         scope.modalTop = window.scrollY;
 
                     };
