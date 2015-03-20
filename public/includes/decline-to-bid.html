@@ -1,0 +1,29 @@
+<div>
+	<div class="cf">
+	    <div class="marginTopLarge columnHalf">
+	        <p>
+	        	If you feel that not enough information was provided about the vehicle, you can request additional information.
+	        </p>
+
+	        <a href="javascript:;" ng-click="switchToRequestInfo($event)">Request additional information</a>
+
+	        <div class="marginTopMedium">
+		        <label>Please select your reason for declining to bid</label>
+
+				<select class="fullWidth" ng-change="hasError=false"
+					ng-model="reasonForDeclining"
+					ng-options="reason as reason.label for reason in reasons">
+				</select>
+
+			</div>
+
+			<div ng-show="hasError"><p class="red paddingTop18">Please select a reason for declining to bid.</p></div>
+
+	    </div>
+    </div>
+
+    <div class="marginTop23">
+        <button class="mdcActionButton" ng-click="submit($event)">Request</button>
+        <button class="mdcActionButton secondary" ng-click="cancelManager($event)">Cancel</button>
+    </div>
+</div>

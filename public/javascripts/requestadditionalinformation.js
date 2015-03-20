@@ -8,8 +8,10 @@
 			templateUrl: '/includes/request-additional-information.html',
 			require: 'ngModel',
 
+			scope:{},
+
 			controller: function($scope){
-				$scope.vehicleInfo = $scope.$parent.$parent.vehicleInfo;
+				$scope.vehicleInfo = $scope.$parent.$parent.$parent.vehicleInfo;
 				$scope.questions = [{value:''}];
 
 				$scope.pictureVehicle = {
@@ -25,7 +27,11 @@
 				};
 				$scope.removeQuestion = function(event, index){
 					$scope.questions.splice(index, 1);
-				}
+				};
+
+				$scope.cancelManager = function(event){
+					$scope.$parent.$parent.cancelManager(event);
+				};
 			}
 		};
 	}])

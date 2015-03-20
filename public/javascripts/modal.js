@@ -8,14 +8,14 @@
 			restrict: 'E',
 			templateUrl: '/includes/modal.html',
 			transclude: true,
-			
+
             scope: {
                 isModalVisible: '@ngShow',
                 title: '@'
             },
 
 			controller: function($scope){
-                $scope.isModalVisible = false;
+                //$scope.isModalVisible = false;
 
 				$scope.cancelManager = function(event){
                     $scope[$scope.isModalVisible] = false;
