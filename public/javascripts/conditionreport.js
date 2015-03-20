@@ -1,6 +1,6 @@
 //condition-report
 (function(){
-	var app = angular.module('ConditionReport', []);
+	var app = angular.module('ConditionReport', ['CurrencyInput']);
 
 	app.directive('conditionReport', [function(){
 

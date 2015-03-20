@@ -2,22 +2,14 @@
 	<div class="cf">
 		<div class="FlowRight columnQuarter">
 			<label>Recon Adjustment Total</label>
-			<!--
-			<input ng-show="lockReconAdjustment" type="number"
-				id="manualInput"
-				ng-model="totalReconAdjustManual"
-				class="fullWidth marginBottomXSmall" />
-
-			<input ng-hide="lockReconAdjustment" type="number"
-				id="automaticInput"
-				ng-focus="focusManual($event)"
-				ng-model="totalReconAdjust"
-				class="fullWidth marginBottomXSmall" />
-			-->
-			<input type="number"
+			
+			<!--<input type="number" min="0"
 				ng-keydown="lockReconAdjustment=true"
 				ng-model="totalReconAdjust"
-				class="fullWidth marginBottomXSmall" />
+				class="fullWidth marginBottomXSmall" /> -->
+			<currency-input ng-keydown="lockReconAdjustment=true"
+				ng-model="totalReconAdjust"
+				class="fullWidth"></currency-input>
 		</div>
 	</div>
 
@@ -39,7 +31,11 @@
 		<dd class="width60">
 			<div class="columnHalf"><strong>Customer Response</strong></div>
 			
-			<div class="width42 floatRight"><strong>{{(lockReconAdjustment ? totalReconAdjustFrozen : totalReconAdjust) | currency}}</strong></div>
+			<div class="width42 floatRight">
+				<strong>
+					{{(lockReconAdjustment ? totalReconAdjustFrozen : totalReconAdjust) | currency}}
+				</strong>
+			</div>
 			<!-- div class="width42 floatRight"><strong>{{aggregate() | currency}}</strong></div -->
 		</dd>
 
@@ -47,9 +43,14 @@
 		<dd class="width60" ng-repeat-end>
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">
-				<input type="number" ng-model="item.cost"
+				<!-- <input type="number" ng-model="item.cost"
 					ng-change="aggregate()"
-					class="fullWidth marginBottomNone absolute" />
+					class="fullWidth marginBottomNone absolute" /> -->
+
+				<div class="dollar fullWidth marginBottomNone absolute">
+        			<input type="number" min="0"
+						ng-model="item.cost" ng-change="aggregate()" />
+				</div>
 			</div>
 		</dd>
 	</dl>
@@ -65,7 +66,14 @@
 		<dd class="width60" ng-repeat-end>
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">
-				<input type="number" ng-model="item.cost" class="fullWidth marginBottomNone absolute" />
+				<!-- <input type="number" ng-model="item.cost"
+					ng-change="aggregate()"
+					class="fullWidth marginBottomNone absolute" /> -->
+
+				<div class="dollar fullWidth marginBottomNone absolute">
+        			<input type="number" min="0"
+						ng-model="item.cost" ng-change="aggregate()" />
+				</div>
 			</div>
 		</dd>
 	</dl>
@@ -81,7 +89,14 @@
 		<dd class="width60" ng-repeat-end>
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">
-				<input type="number" ng-model="item.cost" class="fullWidth marginBottomNone absolute" />
+				<!-- <input type="number" ng-model="item.cost"
+					ng-change="aggregate()"
+					class="fullWidth marginBottomNone absolute" /> -->
+
+				<div class="dollar fullWidth marginBottomNone absolute">
+        			<input type="number" min="0"
+						ng-model="item.cost" ng-change="aggregate()" />
+				</div>
 			</div>
 		</dd>
 	</dl>
@@ -97,7 +112,14 @@
 		<dd class="width60" ng-repeat-end>
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">
-				<input type="number" ng-model="item.cost" class="fullWidth marginBottomNone absolute" />
+				<!-- <input type="number" ng-model="item.cost"
+					ng-change="aggregate()"
+					class="fullWidth marginBottomNone absolute" /> -->
+
+				<div class="dollar fullWidth marginBottomNone absolute">
+        			<input type="number" min="0"
+						ng-model="item.cost" ng-change="aggregate()" />
+				</div>
 			</div>
 		</dd>
 	</dl>
@@ -113,7 +135,14 @@
 		<dd class="width60" ng-repeat-end>
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">
-				<input type="number" ng-model="item.cost" class="fullWidth marginBottomNone absolute" />
+				<!-- <input type="number" ng-model="item.cost"
+					ng-change="aggregate()"
+					class="fullWidth marginBottomNone absolute" /> -->
+
+				<div class="dollar fullWidth marginBottomNone absolute">
+        			<input type="number" min="0"
+						ng-model="item.cost" ng-change="aggregate()" />
+				</div>
 			</div>
 		</dd>
 	</dl>

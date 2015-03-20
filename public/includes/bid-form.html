@@ -4,12 +4,21 @@
 		<form>
 			<div class="paddingBottom10 mdcSeparatorBottom">
 				<label>Current Bid</label>
-				<!-- TODO: currency mask needed -->
-				<input type="number" ng-model="currentBid" class="fullWidth" />
+
+				<!-- <input type="number" ng-model="currentBid" class="fullWidth" /> -->
+
+				<div class="dollar fullWidth">
+        			<input type="number" min="0"
+						ng-model="currentBid" />
+				</div>
 
 				<label>Recon Adjust Total</label>
-				<!-- TODO: currency mask needed -->
-				<input type="number" ng-model="totalReconAdjust" class="fullWidth" />
+				<!-- <input type="number" ng-model="totalReconAdjust" class="fullWidth" /> -->
+
+				<div class="dollar fullWidth">
+        			<input type="number" min="0"
+						ng-model="totalReconAdjust" />
+				</div>
 			</div>
 
 			<div class="paddingTop15">
@@ -35,6 +44,5 @@
 	</div>
 
 	<modal ng-show="showManager"
-        scroll-left="0"
-        scroll-top="0"></modal>
+		show-manager="false"></modal>
 </div>
