@@ -2,7 +2,7 @@
 	<div class="cf">
 		<div class="FlowRight columnQuarter">
 			<label>Recon Adjustment Total</label>
-
+			<!--
 			<input ng-show="lockReconAdjustment" type="number"
 				id="manualInput"
 				ng-model="totalReconAdjustManual"
@@ -11,6 +11,11 @@
 			<input ng-hide="lockReconAdjustment" type="number"
 				id="automaticInput"
 				ng-focus="focusManual($event)"
+				ng-model="totalReconAdjust"
+				class="fullWidth marginBottomXSmall" />
+			-->
+			<input type="number"
+				ng-keydown="lockReconAdjustment=true"
 				ng-model="totalReconAdjust"
 				class="fullWidth marginBottomXSmall" />
 		</div>
@@ -33,14 +38,18 @@
 		<dt class="width40">Vehicle History</dt>
 		<dd class="width60">
 			<div class="columnHalf"><strong>Customer Response</strong></div>
-			<div class="width42 floatRight"><strong>{{aggregate() | currency}}</strong></div>
+			
+			<div class="width42 floatRight"><strong>{{(lockReconAdjustment ? totalReconAdjustFrozen : totalReconAdjust) | currency}}</strong></div>
+			<!-- div class="width42 floatRight"><strong>{{aggregate() | currency}}</strong></div -->
 		</dd>
 
 		<dt class="width40" ng-repeat-start="item in vehicleReportCard.vehicleHistory">{{item.name}}</dt>
 		<dd class="width60" ng-repeat-end>
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">
-				<input type="number" ng-model="item.cost" class="fullWidth marginBottomNone absolute" />
+				<input type="number" ng-model="item.cost"
+					ng-change="aggregate()"
+					class="fullWidth marginBottomNone absolute" />
 			</div>
 		</dd>
 	</dl>

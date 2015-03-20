@@ -141,7 +141,7 @@
 
 .strongText {color: #444;font-size:14px;}
 
- #headermenu {z-index: 1000;}
+ #headermenu {z-index: 940;}
 
  .customerBanner {
  	margin-top:16px;
@@ -337,6 +337,8 @@
 .FlowRight{float:right !important;}
 
 .red {color:red;}
+
+.displayBlock{display:block;}
 
 /* HTML selectors */
 [type=date] {width:89px;}

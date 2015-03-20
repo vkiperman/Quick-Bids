@@ -1,6 +1,6 @@
 (function(){
 
-	var app = angular.module('BidForm', []);
+	var app = angular.module('BidForm', ['Modal']);
 
 	app.directive('bidForm', function($filter){
 
@@ -11,7 +11,11 @@
 			controller: function($scope){
 				$scope.currentBid = 0;
 				$scope.totalReconAdjust = 0;
-			}
+
+				$scope.showManager = false;
+			},
+
+			controllerAs: 'BidFormCtrl'
 
 		};
 

@@ -10,22 +10,18 @@
 
 			controller: function($scope){
 				$scope.totalReconAdjust = 0;
-				$scope.totalReconAdjustManual = 0;
+				$scope.totalReconAdjustFrozen = 0;
 				$scope.lockReconAdjustment = false;
 
 				$scope.$watch(function(){
-					return $scope.$parent.totalReconAdjust;
-				}, function(newVal, oldVal){
-					$scope.totalReconAdjust = newVal;
+						return $scope.$parent.totalReconAdjust;
+					}, function(newVal, oldVal){
+						$scope.totalReconAdjust = newVal;
 				});
 
-				/*$scope.$watch('totalReconAdjust', function(newVal, oldVal){
+				$scope.$watch('totalReconAdjust', function(newVal, oldVal){
 					$scope.$parent.totalReconAdjust = newVal;
-				});*/
-
-				/*$scope.$watch('totalReconAdjustManual', function(newVal, oldVal){
-					$scope.$parent.totalReconAdjust = newVal;
-				});*/
+				});
 
 				$scope.focusManual = function(event){
 					$scope.lockReconAdjustment = true;
@@ -41,15 +37,11 @@
 						});
 					});
 
-
-					if($scope.lockReconAdjustment) {
-						//$scope.totalReconAdjust = aggregate;
-						return aggregate;
+					if(!$scope.lockReconAdjustment) {
+						$scope.totalReconAdjust = aggregate;
 					}
+					$scope.totalReconAdjustFrozen = aggregate;
 
-
-
-					return $scope.totalReconAdjustManual = $scope.totalReconAdjust = aggregate;
 				};
 
 				$scope.vehicleReportCard = {
