@@ -2,7 +2,7 @@
 
 	var app = angular.module('BidInformation', []);
 
-	app.directive('bidInformation', ['numberFilter', function(numberFilter){
+	app.directive('bidInformation', ['numberFilter', '$location', function(numberFilter, $location){
 
 		return {
 			restrict: 'E',
@@ -10,23 +10,32 @@
 
 			scope: {currentTab: '=currentTab'},
 
-			controller: function($scope){
+			/*link: function(scope, elem, attrs){
+				scope.customerView = $location.search().customerView;
+				alert(scope.customerView);
+			},*/
+
+			controller: function($scope, $location){
+				$scope.verified = false;
+
+				if($location.search().verified)
+					$scope.verified = true;
 
 				$scope.vehicleInfo = [
 					{
-						name: 'Series', value: 'Limited'
+						name: 'Series', value: 'Limited', verify: 'Wrong'
 					},
 					{
-						name: 'Body Style', value: '4D Utility'
+						name: 'Body Style', value: '4D Utility', verify: '4D Utility'
 					},
 					{
-						name: 'Exterior Color', value: 'Arctic Frost'
+						name: 'Exterior Color', value: 'Arctic Frost', verify: 'Arctic Frost'
 					},
 					{
-						name: 'Interior Type', value: 'Cloth'
+						name: 'Interior Type', value: 'Cloth', verify: 'Cloth'
 					},
 					{
-						name: 'Interior Color', value: 'Charcoal'
+						name: 'Interior Color', value: 'Charcoal', verify: 'No'
 					},
 					{
 						name: 'VIN', value: '19WWA5641XA011701'
@@ -35,19 +44,19 @@
 				$scope.$parent.vehicleInfo = $scope.vehicleInfo;
 				$scope.conditionSummary = [
 					{
-						name: 'Damage', value: 'None'
+						name: 'Damage', value: 'None', verify: 'None'
 					},
 					{
-						name: 'Title', value: 'Clear'
+						name: 'Title', value: 'Clear', verify: 'Clear'
 					},
 					{
-						name: 'Smoker', value: 'No'
+						name: 'Smoker', value: 'No', verify: 'Yes'
 					},
 					{
-						name: 'Odometer', value: '46,154'
+						name: 'Odometer', value: '46,154', verify: '46,165'
 					},
 					{
-						name: 'Operable', value: 'Yes'
+						name: 'Operable', value: 'Yes', verify: 'No'
 					},
 				];
 				$scope.customerInfo = [

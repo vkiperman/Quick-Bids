@@ -141,6 +141,14 @@
 	border-bottom: none;
 }
 
+.mdcComponent dl.thirds dt{
+	width:33%;
+}
+
+.mdcComponent dl.thirds dd{
+	width:67%;
+}
+
 /*
 .mdcComponent dl.threeCol dt{
 	width: 40%;
@@ -149,6 +157,15 @@
 .mdcComponent dl.threeCol dd{
 	width: 60%;
 } */
+
+.notVerified,
+.verified{
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+.notVerified {background-image:url(/images/bad.png);}
+.verified {background-image:url(/images/good.png);}
 
 .mdcContainer {
 	padding-left: 16px;
