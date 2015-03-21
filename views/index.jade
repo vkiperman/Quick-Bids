@@ -5,18 +5,88 @@ block content
     h1= title
     p Welcome to #{title} Templates
 
+    hr
+    h2 Complete HTML Templates:
+    ul
+      li 
+        h3 Header Menu:
+        ul
+          li
+            a(href='/compiled_html/header-menu/header-menu.html' target='complete') Header Menu
+          li
+            a(href='/compiled_html/header-menu/header-menu-with-submenu.html' target='complete') Header Menu Showing Submenus
+
+
+
+      li
+        h3 Quick Offer Dashboard:
+        ul
+          li
+            a(href='/compiled_html/quick-offer-dashboard/quick-offer-dashboard.html' target='complete') Quick Offer Dashboard
+          li
+            a(href='/compiled_html/quick-offer-dashboard/quick-offer-dashboard-advanced-search.html' target='complete') Quick Offer Dashboard Showing Advanced Search
+
+
+
+      li
+        h3 Quick Offer Page:
+        ul
+          li
+            a(href='/compiled_html/quick-offer/quick-offer-vehicle-condition-report.html' target='complete') Quick Offer Page 
+              br
+              | Showing Vehicle Tab and Condition Report Tab
+          li
+            a(href='/compiled_html/quick-offer/quick-offer-verified.html' target='complete') Quick Offer Page 
+              br
+              | Showing Showing Vehicle Tab, Verified State
+          li
+            a(href='/compiled_html/quick-offer/quick-offer-customer-photos.html' target='complete') Quick Offer Page 
+              br
+              | Showing Customer Tab and Photos Tab
+          li
+            a(href='/compiled_html/quick-offer/quick-offer-request-modal.html' target='complete') Quick Offer Page 
+              br
+              | Showing Request more info Modal
+          li
+          a(href='/compiled_html/quick-offer/quick-offer-decline-modal.html' target='complete') Quick Offer Page 
+            br
+            | Showing Decline bid Modal
+
+
+
+      li
+        h3 Quick Offer Report:
+        ul
+          li
+            span(href='/compiled_html/quick-offer-report/quick-offer-report.html' target='complete') Quick Offer Report [not started]
+          li
+            span(href='/compiled_html/quick-offer-report/quick-offer-report-report-view.html' target='complete') Quick Offer Report 
+              br
+              | Showing Report View [not started]
+          li
+            span(href='/compiled_html/quick-offer-report/quick-offer-report-edit-note-modal.html' target='complete') Quick Offer Report 
+              br
+              | Showing Edit Note Modal [not started]
+          li
+            span(href='/compiled_html/quick-offer-report/quick-offer-report-view-photos-modal.html' target='complete') Quick Offer Report 
+              br
+              | Showing View Photos Modal [not started]
+
+
+
+
+
+    hr
+    h2 Functional Prototypes:
+
     ul
       li
-        a(href='/dashboard.html', target='dashboard') #{title} Dashboard [READY]
+        a(href='/dashboard.html', target='dashboard') #{title} Dashboard
       li
-        a(href='/quick-offer.html', target='dashboard') #{title} [READY]
+        a(href='/quick-offer.html', target='dashboard') #{title}
             br
             | a) Request more info form (modal) [READY for VQA]
             br
             | b) Decline to bid form (modal) [READY for VQA]
       li
         a(href='/offer-report.html', target='dashboard') Offer Report [In Progress]
-
-    ul
-      li
-        a(href='/compiled_html/quick_offer_dashboard.html' target='quick_offer_dashboard') quick_offer_dashboard
