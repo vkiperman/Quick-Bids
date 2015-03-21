@@ -16,6 +16,7 @@
 
 			controller: function($scope){
                 //$scope.isModalVisible = false;
+                $scope.modalTop = 0;
 
 				$scope.cancelManager = function(event){
                     $scope[$scope.isModalVisible] = false;
@@ -29,13 +30,13 @@
 
                 var windowEl = angular.element($window),
                     scrollHandler = function() {
-                        console.log('scrolling');
                         
                         scope.scrollLeft = (window.innerWidth/2)-(619/2)-20;
                         scope.scrollTop = window.scrollY;
 
-                        if(scope.isModalVisible) return;
+                        if(scope.$parent[scope.isModalVisible]) return;
                         scope.modalTop = window.scrollY;
+
 
                     };
 

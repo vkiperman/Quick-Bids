@@ -1,6 +1,6 @@
 <div>
 	<div class="cf">
-	    <div class="marginTopLarge columnHalf">
+	    <div class="marginTopLarge">
 	        <p>
 	        	If you feel that not enough information was provided about the vehicle, you can request additional information.
 	        </p>
@@ -10,7 +10,7 @@
 	        <div class="marginTopMedium">
 		        <label>Please select your reason for declining to bid</label>
 
-				<select class="fullWidth" ng-change="hasError=false"
+				<select class="width60" ng-change="hasError=false"
 					ng-model="reasonForDeclining"
 					ng-options="reason as reason.label for reason in reasons">
 				</select>
