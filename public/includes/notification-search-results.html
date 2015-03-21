@@ -1,7 +1,7 @@
 <div class="mdcModuleContainer mdcModulePadding paddingHorizontal_0 noBorder cf">
 	<h3 class="paddingBottomSmall">Saved Notifications</h3>
 
-    <table ng-table="tableParams" class="widthFull" template-pagination="{{ pagerTemplate }}">
+    <table ng-table="tableParams"  class="widthFull" template-pagination="{{ pagerTemplate }}">
         <tr ng-repeat="notification in $data">
             <td data-title="'Report'" sortable="'report'">
                 {{notification.report}}

@@ -55,6 +55,10 @@
 	</script>
 	<script type="text/javascript" src="/javascripts/notificationsearchresults.js">
 	</script>
+	<script type="text/javascript" src="/javascripts/reportview.js">
+	</script>
+	<script type="text/javascript" src="/javascripts/modal.js">
+	</script>
 	<script type="text/javascript" src="/javascripts/globalfooter.js">
 	</script>
 	<script type="text/javascript" src="/javascripts/ng-table.js">
@@ -70,16 +74,21 @@
 
 	<header-menu></header-menu>	
 
-    <div id="content">		
+    <div id="content" ng-controller="OfferReportCtrl">
+
 		<customer-info
 			heading="Quick Offer Report"
 			subheading=""
 			dealer="Nissan / Mazda of Elk Grove"
-			dealer-number="102602"></customer-info>	
-		<report-dashboard-content></report-dashboard-content>
-		<statistics></statistics>
-		<notification-search></notification-search>
-		<notification-search-results></notification-search-results>
+			dealer-number="102602"></customer-info>
+
+		<report-dashboard-content ng-hide="reportView"></report-dashboard-content>
+		<statistics ng-hide="reportView"></statistics>
+		<notification-search ng-hide="reportView"></notification-search>
+		<notification-search-results ng-hide="reportView"></notification-search-results>
+
+		<report-view ng-show="reportView"</report-view>
+
 
 	</div>
 

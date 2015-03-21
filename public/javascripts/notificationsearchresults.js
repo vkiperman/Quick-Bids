@@ -1,7 +1,7 @@
 (function(){
-	var NotificationSearch = angular.module('NotificationSearchResults', ['ngTable']);
+	var app = angular.module('NotificationSearchResults', ['ngTable']);
 
-	NotificationSearch.directive('notificationSearchResults', function(){
+	app.directive('notificationSearchResults', function(){
 
 		return {
 			restrict: 'E',
