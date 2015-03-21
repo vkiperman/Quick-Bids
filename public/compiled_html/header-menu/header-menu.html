@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+
+      
+    
+    <link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/./dojo/dojo-release-1.6.1/dijit/themes/tundra/tundra.css">
+    <link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/./mdcStyles.css">
+    <link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/css/global.css">
+    <link rel="stylesheet" type="text/css" media="print" href="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/css/global-print.css">
+    
+    <!--
+	===========================================================
+	in the two link tags below, the subdirectory pacman01 will 
+	need to updated to dk01 or higher at implementation time...
+	===========================================================
+    -->
+	<link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/./dojo/pacman07/mdc/resources/DropDownMenu.css">
+	<link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/./dojo/pacman07/cars/cars.css">
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	
+	<script type="text/javascript" src="/javascripts/angular.min.js">
+	</script>
+	
+	<title>My Dealer Center</title>
+
+</head>
+
+<body id="portalThemeNode" class="tundra bids">
+
+	<div id="headermenu" class="relative">
+	    <div id="header-content">
+	        <div id="logoContainer" class="floatLeft">	
+				<div id="logo" onclick="homeRedirect('...')">
+				</div>	
+	        </div>
+			<div id="menuContainer" class="nav Hidden" style="float:right; width: 820px;">
+			 
+			    <div style="width: 820px;">
+			    <!-- start the menubar -->
+			    	<div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText">Home</div>                        
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText">Reporting</div>                        
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">Inventory</div>
+
+                        <div class="mdcDropDownMenuItemContainer ng-hide">
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="inventory/editor.html" class="mdcDropDownMenuItemText">
+					    			Inventory Editor
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="inventory/batchtagline.html" class="mdcDropDownMenuItemText">
+					    			Batch Tagline
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="inventory/photolot.html" class="mdcDropDownMenuItemText">
+					    			Photo Lot
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="inventory/adselect.html" class="mdcDropDownMenuItemText">
+					    			Ad Select
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="inventory/premierzones.html" class="mdcDropDownMenuItemText">
+					    			Premier Zones
+					    		</a>
+					    	</div>
+					    </div>
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">Reviews</div>
+
+                        <div class="mdcDropDownMenuItemContainer ng-hide">
+
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="reviews/reviewsreplies.html" class="mdcDropDownMenuItemText">
+					    			Reviews and Replies
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="reviews/reviewsresources.html" class="mdcDropDownMenuItemText">
+					    			Reviews Resources
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="reviews/summaryreport.html" class="mdcDropDownMenuItemText">
+					    			Summary Report
+					    		</a>
+					    	</div>
+					    </div>
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">Admin</div>
+
+                        <div class="mdcDropDownMenuItemContainer ng-hide">
+
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="admin/usermanagement.html" class="mdcDropDownMenuItemText">
+					    			User Management
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="admin/adduser.html" class="mdcDropDownMenuItemText">
+					    			Add User
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="admin/inventoryactivity.html" class="mdcDropDownMenuItemText">
+					    			Inventory Activity
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="admin/inventorymaintenance.html" class="mdcDropDownMenuItemText">
+					    			Inventory Mainenance
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="admin/profile.html" class="mdcDropDownMenuItemText">
+					    			Dealer Profile
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="admin/disclaimer.html" class="mdcDropDownMenuItemText">
+					    			Legal Disclaimer
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="admin/disclaimerapproval.html" class="mdcDropDownMenuItemText">
+					    			Disclaimer Approval
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="admin/activityhistory.html" class="mdcDropDownMenuItemText">
+					    			Activity History
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="admin/specialoffers.html" class="mdcDropDownMenuItemText">
+					    			Special Offers
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="admin/offerstatusreport.html" class="mdcDropDownMenuItemText">
+					    			Offer Status Report
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="admin/snr.html" class="mdcDropDownMenuItemText">
+					    			Service &amp; Repair
+					    		</a>
+					    	</div>
+					    	<div class="mdcDropDownMenuItem">
+					    		<a href="admin/quickoffer.html" class="mdcDropDownMenuItemText">
+					    			Quick Offer
+					    		</a>
+					    	</div>
+					    </div>
+                    </div>
+				     
+			                    
+			        <div class="mdcDropDownMenu mdcPinRight">                    
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">
+                            <img class="mdcProfileItem" src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif"
+                            	width="22" height="16" alt="Profile">
+                        </div>       
+                        <div class="mdcDropDownMenuItemContainer ng-hide">
+                            <div class="mdcMenuItemSeparator">
+                                <span class="mdcProfileNameText mdcDropDownMenuItemText">test_supportAdmin@cars.com</span>
+                            </div>
+                            <div class="mdcDropDownMenuItem"><a href="javascript:;" class="mdcDropDownMenuItemText">My Profile</a></div>
+							<div><a href="'/cs/cp/logout'" class="mdcDropDownMenuItemText">Logout</a></div>
+                            <div>
+                            	<a href="'/wps/portal/dealercenter/?WCM_GLOBAL_CONTEXT=/wps/wcm/connect/DealerCenter/DealerCenter/Home/FAQ'" class="mdcDropDownMenuItemText">
+                            		Help
+                            	</a>
+                            </div>
+	                    </div>
+	                </div>
+			    
+			    </div>			    
+			
+			</div> <!--menu container -->
+		</div> <!--header-content -->
+	</div> <!--headerMenu -->
+
+    <div id="content">
+
+		<div class="cf customerBanner">
+
+			<div class="floatLeft" id="custInfocontainer">
+		        <h1>
+		            <span class="pageTitle">
+		                <b>Quick Offer Dashboard</b> 
+		                <span id="pageSubHeading"></span>
+		            </span>
+		            
+		            <br>
+		            <span id="custTitle" class="custTitle">
+		            	Nissan / Mazda of Elk Grove | 102602
+		            </span>
+		            
+		        </h1>       
+		        <a href="javascript:;">Change Organization</a>
+		        
+		        <p id="pageInstructions" style="margin-bottom: 0px;">
+		        </p>
+
+		    </div>
+			<div class="floatRight">
+		        <iframe src="/chat.html" scrolling="no" class="chat-iframe"></iframe>
+		        
+		        <span id="supportLinkSpan" style="display: none;"> 
+		            
+		        </span>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="footer" style="margin-top: 10px;">    
+	    <div>	        
+        	<a href="javascript:;">Logout</a>
+        	<span> | </span>        
+        	<a href="http://www.cars.com/go/about/privacy.jsp">Privacy Statement</a>
+        	<span> | </span>        
+        	<a href="http://www.cars.com/go/about/tos.jsp">Terms of Service</a>
+	        	
+	    </div>
+
+	    <div>
+	        <p>
+	            © 2015 Cars.com, LLC™. 
+	            All Rights Reserved. 
+	            175 West Jackson Blvd., Suite 800 Chicago, IL 60604
+	        </p>
+		</div>
+
+	</div>
+
+
+</body>
+</html>
