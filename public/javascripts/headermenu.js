@@ -42,7 +42,7 @@
 				$http.get('/includes/navigation.json')
 					.success(function(data, status, headers, config){
 						$scope.navTabs = data;
-						console.log($scope.navTabs);
+						//console.log($scope.navTabs);
 					})
 					.error(function(data, status, headers, config) {})
 			}
