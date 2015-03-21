@@ -2,15 +2,20 @@
 (function(){
 	var Statistics = angular.module('Statistics', ['ngTable']);
 
-	Statistics.directive('statistics', function(){
+	Statistics.directive('statistics', [function(){
 
 		return {
 			restrict: 'E',
 			templateUrl: '/includes/statistics.html',
 
-			controller: function($scope, $filter, NgTableParams){
+			controller: function($scope, $filter, NgTableParams, $location){
 
 				$scope.pagerTemplate = '/includes/pager.html';
+
+				$scope.showReport = function(event){
+					
+					$scope.reportView = true;
+				}
 
 				$scope.regions = [
 					{label:'All',value:''},
@@ -102,6 +107,6 @@
 			},
 			controllerAs: 'statisticsSearchCtrl'
 		}
-	});
+	}]);
 
 })()

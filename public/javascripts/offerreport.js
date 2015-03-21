@@ -6,8 +6,15 @@
 		'ReportDashboardContent', 
 		'Statistics',	
 		'NotificationSearch',	
-		'NotificationSearchResults', 
+		'NotificationSearchResults',
+		'ReportView', // todo make js /html
 		'GlobalFooter'
 	]);
 
-})()
+	OfferReport.controller('OfferReportCtrl', ['$scope', '$location', function($scope, $location){
+
+		$scope.reportView = false;
+
+	}]);
+
+})();

@@ -2,7 +2,7 @@
 
 	var app = angular.module('BidInformation', []);
 
-	app.directive('bidInformation', ['numberFilter', '$location', function(numberFilter, $location){
+	app.directive('bidInformation', ['numberFilter', function(numberFilter){
 
 		return {
 			restrict: 'E',
@@ -10,16 +10,8 @@
 
 			scope: {currentTab: '=currentTab'},
 
-			/*link: function(scope, elem, attrs){
-				scope.customerView = $location.search().customerView;
-				alert(scope.customerView);
-			},*/
-
-			controller: function($scope, $location){
+			controller: function($scope){
 				$scope.verified = false;
-
-				if($location.search().verified)
-					$scope.verified = true;
 
 				$scope.vehicleInfo = [
 					{
