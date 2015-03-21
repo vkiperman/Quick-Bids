@@ -14,7 +14,7 @@
 
     
     <table ng-table="tableParams" class="widthFull" template-pagination="{{ pagerTemplate }}">
-        <tr ng-repeat="statistics in $data">
+        <tr ng-repeat="statistics in $data" ng-click="showReport($event)">
             <td data-title="'Time Frame'" sortable="'timeframe'">
                 {{statistics.timeframe}}
             </td>

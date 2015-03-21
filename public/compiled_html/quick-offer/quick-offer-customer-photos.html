@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+
+      
+    
+    <link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/./dojo/dojo-release-1.6.1/dijit/themes/tundra/tundra.css">
+    <link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/./mdcStyles.css">
+    <link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/css/global.css">
+    <link rel="stylesheet" type="text/css" media="print" href="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/css/global-print.css">
+    
+    <!--
+	===========================================================
+	in the two link tags below, the subdirectory pacman01 will 
+	need to updated to dk01 or higher at implementation time...
+	===========================================================
+    -->
+	<link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/./dojo/pacman07/mdc/resources/DropDownMenu.css">
+	<link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/./dojo/pacman07/cars/cars.css">
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	
+	<script type="text/javascript" src="/javascripts/angular.min.js">
+	</script>
+	
+	<title>My Dealer Center</title>
+
+</head>
+
+<body id="portalThemeNode" class="tundra bids">
+
+	<div id="headermenu" class="relative">
+	    <div id="header-content">
+	        <div id="logoContainer" class="floatLeft">	
+				<div id="logo" onclick="homeRedirect('...')">
+				</div>	
+	        </div>
+			<div id="menuContainer" class="nav Hidden" style="float:right; width: 820px;">
+			 
+			    <div style="width: 820px;">
+			    <!-- start the menubar -->
+			    	<div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText">Home</div>                        
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText">Reporting</div>                        
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">Inventory</div>
+
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">Reviews</div>
+
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">Admin</div>
+
+                    </div>				     
+			                    
+			        <div class="mdcDropDownMenu mdcPinRight">                    
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">
+                            <img class="mdcProfileItem" src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif"
+                            	width="22" height="16" alt="Profile">
+                        </div>                        
+	                </div>
+			    
+			    </div>
+			
+			</div> <!--menu container -->
+		</div> <!--header-content -->
+	</div> <!--headerMenu -->
+
+    <div id="content">		
+		<div class="cf customerBanner">
+
+			<div class="floatLeft" id="custInfocontainer">
+		        <h1>
+		            <span class="pageTitle">
+		                <b>Quick Offer</b> 
+		                <span id="pageSubHeading"></span>
+		            </span>
+		            
+		            <br>
+		            <span id="custTitle" class="custTitle">
+		            	Nissan / Mazda of Elk Grove | 102602
+		            </span>
+		            
+		        </h1>       
+		        <a href="javascript:;">Change Organization</a>
+		        
+		        <p id="pageInstructions">
+		            <!-- place holder for special instructions -->
+		        </p>
+
+		    </div>
+			<div class="floatRight">
+		        <iframe src="/chat.html" scrolling="no" class="chat-iframe"></iframe>
+		        
+		        <span id="supportLinkSpan" style="display: none;"> 
+		            
+		        </span>
+			</div>
+
+		</div>
+
+		<div class="mdcSection mdcModulePadding cf">
+			<h3 class="paddingBottomSmall floatLeft">2013 Chevrolet Silverado 1500 Hybrid 4D 5 3/4 ft&nbsp;</h3>
+			<h4> | Bid #123456789</h4>
+			<p>Time until bid lock: <strong>15:50</strong></p>
+			<strong></strong>
+		</div>
+
+		<div class="paddingTop10 cf">
+			<div class="columnThreeQuarters paddingBottom30">
+				<div class="mdcSection mdcModulePadding">
+					<div class="columnHalf">
+						<div class="mdcComponent paddingRight15 mdcSeparatorRight cf">
+							<h4>Bid Information</h4>
+
+							<div>
+								<div class="tabs cf">
+									<div class="tab inactive">Vehicle</div>
+									<div class="tab active">Customer</div>
+
+									<div class="floatRight paddingTop11"><a href="javascript:;">View Photos</a></div>
+								</div>
+
+								<div>
+									<div class="paddingTop28">
+										<h5 class="headingText">Customer Info</h5>
+
+										<dl>
+											<dt>Name</dt>
+											<dd class="cf">Limited</dd>
+
+											<dt>City, State, ZIP</dt>
+											<dd class="cf">Chicago, IL, 60505</dd>
+
+											<dt>Email</dt>
+											<dd class="cf">myName@gmail.com</dd>
+
+											<dt>Phone</dt>
+											<dd class="cf">312-245-7879</dd>
+
+											<dt>Need Replacement Vehicle?</dt>
+											<dd class="cf">No</dd>
+										</dl>
+
+									</div>
+								</div>
+							</div>
+
+							<div class="paddingTop28">
+								<div class="columnHalf flowCenter">
+									<img width="162" src="/images/carfax.png" class="paddingBottom10" alt="Carfax Logo">
+									<a href="javascript:;">Update CarFax credentials</a>
+								</div>
+								<div class="columnHalf flowCenter">
+									<img width="162" src="/images/autocheck.png" class="paddingBottom10" alt="Autocheck Logo">
+									<a href="javascript:;">Update Autocheck SID</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="columnHalf">
+						<div class="mdcComponent paddingLeft15 paddingRight15 mdcSeparatorLeft">
+							<h4>Vehicle Valuation</h4>
+
+							<div data-section="black_book_value">
+								<div class="paddingTop14 cf">
+									<h5 class="headingText">Black Book Value</h5>
+									<div class="columnHalf">
+										<h5 class="headingText">As of 2/2/15</h5>
+									</div>
+									<strong class="columnQuarter titleText">Book Value</strong>
+									<strong class="columnQuarter titleText">Adjusted</strong>
+								</div>
+
+								<dl>
+									<dt>X-Clean</dt>
+									<dd>
+										<div class="columnHalf">None</div>
+										<div class="columnHalf">None</div>
+									</dd><dt>Clean</dt>
+									<dd>
+										<div class="columnHalf">Clear</div>
+										<div class="columnHalf">Clear</div>
+									</dd><dt>Average</dt>
+									<dd>
+										<div class="columnHalf">Yes</div>
+										<div class="columnHalf">Yes</div>
+									</dd><dt>Rough</dt>
+									<dd>
+										<div class="columnHalf">46154</div>
+										<div class="columnHalf">46000</div>
+									</dd>
+								</dl>
+
+								<div class="paddingTop15 paddingBottom15 mdcSeparatorBottom">
+									<a href="javascript:;">Change Trim</a> | 
+									<a href="javascript:;">Refresh</a> | 
+									<a href="javascript:;">Save</a>
+								</div>
+
+								<div class="paddingTop15 paddingBottom2 mdcSeparatorBottom cf">
+									<label class="floatLeft"><input type="checkbox">w/o Auto Trans?</label>
+									<strong class="floatRight">$650</strong>
+								</div>
+
+								<div class="paddingTop19 paddingBottom19 mdcSeparatorBottom flowCenter">
+									<a href="javascript:;" class=" minus">
+										Collapse Black Book options
+									</a>
+								</div>
+							</div>
+
+							<div data-section="market_iq_summary">
+								<div class="paddingTop30 cf">
+									<h5 class="headingText floatLeft">Market IQ Summary</h5>
+									<a href="javascript:;" class="floatRight">View Full Details</a>
+								</div>
+								<dl>
+									<dt>Adjusted Market</dt>
+									<dd>$8,765</dd><dt>Adjusted Retail</dt>
+									<dd>$7,654</dd><dt>Adjusted Mileage</dt>
+									<dd>98,123 miles</dd><dt>Distance</dt>
+									<dd>200 miles</dd><dt>Comp. Set</dt>
+									<dd>4</dd><dt>Recent Sales</dt>
+									<dd>3</dd><dt>Turn Time</dt>
+									<dd>33</dd><dt>Day Supply</dt>
+									<dd>40</dd>
+								</dl>
+							</div>
+
+							<div data-section="manheim">
+								<div class="paddingTop30 cf">
+									<h5 class="headingText">Manheim Market Report</h5>
+									<button class="mdcActionButton secondary">View Now</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="columnQuarter">
+				<div class="paddingLeft15 mdcComponent">
+					<div class="gradientTop borderModule paddingModule marginModule">
+						<h4>Place Your Bid</h4>
+						<form class="ng-pristine ng-valid ng-valid-min">
+							<div class="paddingBottom10 mdcSeparatorBottom">
+								<label>Current Bid</label>
+
+								<div class="dollar fullWidth">
+				        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+								</div>
+
+								<label>Recon Adjust Total</label>
+
+								<div class="dollar fullWidth">
+				        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+								</div>
+							</div>
+
+							<div class="paddingTop15">
+								<label class="marginBottomNone">Final Value</label>
+								<!-- if less than zero show error -->
+								<strong class="strongText">
+									$0.00</strong>
+							</div>
+
+							<div class="paddingTop15">
+								<textarea class="fullWidth ng-pristine ng-untouched ng-valid" rows="3"></textarea>
+								<div class="marginTopSmall">
+									<a href="javascript:;" class="cf">Request more info</a>
+								</div>
+								<div class="marginTopXXSmall">
+									<a href="javascript:;">Decline to bid</a>
+								</div>
+								<div class="marginTopSmall">
+									<button class="mdcActionButton fullWidth">Place Bid</button>
+								</div>
+							</div>
+						</form>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<div class="mdcComponent mdcSection">
+			<h4>Market IQ</h4>
+			<p>Find recent values of similar cars in your area</p>
+
+			<iframe src="/fpo-market-iq.html" height="296" class="fullWidth marginTop10" scrolling="no"></iframe>
+		</div>
+
+
+		<div class="mdcSection mdcModulePadding paddingTop26">
+			<div class="mdcComponent paddingRight15 cf">
+				<h4>Vehicle Report Card</h4>
+
+				<div>
+					<div class="tabs cf">
+						<div class="tab inactive">Condition Report</div>
+						<div class="tab active">Photos</div>
+
+					</div>
+
+					<div class="cf ng-hide">
+						<div class="paddingTop28">
+							<div class="cf">
+								<div class="FlowRight columnQuarter">
+									<label>Recon Adjustment Total</label>
+									
+									<div class="dollar fullWidth"><input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min"></div>
+								</div>
+							</div>
+
+							<div class="columnHalf">
+								<a href="javascript:;">Print</a> | <a href="javascript:;">Save Values</a>
+							</div>
+
+							<div class="FlowRight columnQuarter">
+								<label>
+									<input type="checkbox" class="ng-pristine ng-untouched ng-valid">
+									Lock Recon Adjustment
+								</label>
+							</div>
+
+							<dl>
+								<dt class="width40">Vehicle History</dt>
+								<dd class="width60">
+									<div class="columnHalf"><strong>Customer Response</strong></div>
+									
+									<div class="width42 floatRight">
+										<strong>
+											$0.00
+										</strong>
+									</div>
+								</dd>
+
+								<dt class="width40">Status of title</dt>
+								<dd class="width60">
+									<div class="columnHalf">Clear</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">Title location</dt>
+								<dd class="width60">
+									<div class="columnHalf">I have the title</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">Is your vehicle operable?</dt>
+								<dd class="width60">
+									<div class="columnHalf">Yes</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">Has your car been in an accident?</dt>
+								<dd class="width60">
+									<div class="columnHalf">No</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">Have after-market parts been added or removed?</dt>
+								<dd class="width60">
+									<div class="columnHalf">No</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">
+									Has your car had previous paint or body work done?</dt>
+								<dd class="width60">
+									<div class="columnHalf">No</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+							</dl>
+
+							<dl>
+								<dt class="width40">Exterior</dt>
+								<dd class="width60">
+									<div class="columnHalf"><strong>Customer Response</strong></div>
+									<div class="width42 floatRight"><strong>Cost in US$</strong></div>
+								</dd>
+
+								<dt class="width40">Paint damage</dt>
+								<dd class="width60">
+									<div class="columnHalf">Chips</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">Body damage</dt>
+								<dd class="width60">
+									<div class="columnHalf">No</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">Glass damage</dt>
+								<dd class="width60">
+									<div class="columnHalf">No</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">Lights damage</dt>
+								<dd class="width60">
+									<div class="columnHalf">No</div>
+									<div class="width42 floatRight relative">
+										
+											
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+							</dl>
+
+							<dl>
+								<dt class="width40">Interior</dt>
+								<dd class="width60">
+									<div class="columnHalf"><strong>Customer Response</strong></div>
+									<div class="width42 floatRight"><strong>Cost in US$</strong></div>
+								</dd>
+
+								<dt class="width40">Seat damage</dt>
+								<dd class="width60">
+									<div class="columnHalf">Chips</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">Carpet damage</dt>
+								<dd class="width60">
+									<div class="columnHalf">No</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">Odor</dt>
+								<dd class="width60">
+									<div class="columnHalf">No</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">Interior damage</dt>
+								<dd class="width60">
+									<div class="columnHalf">No</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+							</dl>
+
+							<dl>
+								<dt class="width40">Mechanical</dt>
+								<dd class="width60">
+									<div class="columnHalf"><strong>Customer Response</strong></div>
+									<div class="width42 floatRight"><strong>Cost in US$</strong></div>
+								</dd>
+
+								<dt class="width40">Engine Issues</dt>
+								<dd class="width60">
+									<div class="columnHalf">Knocks</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">Transmission issues</dt>
+								<dd class="width60">
+									<div class="columnHalf">Grinding or Shaking</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">Fluid Leaks</dt>
+								<dd class="width60">
+									<div class="columnHalf">Yes</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">AC/Heat issues</dt>
+								<dd class="width60">
+									<div class="columnHalf">Weak</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">Warning lights on</dt>
+								<dd class="width60">
+									<div class="columnHalf">Yes</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+
+								<dt class="width40">Do you have spare keys?</dt>
+								<dd class="width60">
+									<div class="columnHalf">Yes</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+							</dl>
+
+							<dl>
+								<dt class="width40">Condition of Tires</dt>
+								<dd class="width60">
+									<div class="columnHalf"><strong>Customer Response</strong></div>
+									<div class="width42 floatRight"><strong>Cost in US$</strong></div>
+								</dd>
+
+								<dt class="width40">Tires</dt>
+								<dd class="width60">
+									<div class="columnHalf">Recently replaced</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd><dt class="width40">Brakes</dt>
+								<dd class="width60">
+									<div class="columnHalf">Old</div>
+									<div class="width42 floatRight relative">
+
+										<div class="dollar fullWidth marginBottomNone absolute">
+						        			<input type="number" min="0" class="ng-pristine ng-untouched ng-valid ng-valid-min">
+										</div>
+									</div>
+								</dd>
+							</dl>
+
+						</div>
+					</div>
+
+					<div>				
+						<div class="paddingTop28">
+							<div class="columnThird">
+								<div class="paddingRight6">
+									<img src="/images/placeholder.png" height="200" class="fullWidth" alt="placeholder image">
+									<p class="marginTop23">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+								</div>
+							</div>
+							<div class="columnThird">
+								<div class="paddingHorizontal3">
+									<img src="/images/placeholder.png" height="200" class="fullWidth" alt="placeholder image">
+									<p class="marginTop23">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+								</div>
+							</div>
+							<div class="columnThird">
+								<div class="paddingLeft6">
+									<img src="/images/placeholder.png" height="200" class="fullWidth" alt="placeholder image">
+									<p class="marginTop23">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">    
+	    <div>
+	        
+        	<a href="">Logout</a>
+        	<span> | </span>
+        
+        	<a href="http://www.cars.com/go/about/privacy.jsp">Privacy Statement</a>
+        	<span> | </span>
+        
+        	<a href="http://www.cars.com/go/about/tos.jsp">Terms of Service</a>
+	        
+	    </div>
+
+	    <div>
+	        <p>
+	            © 2015 Cars.com, LLC™. 
+	            All Rights Reserved. 
+	            175 West Jackson Blvd., Suite 800 Chicago, IL 60604
+	        </p>
+		</div>
+
+	</div>
+
+
+</body>
+</html>
