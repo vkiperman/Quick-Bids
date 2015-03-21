@@ -61,6 +61,13 @@
 	background-position: -2px;
 	padding-left: 15px;
 }
+
+.chat-iframe {
+	width: 161px;
+	height: 28px;
+	border:none;
+}
+
 .plus {background-image: url(/images/plus_small.gif);}
 .minus {background-image: url(/images/minus_small.gif);}
 

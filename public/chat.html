@@ -25,8 +25,8 @@
 		    		buttonOnline = document.getElementById('liveagent_button_online_' + chatType),
 		    		buttonOffline =document.getElementById('liveagent_button_offline_' + chatType),
 		    		toggleSupportLink = window.toggleSupportLink = function toggleSupportLink() {
-		                var	online = buttonOnline.css('display') !== 'none';
-		                var offline = buttonOffline.css('display') !== 'none';
+		                var	online = buttonOnline.style.display !== 'none';
+		                var offline = buttonOffline.style.display !== 'none';
 
 				        try {
 				            if (offline) {
