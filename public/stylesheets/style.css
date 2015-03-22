@@ -326,6 +326,28 @@
 .width42 {width: 42% !important;}
 .width820px {width: 820px;}
 
+.scrollX {
+	overflow-x:scroll;
+}
+.rightInsetShadow {
+	-webkit-box-shadow: inset -13px 0px 8px -8px rgba(0,0,0,0.15);
+	-moz-box-shadow: inset -13px 0px 8px -8px rgba(0,0,0,0.15);
+	box-shadow: inset -13px 0px 8px -8px rgba(0,0,0,0.15);
+}
+.leftInsetShadow {
+	-webkit-box-shadow: inset 13px 0px 8px -8px rgba(0,0,0,0.15);
+	-moz-box-shadow: inset 13px 0px 8px -8px rgba(0,0,0,0.15);
+	box-shadow: inset 13px 0px 8px -8px rgba(0,0,0,0.15);
+}
+.horizontalInsetShadow {
+	-webkit-box-shadow: inset 13px 0px 8px -8px rgba(0,0,0,0.15), 
+		inset -13px 0px 8px -8px rgba(0,0,0,0.15);
+	-moz-box-shadow: inset 13px 0px 8px -8px rgba(0,0,0,0.15),
+		inset -13px 0px 8px -8px rgba(0,0,0,0.15);
+	box-shadow: inset 13px 0px 8px -8px rgba(0,0,0,0.15),
+		inset -13px 0px 8px -8px rgba(0,0,0,0.15);
+}
+
 .pager{
 	border-bottom: 1px solid #ccc;
 }

@@ -5,7 +5,7 @@
 		<a href="javascript:;">PDF</a>
 	</p>
     
-    <div style="overflow-x:scroll">
+    <div class="scrollX" ng-class="{rightInsetShadow: !startScroll, horizontalInsetShadow: startScroll && !endScroll, leftInsetShadow: endScroll}">
         <table ng-table="tableParams"
             class="widthFull noWrapCells noWrapHeadings marginRight20"
         	template-pagination="{{ pagerTemplate }}">

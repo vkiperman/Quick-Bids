@@ -36,14 +36,28 @@
 			restrict: 'E',
 			templateUrl: '/includes/report-view.html',
 
-			scope: {},
+			//scope: {},
 
 			link: function(scope, element, attrs, obj){
-				//debugger;
-				document.getElementById('ng-pager-report-view').appendChild(element[0].getElementsByClassName('ng-scope')[1]); 
+				var ngPagerReportView = document.getElementById('ng-pager-report-view'),
+					pagerNode = element[0].getElementsByClassName('ng-scope')[1];
+
+				ngPagerReportView.appendChild(pagerNode);
+				
+				angular.element(element[0].getElementsByClassName('scrollX')[0]).bind('scroll', function(event){
+					var target = event.target;
+					if(target.scrollLeft > 6){
+						scope.startScroll = true;//'horizontalInsetShadow';
+					}
+			    	if(target.scrollWidth - target.scrollLeft >= target.clientWidth - 6){
+						scope.endScroll = true;//'leftInsetShadow';
+					}
+			    });
 			},
 
 			controller: function($scope, $filter, NgTableParams){
+				$scope.startScroll = false;//'rightInsetShadow';
+				$scope.endScroll = false;//'leftInsetShadow';
 
 				$scope.showEditNote = false;
 				$scope.showViewPhotos = false;
