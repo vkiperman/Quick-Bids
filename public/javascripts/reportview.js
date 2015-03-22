@@ -22,7 +22,7 @@
 				}
 				truncation = input.substr(0, limit).replace(/\s$/, '');
 
-				return truncation + '...'
+				return truncation + '...';
 
 			};
 		});
@@ -40,7 +40,15 @@
 
 			controller: function($scope, $filter, NgTableParams){
 
+				$scope.showEditNote = false;
+				$scope.showViewPhotos = false;
+
 				$scope.pagerTemplate = '/includes/pager.html';
+
+				$scope.showModal = function(show){
+					$scope[show] = true;
+					// pass data model to the form...
+				};
 
 				$scope.offerReportView = [
             		{

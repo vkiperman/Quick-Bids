@@ -5,7 +5,7 @@
 		<a href="javascript:;">PDF</a>
 	</p>
     
-    <table ng-table="tableParams" class="widthFull noWrapCells noWrapHeadings" 
+    <table ng-table="tableParams" class="widthFull noWrapCells noWrapHeadings marginRight20"
     	template-pagination="{{ pagerTemplate }}">
         <tr ng-repeat="offerReportView in $data" ng-click="showReport($event)">
             <td data-title="'Lead Status'">
@@ -14,7 +14,7 @@
                 </select>
             </td>
             <td data-title="'Notes'">
-                <a href="">Edit</a> | <a href="">View</a>
+                <a href="javascript:;" ng-click="showModal('showEditNote')">Edit</a> | <a href="javascript:;">View</a>
             </td>
             <td data-title="'Voucher #'" sortable="'voucher'">
                 {{offerReportView.voucher | uppercase}}
@@ -27,11 +27,11 @@
             	class="noWrap">
                 {{offerReportView.requestDate | date : 'short'}}
             </td>
-            <td data-title="'ReBid'" sortable="'rebid'">
+            <td data-title="'Rebid'" sortable="'rebid'">
                 {{offerReportView.rebid}}
             </td>
             <td data-title="'Images'" sortable="'images'">
-                <a href="">{{offerReportView.images}} Pics</a>
+                <a href="javascript:;" ng-click="showModal('showViewPhotos')">{{offerReportView.images}} Pics</a>
             </td>
             <td data-title="'Vin'" sortable="'vin'">
                 {{offerReportView.vin}}
@@ -113,5 +113,19 @@
             </td>
         </tr>
     </table>
+
+
+
+	<modal ng-show="showEditNote"
+		title="Edit Note"
+		show-manager="false">
+		<edit-note></edit-note>
+	</modal>
+
+	<modal ng-show="showViewPhotos"
+		title="View Photos"
+		show-manager="false">
+		<view-photos></view-photos>
+	</modal>
 
 </div>
