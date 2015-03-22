@@ -5,116 +5,120 @@
 		<a href="javascript:;">PDF</a>
 	</p>
     
-    <table ng-table="tableParams" class="widthFull noWrapCells noWrapHeadings marginRight20"
-    	template-pagination="{{ pagerTemplate }}">
-        <tr ng-repeat="offerReportView in $data" ng-click="showReport($event)">
-            <td data-title="'Lead Status'">
-                <select>
-                	<option value="0">Select</option>
-                </select>
-            </td>
-            <td data-title="'Notes'">
-                <a href="javascript:;" ng-click="showModal('showEditNote')">Edit</a> | <a href="javascript:;">View</a>
-            </td>
-            <td data-title="'Voucher #'" sortable="'voucher'">
-                {{offerReportView.voucher | uppercase}}
-            </td>
-            <td data-title="'Status'" sortable="'status'">
-                {{offerReportView.status}}
-            </td>
-            <td data-title="'Request Date'" sortable="'requestDate'"
-            	header-class="'noWrap'"
-            	class="noWrap">
-                {{offerReportView.requestDate | date : 'short'}}
-            </td>
-            <td data-title="'Rebid'" sortable="'rebid'">
-                {{offerReportView.rebid}}
-            </td>
-            <td data-title="'Images'" sortable="'images'">
-                <a href="javascript:;" ng-click="showModal('showViewPhotos')">{{offerReportView.images}} Pics</a>
-            </td>
-            <td data-title="'Vin'" sortable="'vin'">
-                {{offerReportView.vin}}
-            </td>
-            <td data-title="'Year'" sortable="'year'">
-                {{offerReportView.year}}
-            </td>
-            <td data-title="'Year'" sortable="'year'">
-                {{offerReportView.year}}
-            </td>
-            <td data-title="'Make'" sortable="'make'">
-                {{offerReportView.make}}
-            </td>
-            <td data-title="'Model'" sortable="'model'">
-                {{offerReportView.model}}
-            </td>
-            <td data-title="'Trim'" sortable="'trim'">
-                {{offerReportView.trim}}
-            </td>
-            <td data-title="'Body Style'" sortable="'bodyStyle'"
-            	class="noWrap">
-                {{offerReportView.bodyStyle}}
-            </td>
-            <td data-title="'Mileage'" sortable="'mileage'"
-                header-class="'flowRight'"
-                class="flowCenter">
-                {{offerReportView.mileage | number}}
-            </td>
-            <td data-title="'Interior Type'" sortable="'interiorType'">
-                {{offerReportView.interiorType}}
-            </td>
-            <td data-title="'Customer Reply'" sortable="'customerReply'">
-                {{offerReportView.customerReply}}
-            </td>
-            <td data-title="'Customer Response Date'" sortable="'customerResponseDate'">
-                {{offerReportView.customerResponseDate}}
-            </td>
-            <td data-title="'Customer Amount Request'" sortable="'customerAmountRequest'"
-                header-class="'flowRight'"
-                class="flowRight">
-                {{offerReportView.customerAmountRequest | currency}}
-            </td>
-            <td data-title="'Customer Comment'" sortable="'customerComment'">
-                <span
-                title="{{offerReportView.customerComment}}">{{offerReportView.customerComment | truncate : 20}}</span>
-            </td>
-            <td data-title="'Offer'" sortable="'offer'"
-                header-class="'flowRight'"
-                class="flowCenter">
-                {{offerReportView.offer | currency}}
-            </td>
-            <td data-title="'Initial Bid Date'" sortable="'initialBidDate'">
-                {{offerReportView.initialBidDate | date : 'short'}}
-            </td>
-            <td data-title="'Bidder'" sortable="'bidder'">
-                {{offerReportView.bidder}}
-            </td>
-            <td data-title="'Bidder Comment'" sortable="'bidderComment'">
-                {{offerReportView.bidderComment | truncate : 20}}
-            </td>
+    <div style="overflow-x:scroll">
+        <table ng-table="tableParams"
+            class="widthFull noWrapCells noWrapHeadings marginRight20"
+        	template-pagination="{{ pagerTemplate }}">
+            <tbody>
+                <tr ng-repeat="offerReportView in $data" ng-click="showReport($event)">
+                    <td data-title="'Lead Status'">
+                        <select>
+                        	<option value="0">Select</option>
+                        </select>
+                    </td>
+                    <td data-title="'Notes'">
+                        <a href="javascript:;" ng-click="showModal('showEditNote')">Edit</a> | <a href="javascript:;">View</a>
+                    </td>
+                    <td data-title="'Voucher #'" sortable="'voucher'">
+                        {{offerReportView.voucher | uppercase}}
+                    </td>
+                    <td data-title="'Status'" sortable="'status'">
+                        {{offerReportView.status}}
+                    </td>
+                    <td data-title="'Request Date'" sortable="'requestDate'"
+                    	header-class="'noWrap'"
+                    	class="noWrap">
+                        {{offerReportView.requestDate | date : 'short'}}
+                    </td>
+                    <td data-title="'Rebid'" sortable="'rebid'">
+                        {{offerReportView.rebid}}
+                    </td>
+                    <td data-title="'Images'" sortable="'images'">
+                        <a href="javascript:;" ng-click="showModal('showViewPhotos')">{{offerReportView.images}} Pics</a>
+                    </td>
+                    <td data-title="'Vin'" sortable="'vin'">
+                        {{offerReportView.vin}}
+                    </td>
+                    <td data-title="'Year'" sortable="'year'">
+                        {{offerReportView.year}}
+                    </td>
+                    <td data-title="'Year'" sortable="'year'">
+                        {{offerReportView.year}}
+                    </td>
+                    <td data-title="'Make'" sortable="'make'">
+                        {{offerReportView.make}}
+                    </td>
+                    <td data-title="'Model'" sortable="'model'">
+                        {{offerReportView.model}}
+                    </td>
+                    <td data-title="'Trim'" sortable="'trim'">
+                        {{offerReportView.trim}}
+                    </td>
+                    <td data-title="'Body Style'" sortable="'bodyStyle'"
+                    	class="noWrap">
+                        {{offerReportView.bodyStyle}}
+                    </td>
+                    <td data-title="'Mileage'" sortable="'mileage'"
+                        header-class="'flowRight'"
+                        class="flowCenter">
+                        {{offerReportView.mileage | number}}
+                    </td>
+                    <td data-title="'Interior Type'" sortable="'interiorType'">
+                        {{offerReportView.interiorType}}
+                    </td>
+                    <td data-title="'Customer Reply'" sortable="'customerReply'">
+                        {{offerReportView.customerReply}}
+                    </td>
+                    <td data-title="'Customer Response Date'" sortable="'customerResponseDate'">
+                        {{offerReportView.customerResponseDate}}
+                    </td>
+                    <td data-title="'Customer Amount Request'" sortable="'customerAmountRequest'"
+                        header-class="'flowRight'"
+                        class="flowRight">
+                        {{offerReportView.customerAmountRequest | currency}}
+                    </td>
+                    <td data-title="'Customer Comment'" sortable="'customerComment'">
+                        <span
+                        title="{{offerReportView.customerComment}}">{{offerReportView.customerComment | truncate : 20}}</span>
+                    </td>
+                    <td data-title="'Offer'" sortable="'offer'"
+                        header-class="'flowRight'"
+                        class="flowCenter">
+                        {{offerReportView.offer | currency}}
+                    </td>
+                    <td data-title="'Initial Bid Date'" sortable="'initialBidDate'">
+                        {{offerReportView.initialBidDate | date : 'short'}}
+                    </td>
+                    <td data-title="'Bidder'" sortable="'bidder'">
+                        {{offerReportView.bidder}}
+                    </td>
+                    <td data-title="'Bidder Comment'" sortable="'bidderComment'">
+                        {{offerReportView.bidderComment | truncate : 20}}
+                    </td>
 
-            <td data-title="'Customer Last Name'" sortable="'lastName'">
-                {{offerReportView.lastName}}
-            </td>
-            <td data-title="'Customer First Name'" sortable="'firstName'">
-                {{offerReportView.firstName}}
-            </td>
-            <td data-title="'Customer Phone Number'" sortable="'phoneNumber'">
-                {{offerReportView.phoneNumber | phone}}
-            </td>
-            <td data-title="'Customer Email Address'" sortable="'email'">
-                {{offerReportView.email}}
-            </td>
-            <td data-title="'ZIP Code'" sortable="'zip'">
-                {{offerReportView.zip}}
-            </td>
-            <td data-title="'Expiration Date'" sortable="'expiry'">
-                {{offerReportView.expiry | date : 'short'}}
-            </td>
-        </tr>
-    </table>
-
-
+                    <td data-title="'Customer Last Name'" sortable="'lastName'">
+                        {{offerReportView.lastName}}
+                    </td>
+                    <td data-title="'Customer First Name'" sortable="'firstName'">
+                        {{offerReportView.firstName}}
+                    </td>
+                    <td data-title="'Customer Phone Number'" sortable="'phoneNumber'">
+                        {{offerReportView.phoneNumber | phone}}
+                    </td>
+                    <td data-title="'Customer Email Address'" sortable="'email'">
+                        {{offerReportView.email}}
+                    </td>
+                    <td data-title="'ZIP Code'" sortable="'zip'">
+                        {{offerReportView.zip}}
+                    </td>
+                    <td data-title="'Expiration Date'" sortable="'expiry'">
+                        {{offerReportView.expiry | date : 'short'}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="ng-pager-report-view"></div>
 
 	<modal ng-show="showEditNote"
 		title="Edit Note"

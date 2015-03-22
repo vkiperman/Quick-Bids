@@ -87,7 +87,8 @@
 		<notification-search ng-hide="reportView"></notification-search>
 		<notification-search-results ng-hide="reportView"></notification-search-results>
 
-		<report-view ng-show="reportView"</report-view>
+		<!-- using ng-if because this content is huge -->
+		<report-view ng-if="reportView"></report-view>
 
 
 	</div>

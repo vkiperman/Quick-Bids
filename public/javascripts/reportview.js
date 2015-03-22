@@ -38,6 +38,11 @@
 
 			scope: {},
 
+			link: function(scope, element, attrs, obj){
+				//debugger;
+				document.getElementById('ng-pager-report-view').appendChild(element[0].getElementsByClassName('ng-scope')[1]); 
+			},
+
 			controller: function($scope, $filter, NgTableParams){
 
 				$scope.showEditNote = false;
