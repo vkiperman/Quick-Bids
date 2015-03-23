@@ -1227,7 +1227,7 @@ label.mdcModalInline {
 	text-align: right;
 }
 button.mdcActionButton, input[type=button].mdcActionButton, input[type=submit].mdcActionButton {
-	background: url(resources/images/primary-button.png) repeat-x 0 0 #93A445;
+	background: url(/images/primary-button.png) repeat-x 0 0 #93A445;
 	font-size: 12px;
 	padding: 3px 10px 4px 10px;
 	color: #fff;
