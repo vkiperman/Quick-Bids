@@ -2,7 +2,7 @@
 	    <div id="header-content">
 	        <div id="logoContainer" class="floatLeft">	
 				<div id="logo"
-					onclick="homeRedirect('...')">
+					onclick="homeRedirect('...')"><!-- TODO: provide a home link -->
 				</div>	
 	        </div>
 			<div id="menuContainer" class="nav Hidden floatRight width820px">
@@ -11,7 +11,7 @@
 			    <!-- start the menubar -->
 			    	<div class="mdcDropDownMenu" ng-repeat="tab in navTabs.navigation">
                         <div href="{{tab.link}}"
-                        	ng-class="{mdcDropDownMenuWithChildren:tab.subnav}"
+                        	ng-class="{mdcDropDownMenuWithChildren: tab.subnav, mdcMenuActive:dropDownMenu===tab.title}"
                         	ng-click="showDropDownMenu($event, tab.title)"
                         	class="mdcDropDownMenuText">{{tab.title}}</div>
 
