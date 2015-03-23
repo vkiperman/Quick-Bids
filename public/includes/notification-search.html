@@ -1,5 +1,5 @@
 <div class="mdcModuleContainer mdcModulePadding arrowheadDown cf">
-    <h3 class="paddingBottomSmall">Notification Settings</h3>
+    <h3 class="marginBottom10 ">Notification Settings</h3>
 
     <div class="cf paddingBottom10">
         <div class="floatLeft marginRight50">
@@ -10,69 +10,85 @@
             </select>
         </div>
 
-        <div >
+        <div>
             <div >
                 <label>Method</label>
-                <!--Radio buttons-->
+                <input type="radio" checked="true">SMS
+                <input type="radio">Email
             </div>
         </div>        
     </div>
-
-    <div class="cf paddingBottom10">
-        <div class="floatLeft marginRight50">
-            <label>Frequency</label>
+    <div class="floatLeft fullWidth">
+        <label>Frequency</label>
+    </div>
+    <div class="cf paddingBottom10">        
+        <div class="floatLeft paddingRight10">
             <select class="selectSmall"
                 ng-model="notificationFilter.frequencySelected"
                 ng-options="frequency as frequency.label for frequency in frequencies">
             </select>
         </div>
 
-        <div class="floatLeft marginRight50">
-            <label></label>
-            <span >
-                Between
-            </span>
+        <div class="floatLeft paddingRight10">
+            <span>between</span>
         </div>
 
-        <div class="floatLeft marginRight50">
-            <label></label>
-            <span >
-                 TestBox
-            </span>
+        <div class="floatLeft paddingRight5">
+            <div>
+                <input type="textbox" value="12:00"/>                
+            </div>
         </div>
 
-        <div class="floatLeft marginRight16">
-            <label></label>
-            <select class="selectMedium"
+        <div class="floatLeft paddingRight10">         
+            <select class="selectSmall"
                 ng-model="notificationFilter.ampmSelected"
                 ng-options="ampm as ampm.label for ampm in amorpm">
             </select>
         </div>
 
-        <div class="floatLeft marginRight50">
-            <label></label>
-            <span >
-                and
-            </span>
+        <div class="floatLeft paddingRight10">
+            <span>and</span>
         </div>
 
-        <div class="floatLeft marginRight50">
-            <label></label>
-            <span >
-                 TestBox
-            </span>
+        <div class="floatLeft paddingRight10">
+            <div>
+                <input type="textbox" value="12:00"/>                
+            </div>
         </div>
 
-        <div class="floatLeft marginRight16">
-            <label></label>
-            <select class="selectMedium"
+        <div class="floatLeft marginRight10">         
+            <select class="selectSmall "
                 ng-model="notificationFilter.ampmSelected"
-                ng-options="ampm as ampm.label for ampm in ampm">
+                ng-options="ampm as ampm.label for ampm in amorpm">
             </select>
-        </div>               
+        </div>           
        
     </div>
+    <div class="cf"> 
+        <div class="displayInline paddingRight10" >
+            <input type="checkbox"/>Sunday
+        </div>
+        <div class="displayInline paddingRight10" >
+            <input type="checkbox"/>Monday
+        </div>
+        <div class="displayInline paddingRight10" >
+            <input type="checkbox"/>Tuesday
+        </div>
+        <div class="displayInline paddingRight10" >
+            <input type="checkbox"/>Wednesday
+        </div>
+        <div class="displayInline paddingRight10" >
+            <input type="checkbox"/>Thursday
+        </div>
+        <div class="displayInline paddingRight10" >
+            <input type="checkbox"/>Friday
+        </div>
+        <div class="displayInline paddingRight10" >
+            <input type="checkbox"/>Saturday
+        </div>
+    </div>
+
     <div>
-        <!--check boxes goe s here -->
+        <button class="mdcActionButton">Save</button>  
     </div>
 </div>
