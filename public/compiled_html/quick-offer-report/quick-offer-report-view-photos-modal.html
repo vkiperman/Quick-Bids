@@ -1,0 +1,857 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>    
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">      
+    
+    <link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/./dojo/dojo-release-1.6.1/dijit/themes/tundra/tundra.css">
+    <link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/./mdcStyles.css">
+    <link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/css/global.css">
+    <link rel="stylesheet" type="text/css" media="print" href="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/css/global-print.css">
+    
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/DropDownMenu.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/cars.css">
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	
+	<script type="text/javascript" src="/javascripts/angular.min.js">
+	</script>
+	
+	<title>My Dealer Center</title>
+
+</head>
+
+<body id="portalThemeNode" class="tundra bids">
+
+	<div id="headermenu" class="relative">
+	    <div id="header-content">
+	        <div id="logoContainer" class="floatLeft">	
+				<div id="logo" onclick="homeRedirect('...')">
+				</div>	
+	        </div>
+			<div id="menuContainer" class="nav Hidden floatRight width820px">
+			 
+			    <div style="width820px">
+			    <!-- start the menubar -->
+			    	<div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText">Home</div>                        
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText">Reporting</div>                        
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">Inventory</div>
+
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">Reviews</div>
+
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">Admin</div>
+
+                    </div>
+				     
+			                    
+			        <div class="mdcDropDownMenu mdcPinRight">                    
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">
+                            <img class="mdcProfileItem" src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif"
+                            	width="22" height="16" alt="Profile">
+                        </div>       
+                        
+	                </div>
+			    
+			    </div>
+			
+			</div> <!--menu container -->
+		</div> <!--header-content -->
+	</div> <!--headerMenu -->	
+
+    <div id="content">
+
+		<div class="cf customerBanner">
+
+			<div class="floatLeft" id="custInfocontainer">
+		        <h1>
+		            <span class="pageTitle">
+		                <b>Quick Offer Dashboard</b> 
+		                <span id="pageSubHeading"></span>
+		            </span>
+		            
+		            <br>
+		            <span id="custTitle" class="custTitle">
+		            	Nissan / Mazda of Elk Grove | 102602
+		            </span>
+		            
+		        </h1>       
+		        <a href="javascript:;">Change Organization</a>
+		        
+		        <p id="pageInstructions" class="marginBottomNone">
+		        </p>
+
+		    </div>
+			<div class="floatRight">
+		        <iframe src="/chat.html" scrolling="no" class="chat-iframe"></iframe>
+		        
+		        <span id="supportLinkSpan" style="display: none;"> 
+		            
+		        </span>
+			</div>
+
+		</div>
+
+		<div>
+			<p>
+				Export: <a href="javascript:;">Excel</a> | 
+				<a href="javascript:;">CSV</a> | 
+				<a href="javascript:;">PDF</a>
+			</p>
+    
+		    <div class="scrollX rightInsetShadow">
+			    <table class="widthFull noWrapCells noWrapHeadings marginRight20 ng-table">
+			    	<thead>
+			    		<tr>
+			    			<th title=" " class="header">
+			    				<div class="ng-table-header">
+			    					<span class="sort-indicator">Lead Status</span>
+			    				</div>
+			    			</th>
+			    			<th title=" " class="header">
+			    				<div class="ng-table-header">
+			    					<span class="sort-indicator">Notes</span>
+			    				</div>
+			    			</th>
+			    			<th title=" " class="header sortable sort-as c">
+			    				<div class="ng-table-header">
+			    					<span class="sort-indicator">Voucher #</span>
+			    				</div>
+			    			</th>
+			    			<th title=" " class="header sortable">
+			    				<div class="ng-table-header">
+			    					<span class="sort-indicator">Status</span>
+			    				</div>
+			    			</th>
+			    			<th title=" " class="header noWrap sortable">
+			    				<div class="ng-table-header">
+			    					<span class="sort-indicator">Request Date</span>
+			    				</div>
+			    			</th>
+			    			<th title=" " class="header sortable">
+			    				<div class="ng-table-header">
+			    					<span class="sort-indicator">Rebid</span>
+			    				</div>
+			    			</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Images</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Vin</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Year</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Year</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Make</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Model</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Trim</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Body Style</span>
+								</div>
+							</th>
+							<th title=" " class="header flowRight sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Mileage</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Interior Type</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Customer Reply</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Customer Response Date</span>
+								</div>
+							</th>
+							<th title=" " class="header flowRight sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Customer Amount Request</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Customer Comment</span>
+								</div>
+							</th>
+							<th title=" " class="header flowRight sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Offer</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Initial Bid Date</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Bidder</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Bidder Comment</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Customer Last Name</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Customer First Name</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Customer Phone Number</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Customer Email Address</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">ZIP Code</span>
+								</div>
+							</th>
+							<th title=" " class="header sortable">
+								<div class="ng-table-header">
+									<span class="sort-indicator">Expiration Date</span>
+								</div>
+							</th>
+						</tr>
+						<tr class="ng-table-filters ng-hide">
+							<th data-title-text="Lead Status" class="filter">  </th>
+							<th data-title-text="Notes" class="filter">  </th>
+							<th data-title-text="Voucher #" class="filter">  </th>
+							<th data-title-text="Status" class="filter">  </th>
+							<th data-title-text="Request Date" class="filter">  </th>
+							<th data-title-text="Rebid" class="filter">  </th>
+							<th data-title-text="Images" class="filter">  </th>
+							<th data-title-text="Vin" class="filter">  </th>
+							<th data-title-text="Year" class="filter">  </th>
+							<th data-title-text="Year" class="filter">  </th>
+							<th data-title-text="Make" class="filter">  </th>
+							<th data-title-text="Model" class="filter">  </th>
+							<th data-title-text="Trim" class="filter">  </th>
+							<th data-title-text="Body Style" class="filter">  </th>
+							<th data-title-text="Mileage" class="filter">  </th>
+							<th data-title-text="Interior Type" class="filter">  </th>
+							<th data-title-text="Customer Reply" class="filter">  </th>
+							<th data-title-text="Customer Response Date" class="filter">  </th>
+							<th data-title-text="Customer Amount Request" class="filter">  </th>
+							<th data-title-text="Customer Comment" class="filter">  </th>
+							<th data-title-text="Offer" class="filter">  </th>
+							<th data-title-text="Initial Bid Date" class="filter">  </th>
+							<th data-title-text="Bidder" class="filter">  </th>
+							<th data-title-text="Bidder Comment" class="filter">  </th>
+							<th data-title-text="Customer Last Name" class="filter">  </th>
+							<th data-title-text="Customer First Name" class="filter">  </th>
+							<th data-title-text="Customer Phone Number" class="filter">  </th>
+							<th data-title-text="Customer Email Address" class="filter">  </th>
+							<th data-title-text="ZIP Code" class="filter">  </th>
+							<th data-title-text="Expiration Date" class="filter">  </th>
+						</tr>
+					</thead>
+		        	<tbody>
+		        		<tr>
+				            <td data-title="'Lead Status'" data-title-text="Lead Status">
+				                <select>
+				                	<option value="0">Select</option>
+				                </select>
+				            </td>
+				            <td data-title="'Notes'" data-title-text="Notes">
+				                <a href="javascript:;">Edit</a> | <a href="javascript:;">View</a>
+				            </td>
+				            <td data-title="'Voucher #'" data-title-text="Voucher #">
+				                CAZKU1
+				            </td>
+				            <td data-title="'Status'" data-title-text="Status">
+				                InitAcpt
+				            </td>
+				            <td data-title="'Request Date'"  class="noWrap" data-title-text="Request Date">
+				                3/4/15 12:22:55 PM
+				            </td>
+				            <td data-title="'Rebid'" data-title-text="Rebid">
+				                N
+				            </td>
+				            <td data-title="'Images'" data-title-text="Images">
+				                <a href="javascript:;">3 Pics</a>
+				            </td>
+				            <td data-title="'Vin'" data-title-text="Vin">
+				                1N4AL3AP1DN656255
+				            </td>
+				            <td data-title="'Year'" data-title-text="Year">
+				                2001
+				            </td>
+				            <td data-title="'Year'" data-title-text="Year">
+				                2001
+				            </td>
+				            <td data-title="'Make'" data-title-text="Make">
+				                Chevrolet
+				            </td>
+				            <td data-title="'Model'" data-title-text="Model">
+				                Silverado 1500 Hybrid
+				            </td>
+				            <td data-title="'Trim'" data-title-text="Trim">
+				                XL Edition
+				            </td>
+				            <td data-title="'Body Style'" class="noWrap" data-title-text="Body Style">
+				                $d utility 4WD
+				            </td>
+				            <td data-title="'Mileage'"  class="flowCenter" data-title-text="Mileage">
+				                100,020
+				            </td>
+				            <td data-title="'Interior Type'" data-title-text="Interior Type">
+				                Cloth
+				            </td>
+				            <td data-title="'Customer Reply'" data-title-text="Customer Reply">
+				                Decline
+				            </td>
+				            <td data-title="'Customer Response Date'" data-title-text="Customer Response Date">
+				                3/4/15 12:22:55 PM
+				            </td>
+				            <td data-title="'Customer Amount Request'"  class="flowRight" data-title-text="Customer Amount Request">
+				                $2,100.00
+				            </td>
+				            <td data-title="'Customer Comment'" data-title-text="Customer Comment">
+				                <span title="A very long comment left by the customer!">A very long comment...</span>
+				            </td>
+				            <td data-title="'Offer'"  class="flowCenter" data-title-text="Offer">
+				                $10,000.00
+				            </td>
+				            <td data-title="'Initial Bid Date'" data-title-text="Initial Bid Date">
+				                3/4/15 12:22:55 PM
+				            </td>
+				            <td data-title="'Bidder'" data-title-text="Bidder">
+				                smn
+				            </td>
+				            <td data-title="'Bidder Comment'" data-title-text="Bidder Comment">
+				                Hello
+				            </td>
+
+				            <td data-title="'Customer Last Name'" data-title-text="Customer Last Name">
+				                Adams
+				            </td>
+				            <td data-title="'Customer First Name'" data-title-text="Customer First Name">
+				                Sammuel
+				            </td>
+				            <td data-title="'Customer Phone Number'" data-title-text="Customer Phone Number">
+				                675-234-3123
+				            </td>
+				            <td data-title="'Customer Email Address'" data-title-text="Customer Email Address">
+				                myname@email.com
+				            </td>
+				            <td data-title="'ZIP Code'" data-title-text="ZIP Code">
+				                33130
+				            </td>
+				            <td data-title="'Expiration Date'" data-title-text="Expiration Date">
+				                3/4/15 12:22:55 PM
+				            </td>
+				        </tr>
+				        <tr>
+				            <td data-title="'Lead Status'" data-title-text="Lead Status">
+				                <select>
+				                	<option value="0">Select</option>
+				                </select>
+				            </td>
+				            <td data-title="'Notes'" data-title-text="Notes">
+				                <a href="javascript:;">Edit</a> | <a href="javascript:;">View</a>
+				            </td>
+				            <td data-title="'Voucher #'" data-title-text="Voucher #">
+				                CAZKU3
+				            </td>
+				            <td data-title="'Status'" data-title-text="Status">
+				                InitAcpt
+				            </td>
+				            <td data-title="'Request Date'"  class="noWrap" data-title-text="Request Date">
+				                3/3/15 12:02:55 PM
+				            </td>
+				            <td data-title="'Rebid'" data-title-text="Rebid">
+				                Y
+				            </td>
+				            <td data-title="'Images'" data-title-text="Images">
+				                <a href="javascript:;">32 Pics</a>
+				            </td>
+				            <td data-title="'Vin'" data-title-text="Vin">
+				                1N4AL35JSK9E56255
+				            </td>
+				            <td data-title="'Year'" data-title-text="Year">
+				                2011
+				            </td>
+				            <td data-title="'Year'" data-title-text="Year">
+				                2011
+				            </td>
+				            <td data-title="'Make'" data-title-text="Make">
+				                Chevrolet
+				            </td>
+				            <td data-title="'Model'" data-title-text="Model">
+				                Silverado 1500 Hybrid
+				            </td>
+				            <td data-title="'Trim'" data-title-text="Trim">
+				                XL Edition
+				            </td>
+				            <td data-title="'Body Style'" class="noWrap" data-title-text="Body Style">
+				                $d utility 4WD
+				            </td>
+				            <td data-title="'Mileage'"  class="flowCenter" data-title-text="Mileage">
+				                40,020
+				            </td>
+				            <td data-title="'Interior Type'" data-title-text="Interior Type">
+				                Cloth
+				            </td>
+				            <td data-title="'Customer Reply'" data-title-text="Customer Reply">
+				                Accept
+				            </td>
+				            <td data-title="'Customer Response Date'" data-title-text="Customer Response Date">
+				                3/4/14 12:20:55 PM
+				            </td>
+				            <td data-title="'Customer Amount Request'"  class="flowRight" data-title-text="Customer Amount Request">
+				                $2,100.00
+				            </td>
+				            <td data-title="'Customer Comment'" data-title-text="Customer Comment">
+				                <span title="Comment">Comment</span>
+				            </td>
+				            <td data-title="'Offer'"  class="flowCenter" data-title-text="Offer">
+				                $11,000.00
+				            </td>
+				            <td data-title="'Initial Bid Date'" data-title-text="Initial Bid Date">
+				                3/2/15 12:22:43 PM
+				            </td>
+				            <td data-title="'Bidder'" data-title-text="Bidder">
+				                smn
+				            </td>
+				            <td data-title="'Bidder Comment'" data-title-text="Bidder Comment">
+				                Hello
+				            </td>
+
+				            <td data-title="'Customer Last Name'" data-title-text="Customer Last Name">
+				                Henry
+				            </td>
+				            <td data-title="'Customer First Name'" data-title-text="Customer First Name">
+				                John
+				            </td>
+				            <td data-title="'Customer Phone Number'" data-title-text="Customer Phone Number">
+				                Not Provided
+				            </td>
+				            <td data-title="'Customer Email Address'" data-title-text="Customer Email Address">
+				                hj@email.com
+				            </td>
+				            <td data-title="'ZIP Code'" data-title-text="ZIP Code">
+				                33138
+				            </td>
+				            <td data-title="'Expiration Date'" data-title-text="Expiration Date">
+				                3/4/15 12:22:55 PM
+				            </td>
+				        </tr>
+				        <tr>
+				            <td data-title="'Lead Status'" data-title-text="Lead Status">
+				                <select>
+				                	<option value="0">Select</option>
+				                </select>
+				            </td>
+				            <td data-title="'Notes'" data-title-text="Notes">
+				                <a href="javascript:;">Edit</a> | <a href="javascript:;">View</a>
+				            </td>
+				            <td data-title="'Voucher #'" data-title-text="Voucher #">
+				                CAZKW1
+				            </td>
+				            <td data-title="'Status'" data-title-text="Status">
+				                InitAcpt
+				            </td>
+				            <td data-title="'Request Date'"  class="noWrap" data-title-text="Request Date">
+				                3/3/15 12:02:55 PM
+				            </td>
+				            <td data-title="'Rebid'" data-title-text="Rebid">
+				                Y
+				            </td>
+				            <td data-title="'Images'" data-title-text="Images">
+				                <a href="javascript:;">13 Pics</a>
+				            </td>
+				            <td data-title="'Vin'" data-title-text="Vin">
+				                1N4AL35JSK9E56255
+				            </td>
+				            <td data-title="'Year'" data-title-text="Year">
+				                2011
+				            </td>
+				            <td data-title="'Year'" data-title-text="Year">
+				                2011
+				            </td>
+				            <td data-title="'Make'" data-title-text="Make">
+				                Chevrolet
+				            </td>
+				            <td data-title="'Model'" data-title-text="Model">
+				                Silverado 1500 Hybrid
+				            </td>
+				            <td data-title="'Trim'" data-title-text="Trim">
+				                XL Edition
+				            </td>
+				            <td data-title="'Body Style'" class="noWrap" data-title-text="Body Style">
+				                $d utility 4WD
+				            </td>
+				            <td data-title="'Mileage'"  class="flowCenter" data-title-text="Mileage">
+				                100,020
+				            </td>
+				            <td data-title="'Interior Type'" data-title-text="Interior Type">
+				                Cloth
+				            </td>
+				            <td data-title="'Customer Reply'" data-title-text="Customer Reply">
+				                Accept
+				            </td>
+				            <td data-title="'Customer Response Date'" data-title-text="Customer Response Date">
+				                3/4/15 12:22:55 PM
+				            </td>
+				            <td data-title="'Customer Amount Request'"  class="flowRight" data-title-text="Customer Amount Request">
+				                $2,100.00
+				            </td>
+				            <td data-title="'Customer Comment'" data-title-text="Customer Comment">
+				                <span title="Comment">Comment</span>
+				            </td>
+				            <td data-title="'Offer'"  class="flowCenter" data-title-text="Offer">
+				                $11,000.00
+				            </td>
+				            <td data-title="'Initial Bid Date'" data-title-text="Initial Bid Date">
+				                3/4/15 12:22:55 PM
+				            </td>
+				            <td data-title="'Bidder'" data-title-text="Bidder">
+				                smn
+				            </td>
+				            <td data-title="'Bidder Comment'" data-title-text="Bidder Comment">
+				                Hello
+				            </td>
+
+				            <td data-title="'Customer Last Name'" data-title-text="Customer Last Name">
+				                Smith
+				            </td>
+				            <td data-title="'Customer First Name'" data-title-text="Customer First Name">
+				                Sammuel
+				            </td>
+				            <td data-title="'Customer Phone Number'" data-title-text="Customer Phone Number">
+				                Not Provided
+				            </td>
+				            <td data-title="'Customer Email Address'" data-title-text="Customer Email Address">
+				                myname@email.com
+				            </td>
+				            <td data-title="'ZIP Code'" data-title-text="ZIP Code">
+				                33160
+				            </td>
+				            <td data-title="'Expiration Date'" data-title-text="Expiration Date">
+				                3/4/15 12:22:55 PM
+				            </td>
+				        </tr>
+			    	</tbody>
+				</table>
+			</div><!-- end of scrollX -->
+			<div>
+				<div>
+					<div class="pager cf">
+
+	    				<div class="pagerContent floatLeft columnQuarter">3 Total Items</div>
+	        
+					    <div class="pagerContent floatLeft columnHalf flowCenter">
+					        <div class="count-group">
+					            <a href="javascript:;" class="active">25</a> | 
+					            <a href="javascript:;">50</a> | 
+					            <a href="javascript:;">100</a> | 
+					            <a href="javascript:;">All</a>
+					        </div>
+					    </div>
+
+					    <div class="pagerContent columnQuarter">
+
+					        <div class="dojoxGridPaginatorStep">
+					            <div title="First Page" tabindex="-1" aria-label="First Page" class="dojoxGridWardButton dojoxGridfirstPageBtnDisable">
+					                <span title="First Page" class="dojoxGridWardButtonInner">«</span>
+					            </div>
+					            
+					            <div title="Previous Page" tabindex="-1" aria-label="Previous Page"
+					            	class="dojoxGridWardButton dojoxGridprevPageBtnDisable">
+					                <span title="Previous Page" class="dojoxGridWardButtonInner">&lt;</span>
+					            </div>
+
+					            <div title="Page 1" aria-label="Page 1" class="dojoxGridActived">1</div>
+					            <div title="Page 2" aria-label="Page 2" class="dojoxGridInactived">2</div>
+					            <div title="Page 3" aria-label="Page 3" class="dojoxGridInactived">3</div>
+					            <div title="Page 4" aria-label="Page 4" class="dojoxGridInactived">4</div>
+
+					            <div title="Next Page" aria-label="Next Page" class="dojoxGridWardButton dojoxGridnextPageBtn">
+					                <span title="Next Page" class="dojoxGridWardButtonInner">&gt;</span>
+					            </div>
+
+					            <div title="Last Page" tabindex="0" aria-label="Last Page" class="dojoxGridWardButton dojoxGridlastPageBtn">
+					                <span title="Last Page" class="dojoxGridWardButtonInner">»</span>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- modal content follows... -->
+			<div class="ng-hide">
+				<div class="dijitDialogUnderlayWrapper displayBlock" style="top:0px">
+				    <div class="dijitDialogUnderlay mdcModalStandard_underlay"></div>
+				    <iframe src="javascript:;" class="dijitBackgroundIframe"></iframe>
+				</div>
+
+				<div class="mdcModal mdcModalStandard dijitDialogFixed modal" style="left: 630.5px; top: 25px;">
+				    <div class="mdcModalTitleBar">
+				        <span class="mdcModalTitle">Edit Note</span>
+				        <span title="Cancel" class="mdcModalCloseIcon">
+				            <span title="Cancel" class="mdcModalCloseText">×</span>
+				        </span>
+				    </div>
+				    <div class="mdcModalPaneContent">
+				        
+					
+				
+				    </div>
+				</div>
+			</div>
+
+
+			<div>
+
+				<div class="dijitDialogUnderlayWrapper displayBlock" style="top:0px">
+				    <div class="dijitDialogUnderlay mdcModalStandard_underlay"></div>
+				    <iframe src="javascript:;" class="dijitBackgroundIframe"></iframe>
+				</div>
+				<!-- the left positioning here is dynamic, see /javascripts/modal.js for reference -->
+				<div class="mdcModal mdcModalStandard dijitDialogFixed modal" style="left: 510.5px; top: 25px;">
+				    <div class="mdcModalTitleBar">
+				        <span class="mdcModalTitle">View Photos</span>
+				        <span title="Cancel" class="mdcModalCloseIcon">
+				            <span title="Cancel" class="mdcModalCloseText">×</span>
+				        </span>
+				    </div>
+				    <div class="mdcModalPaneContent">
+				        
+						<div>
+							<!-- lighbox -->
+
+							<div class="marginTopLarge cf marginBottomNegative23">
+								<div class="columnFifth paddingHorizontal3 paddingTop3 paddingBottom26 boxSizing flowCenter">
+
+									<img src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif" style="background-image:url(http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg)"
+										class="fullWidth thumbNailFit" alt="My car">
+
+									<p class="marginTopXSmall marginBottomNone">My car</p>
+
+									<a href="http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg"
+										class="afterParagraph" target="My car">View full size image</a>
+								</div>
+
+								<div class="columnFifth paddingHorizontal3 paddingTop3 paddingBottom26 boxSizing flowCenter">
+
+									<img src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif" style="background-image:url(https://s-media-cache-ak0.pinimg.com/236x/2e/2e/49/2e2e49bf04231dc6ed6816de324ebf40.jpg)"
+										class="fullWidth thumbNailFit" alt="My ride">
+
+									<p class="marginTopXSmall marginBottomNone">My ride</p>
+
+									<a href="https://s-media-cache-ak0.pinimg.com/236x/2e/2e/49/2e2e49bf04231dc6ed6816de324ebf40.jpg"
+										class="afterParagraph" target="My ride">View full size image</a>
+								</div>
+
+								<div class="columnFifth paddingHorizontal3 paddingTop3 paddingBottom26 boxSizing flowCenter">
+
+									<img src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif" style="background-image:url(http://www.rushisaband.com/images/201110/2062.f.jpg)"
+										class="fullWidth thumbNailFit" alt="My car">
+
+									<p class="marginTopXSmall marginBottomNone">My car</p>
+
+									<a href="http://www.rushisaband.com/images/201110/2062.f.jpg"
+										class="afterParagraph" target="My car">View full size image</a>
+								</div>
+
+								<div class="columnFifth paddingHorizontal3 paddingTop3 paddingBottom26 boxSizing flowCenter">
+
+									<img src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif" style="background-image:url(http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg)"
+										class="fullWidth thumbNailFit" alt="My car">
+
+									<p class="marginTopXSmall marginBottomNone">My car</p>
+
+									<a href="http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg"
+										class="afterParagraph" target="My car">View full size image</a>
+								</div>
+
+								<div class="columnFifth paddingHorizontal3 paddingTop3 paddingBottom26 boxSizing flowCenter">
+
+									<img src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif" style="background-image:url(http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg)"
+										class="fullWidth thumbNailFit" alt="My car">
+
+									<p class="marginTopXSmall marginBottomNone">My car</p>
+
+									<a href="http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg"
+										class="afterParagraph" target="My car">View full size image</a>
+								</div>
+
+								<div class="columnFifth paddingHorizontal3 paddingTop3 paddingBottom26 boxSizing flowCenter">
+
+									<img src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif" style="background-image:url(http://www.voyageunbound.com/cars/i/misc/z_1948_ferrari_166_MM_barchetta.jpg)"
+										class="fullWidth thumbNailFit" alt="Offroad fun...">
+
+									<p class="marginTopXSmall marginBottomNone">Offroad fun...</p>
+
+									<a href="http://www.voyageunbound.com/cars/i/misc/z_1948_ferrari_166_MM_barchetta.jpg" 
+										class="afterParagraph" target="Offroad fun...">View full size image</a>
+								</div>
+
+								<div class="columnFifth paddingHorizontal3 paddingTop3 paddingBottom26 boxSizing flowCenter">
+
+									<img src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif" style="background-image:url(http://www.rushisaband.com/images/201110/2062.f.jpg)"
+										class="fullWidth thumbNailFit" alt="My car">
+
+									<p class="marginTopXSmall marginBottomNone">My car</p>
+
+									<a href="http://www.rushisaband.com/images/201110/2062.f.jpg"
+										class="afterParagraph" target="My car">View full size image</a>
+								</div>
+
+								<div class="columnFifth paddingHorizontal3 paddingTop3 paddingBottom26 boxSizing flowCenter">
+
+									<img src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif" style="background-image:url(http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg)"
+										class="fullWidth thumbNailFit" alt="My car">
+
+									<p class="marginTopXSmall marginBottomNone">My car</p>
+
+									<a href="http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg"
+										class="afterParagraph" target="My car">View full size image</a>
+								</div>
+
+								<div class="columnFifth paddingHorizontal3 paddingTop3 paddingBottom26 boxSizing flowCenter">
+
+									<img src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif" style="background-image:url(https://s-media-cache-ak0.pinimg.com/236x/2e/2e/49/2e2e49bf04231dc6ed6816de324ebf40.jpg)"
+										class="fullWidth thumbNailFit" alt="My red car">
+
+									<p class="marginTopXSmall marginBottomNone">My red car</p>
+
+									<a href="https://s-media-cache-ak0.pinimg.com/236x/2e/2e/49/2e2e49bf04231dc6ed6816de324ebf40.jpg"
+										class="afterParagraph" target="My red car">View full size image</a>
+								</div>
+
+								<div class="columnFifth paddingHorizontal3 paddingTop3 paddingBottom26 boxSizing flowCenter">
+
+									<img src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif" style="background-image:url(http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg)"
+										class="fullWidth thumbNailFit" alt="My car">
+
+									<p class="marginTopXSmall marginBottomNone">My car</p>
+
+									<a href="http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg"
+										class="afterParagraph" target="My car">View full size image</a>
+								</div>
+
+								<div class="columnFifth paddingHorizontal3 paddingTop3 paddingBottom26 boxSizing flowCenter">
+
+									<img src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif" style="background-image:url(http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg)"
+										class="fullWidth thumbNailFit" alt="My car">
+
+									<p class="marginTopXSmall marginBottomNone">My car</p>
+
+									<a href="http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg"
+										class="afterParagraph" target="My car">View full size image</a>
+								</div>
+
+								<div class="columnFifth paddingHorizontal3 paddingTop3 paddingBottom26 boxSizing flowCenter">
+
+									<img src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif" style="background-image:url(http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg)"
+										class="fullWidth thumbNailFit" alt="My car">
+
+									<p class="marginTopXSmall marginBottomNone">My car</p>
+
+									<a href="http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg"
+										class="afterParagraph" target="My car">View full size image</a>
+								</div>
+
+								<div class="columnFifth paddingHorizontal3 paddingTop3 paddingBottom26 boxSizing flowCenter">
+
+									<img src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif" style="background-image:url(http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg)"
+										class="fullWidth thumbNailFit" alt="My car">
+
+									<p class="marginTopXSmall marginBottomNone">My car</p>
+
+									<a href="http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg"
+										class="afterParagraph" target="My car">View full size image</a>
+								</div>
+							</div>
+
+							<div class="marginTop23">
+							    <button class="mdcActionButton secondary">Close</button>
+							</div>
+						</div>
+				
+				    </div>
+				</div>
+			</div>
+
+		</div>
+	</div>	
+
+	<div id="footer">    
+	    <div>	        
+        	<a href="javascript:;">Logout</a>
+        	<span> | </span>        
+        	<a href="http://www.cars.com/go/about/privacy.jsp">Privacy Statement</a>
+        	<span> | </span>        
+        	<a href="http://www.cars.com/go/about/tos.jsp">Terms of Service</a>
+	        	
+	    </div>
+
+	    <div>
+	        <p>
+	            © 2015 Cars.com, LLC™. 
+	            All Rights Reserved. 
+	            175 West Jackson Blvd., Suite 800 Chicago, IL 60604
+	        </p>
+		</div>
+
+	</div>
+
+
+</body>
+</html>
