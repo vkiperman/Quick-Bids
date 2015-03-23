@@ -20,7 +20,7 @@
 
 				$scope.toggleMode = function(mode){
 					$scope.ui.mode = mode;
-				}
+				};
 			}
 		};
 
