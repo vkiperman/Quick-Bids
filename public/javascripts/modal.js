@@ -1,6 +1,6 @@
 (function(){
 
-	var app = angular.module('Modal', []);
+	var app = angular.module('Modal', ['Underlay']);
 
 	app.directive('modal', ['$document', '$log', '$window', function($document, $log, $window){
 
