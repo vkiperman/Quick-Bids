@@ -15,7 +15,7 @@
 					{
 						report: 'Daily Bid Statistics',
 						method: 'SMS',
-						days: 'M,Tu,W,Th,F,Sa,Su',
+						days: 'M, T, W, Th, F, Sa, Su',
 						frequency: '1 hour',
 						starttime: '9:00 AM',
 						endtime: '12:35 PM',
@@ -24,7 +24,7 @@
 					{
 						report: 'Daily Bid Statistics',
 						method: 'Email',
-						days: 'M,Tu,W,Th,F,Sa,Su',
+						days: 'M, T, W, Th, F, Sa, Su',
 						frequency: '1 hour',
 						starttime: '9:00 AM',
 						endtime: '12:35 PM',
@@ -33,7 +33,7 @@
 					{
 						report: 'Daily Bid Statistics',
 						method: 'SMS',
-						days: 'M,Tu,W,Th,F,Sa,Su',
+						days: 'M, T, W, Th, F, Sa, Su',
 						frequency: '1 hour',
 						starttime: '9:00 AM',
 						endtime: '12:35 PM',
@@ -42,7 +42,7 @@
 					{
 						report: 'Daily Bid Statistics',
 						method: 'Email',
-						days: 'M,Tu,W,Th,F,Sa,Su',
+						days: 'M, T, W, Th, F, Sa, Su',
 						frequency: '1 hour',
 						starttime: '9:00 AM',
 						endtime: '12:35 PM',

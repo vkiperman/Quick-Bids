@@ -30,7 +30,7 @@
         
         <span class="marginRight8">between</span>
             
-        <input type="textbox" value="12:00" class="hour" />
+        <input type="text" value="12:00" class="hour" />
                 
         <select class="selectSmall ampm"
             ng-model="notificationFilter.ampmSelected"
@@ -39,13 +39,12 @@
 
         <span class="marginRight8">and</span>
         
-        <input type="textbox" value="12:00" class="hour" />
+        <input type="text" value="12:00" class="hour" />
         
         <select class="selectSmall ampm"
             ng-model="notificationFilter.ampmSelected"
             ng-options="ampm as ampm.label for ampm in amorpm">
-        </select>
-            
+        </select>            
        
     </div>
     <div class="cf"> 
