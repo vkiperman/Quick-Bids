@@ -28,7 +28,14 @@
 		})
 		.filter('initialCaps', function() {
 			return function(input) {
-				return [input.charAt(0).toUpperCase(), input.substring(1)].join('');
+				var words = input.split(' '),
+					i;
+
+				for(i = 0; i < words.length; i++){
+					words[i] = [words[i].charAt(0).toUpperCase(), words[i].substring(1)].join('');
+				}
+
+				return words.join(' ');
 
 			};
 		});
@@ -118,7 +125,7 @@
 		                	{label:'My car', href:'http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg'},
 		                	{label:'My car', href:'http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg'},
 		                	{label:'My awesome car', href:'http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg'},
-		                	{label:'In the country.', href:'hhttp://www.voyageunbound.com/cars/i/misc/z_1948_ferrari_166_MM_barchetta.jpg'},
+		                	{label:'In the country.', href:'http://www.voyageunbound.com/cars/i/misc/z_1948_ferrari_166_MM_barchetta.jpg'},
 		                	{label:'My car', href:'http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg'},
 		                	{label:'My car', href:'http://s3.amazonaws.com/rapgenius/GdZR162TAemvhEG05Vd7_166_barchettA.jpg'}
 		                ],

@@ -2,7 +2,7 @@
 	<!-- lighbox -->
 
 	<div class="marginTopLarge cf marginBottomNegative23">
-		<div ng-repeat="image in ui.data"
+		<div ng-repeat="image in ui.data track by $index"
 			class="columnFifth paddingHorizontal3 paddingTop3 paddingBottom26 boxSizing flowCenter">
 
 			<img ng-src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif"
