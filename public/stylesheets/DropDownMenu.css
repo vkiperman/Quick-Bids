@@ -1,0 +1,75 @@
+.mdcDropDownMenu {
+	float: left;
+	padding-right: 13px;
+	padding-left: 13px;
+	padding-top: 13px;
+	padding-bottom: 7px;
+	cursor: pointer;
+	border: 0px;
+}
+.mdcDropDownMenuSelected {
+	background: url(/images/DC-new-header-menu.png);
+	background-repeat: repeat-x;
+	color: #FFFFFF;
+	background-position: top;
+}
+.mdcPinRight {
+	float: right;
+}
+.mdcDropDownMenuWithChildren {
+	padding-right: 13px;
+	background: url(/images/arrow-down-dk.gif) no-repeat right;
+}
+.mdcMenuActive {
+	padding-right: 13px;
+	color: #FFFFFF;
+	background: url(/images/arrow-down-wh.gif) no-repeat right;
+}
+.mdcDropDownMenuItem {
+	border: 0px;
+}
+.mdcDropDownMenuText {
+	color: #E5E4F8;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+}
+.mdcDropDownMenuItemContainer {
+	background-color:#250858;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+}
+.mdcDropDownMenuItemText {
+	padding-bottom: 5px;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 0px;
+	font-size:11px;
+	color: #E5E4F8;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight: normal;
+	letter-spacing: 0.3px;
+}
+.mdcDropDownMenuItemText:hover {
+	color:#FFFFFF;
+}
+.mdcProfileNameText {
+	color:#A4A4C4;
+	font-weight: bold;
+	cursor: default;
+}
+.mdcProfileNameText:hover {
+	color:#A4A4C4;
+	font-weight: bold;
+	cursor: default;
+}
+.mdcMenuItemSeparator {
+	border-bottom: 1px dotted #515191;
+	padding-bottom: 7px;
+	padding-top: 7px;
+	cursor: default;
+}
