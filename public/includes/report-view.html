@@ -34,8 +34,8 @@
                     <td data-title="'Rebid'" sortable="'rebid'">
                         {{offerReportView.rebid}}
                     </td>
-                    <td data-title="'Images'" sortable="'images'">
-                        <a href="javascript:;" ng-click="showModal('showViewPhotos', '', '')">{{offerReportView.images}} Pics</a>
+                    <td data-title="'Images'" sortable="'images.length'">
+                        <a href="javascript:;" ng-click="showModal('showViewPhotos', offerReportView.images, '')">{{offerReportView.images.length}} Pics</a>
                     </td>
                     <td data-title="'Vin'" sortable="'vin'">
                         {{offerReportView.vin}}
