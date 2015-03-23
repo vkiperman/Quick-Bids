@@ -25,9 +25,15 @@
 				return truncation + '...';
 
 			};
+		})
+		.filter('initialCaps', function() {
+			return function(input) {
+				return [input.charAt(0).toUpperCase(), input.substring(1)].join('');
+
+			};
 		});
 
-	var app = angular.module('ReportView', ['Modal', 'BidFilters', 'ngTable']);
+	var app = angular.module('ReportView', ['Modal', 'EditNote', 'ViewPhotos', 'BidFilters', 'ngTable']);
 
 
 	app.directive('reportView', [function(){
@@ -47,24 +53,31 @@
 				angular.element(element[0].getElementsByClassName('scrollX')[0]).bind('scroll', function(event){
 					var target = event.target;
 					if(target.scrollLeft > 6){
-						scope.startScroll = true;//'horizontalInsetShadow';
+						scope.startScroll = true;
 					}
 			    	if(target.scrollWidth - target.scrollLeft >= target.clientWidth - 6){
-						scope.endScroll = true;//'leftInsetShadow';
+						scope.endScroll = true;
 					}
 			    });
 			},
 
 			controller: function($scope, $filter, NgTableParams){
-				$scope.startScroll = false;//'rightInsetShadow';
-				$scope.endScroll = false;//'leftInsetShadow';
+				$scope.startScroll = false;
+				$scope.endScroll = false;
 
 				$scope.showEditNote = false;
 				$scope.showViewPhotos = false;
 
+				$scope.ui = {
+					mode: 'edit',
+					data: null
+				}
+
 				$scope.pagerTemplate = '/includes/pager.html';
 
-				$scope.showModal = function(show){
+				$scope.showModal = function(show, data, mode){
+					$scope.ui.mode = mode;
+					$scope.ui.data = data;
 					$scope[show] = true;
 					// pass data model to the form...
 				};
@@ -97,7 +110,8 @@
 		                phoneNumber: '6752343123',
 		                email: 'myname@email.com',
 		                zip:'33130',
-		                expiry: '3/4/15 12:22:55 PM'
+		                expiry: '3/4/15 12:22:55 PM',
+		                note: 'Gary Numan may have had a string of hits in the United Kingdom, but “Cars” was his only Top 40 track in the United States. It’s become a new wave staple more than 40 years later, anchored by analog synthesizers, tambourine breakdowns, and Numan’s nearly-emotionless delivery.'
 		            },
             		{
 		                voucher:'CAZKW1',
@@ -126,7 +140,8 @@
 		                phoneNumber: '',
 		                email: 'myname@email.com',
 		                zip:'33160',
-		                expiry: '3/4/15 12:22:55 PM'
+		                expiry: '3/4/15 12:22:55 PM',
+		                note: 'Sure, you could ask The Car’s bassist Benjamin Orr — who supplied lead vocals on the band’s 1984 hit, “Drive” — for a ride, but prepare yourself for an electro-pop filled, melodic onslaught of passive aggressive judgment. The gorgeous, heartfelt ballad known as “Drive” was The Cars’ highest ranking single in the United States and even exhibited a brief comeback two years later when it was featured as background music set to Ethiopian famine images during Live Aid ’85.'
 		            },
             		{
 		                voucher:'CAZKU3',
@@ -136,26 +151,27 @@
 		                images:'32',
 		                vin:'1N4AL35JSK9E56255',
 		                year:2011,
-		                make:'Chevrolet',
-		                model:'Silverado 1500 Hybrid',
-		                trim:'XL Edition',
-		                bodyStyle:'$d utility 4WD',
+		                make:'Ferrari',
+		                model:'Grand tourer',
+		                trim:'Front-engine, rear-wheel drive',
+		                bodyStyle:'Berlinetta Convertible (Barchetta)',
 		                mileage:40020,
-		                interiorType:'Cloth',
+		                interiorType:'Leather',
 		                customerReply:'Accept',
 		                customerResponseDate:'3/4/14 12:20:55 PM',
-		            	customerAmountRequest: 2100,
+		            	customerAmountRequest: 2000000,
 		                customerComment:'Comment',
-		            	offer:11000,
+		            	offer:1800000,
 		                initialBidDate: '3/2/15 12:22:43 PM',
-		                bidder:'smn',
+		                bidder:'vkiperman',
 		                bidderComment:'Hello',
-		                lastName:'Henry',
-		                firstName:'John',
+		                lastName:'Peart',
+		                firstName:'Neil',
 		                phoneNumber: '',
-		                email: 'hj@email.com',
+		                email: 'np@rush.com',
 		                zip:'33138',
-		                expiry: '3/4/15 12:22:55 PM'
+		                expiry: '3/4/15 12:22:55 PM',
+		                note:'I strip away the old debris\nThat hides a shining car\n\nA brilliant red Barchetta\nFrom a better vanished time\n\nI fire up the willing engine\nResponding with a roar\n\nTires spitting gravel\nI commit my weekly crime'
 		            }
 
 				];

@@ -7,7 +7,7 @@
 		'Statistics',	
 		'NotificationSearch',	
 		'NotificationSearchResults',
-		'ReportView', // todo make js /html
+		'ReportView',
 		'GlobalFooter'
 	]);
 

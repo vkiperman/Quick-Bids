@@ -1,0 +1,19 @@
+<div>
+
+	<div class="marginTopLarge cf">
+
+		<textarea ng-model="ui.data" class="fullWidth" rows="8" ng-show="ui.mode === 'edit'"></textarea>
+		<p ng-show="ui.mode === 'view'">{{ui.data}}</p>
+
+	</div>
+
+	<div class="marginTop23" ng-show="ui.mode === 'edit'">
+	    <button class="mdcActionButton">Save</button>
+	    <button class="mdcActionButton secondary" ng-click="cancelManager($event)">Cancel</button>
+	</div>
+
+	<div class="marginTop23" ng-show="ui.mode === 'view'">
+	    <button class="mdcActionButton" ng-click="toggleMode('edit')">Edit</button>
+	    <button class="mdcActionButton secondary" ng-click="cancelManager($event)">Cancel</button>
+	</div>
+</div>

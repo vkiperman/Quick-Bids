@@ -10,14 +10,15 @@
             class="widthFull noWrapCells noWrapHeadings marginRight20"
         	template-pagination="{{ pagerTemplate }}">
             <tbody>
-                <tr ng-repeat="offerReportView in $data" ng-click="showReport($event)">
+                <tr ng-repeat="offerReportView in $data track by $index" ng-click="showReport($event)">
                     <td data-title="'Lead Status'">
                         <select>
                         	<option value="0">Select</option>
                         </select>
                     </td>
                     <td data-title="'Notes'">
-                        <a href="javascript:;" ng-click="showModal('showEditNote')">Edit</a> | <a href="javascript:;">View</a>
+                        <a href="javascript:;" ng-click="showModal('showEditNote', offerReportView.note, 'edit')">Edit</a> | 
+                        <a href="javascript:;" ng-click="showModal('showEditNote', offerReportView.note, 'view')">View</a>
                     </td>
                     <td data-title="'Voucher #'" sortable="'voucher'">
                         {{offerReportView.voucher | uppercase}}
@@ -34,7 +35,7 @@
                         {{offerReportView.rebid}}
                     </td>
                     <td data-title="'Images'" sortable="'images'">
-                        <a href="javascript:;" ng-click="showModal('showViewPhotos')">{{offerReportView.images}} Pics</a>
+                        <a href="javascript:;" ng-click="showModal('showViewPhotos', '', '')">{{offerReportView.images}} Pics</a>
                     </td>
                     <td data-title="'Vin'" sortable="'vin'">
                         {{offerReportView.vin}}
@@ -121,7 +122,7 @@
     <div id="ng-pager-report-view"></div>
 
 	<modal ng-show="showEditNote"
-		title="Edit Note"
+		title="{{ui.mode | initialCaps}} Note"
 		show-manager="false">
 		<edit-note></edit-note>
 	</modal>
