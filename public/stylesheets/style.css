@@ -75,6 +75,7 @@
 	height: 28px;
 	border:none;
 	overflow: hidden;
+	display: block;
 }
 
 .plus {background-image: url(/images/plus_small.gif);}
