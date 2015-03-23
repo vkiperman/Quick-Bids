@@ -120,7 +120,7 @@
 	width: 12px!important;
 	height: 12px!important;
 	float: left;
-	background: url(img/sprite_icons.png) no-repeat;
+	background: url(/images/sprite_icons.png) no-repeat;
 }
 .dojoxGridnextPageBtn {
 	cursor: pointer;
@@ -852,7 +852,7 @@
 	padding: 20px;
 	padding-bottom: 30px;
 	margin-bottom: 10px;
-	background-image: url(img/module_container_header.png);
+	background-image: url(/images/module_container_header.png);
 	background-repeat: repeat-x;
 	background-color: #FFF !important;
 }
@@ -1270,7 +1270,7 @@ button.mdcActionButtonDisabled, input[type=button].mdcActionButtonDisabled, inpu
 }
 button.secondary, input[type=button].secondary, input[type=submit].secondary, a.button.secondary {
 	color: #5C707C;
-	background: url(resources/images/secondary-button.png) repeat-x 0 0 #EEF1F3;
+	background: url(/images/secondary-button.png) repeat-x 0 0 #EEF1F3;
 	border: 1px solid #e1e1e1;
 }
 button.secondary.mdcActionButtonDisabled,
