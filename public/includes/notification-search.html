@@ -4,7 +4,7 @@
     <div class="cf paddingBottom10">
         <div class="floatLeft marginRight50">
             <label>Report</label>
-            <select class="selectSmall"
+            <select class="selectWide"
                 ng-model="notificationFilter.reportSelected"
                 ng-options="report as report.label for report in reports">
             </select>
@@ -13,8 +13,8 @@
         <div>
             <div >
                 <label>Method</label>
-                <input type="radio" checked="true">SMS
-                <input type="radio">Email
+                <input type="radio" checked> SMS
+                <input type="radio" class="marginLeft18"> Email
             </div>
         </div>        
     </div>
@@ -22,73 +22,57 @@
         <label>Frequency</label>
     </div>
     <div class="cf paddingBottom10">        
-        <div class="floatLeft paddingRight10">
-            <select class="selectSmall"
-                ng-model="notificationFilter.frequencySelected"
-                ng-options="frequency as frequency.label for frequency in frequencies">
-            </select>
-        </div>
+        
+        <select class="selectWide marginRight8"
+            ng-model="notificationFilter.frequencySelected"
+            ng-options="frequency as frequency.label for frequency in frequencies">
+        </select>
+        
+        <span class="marginRight8">between</span>
+            
+        <input type="textbox" value="12:00" class="hour" />
+                
+        <select class="selectSmall ampm"
+            ng-model="notificationFilter.ampmSelected"
+            ng-options="ampm as ampm.label for ampm in amorpm">
+        </select>
 
-        <div class="floatLeft paddingRight10">
-            <span>between</span>
-        </div>
-
-        <div class="floatLeft paddingRight5">
-            <div>
-                <input type="textbox" value="12:00"/>                
-            </div>
-        </div>
-
-        <div class="floatLeft paddingRight10">         
-            <select class="selectSmall"
-                ng-model="notificationFilter.ampmSelected"
-                ng-options="ampm as ampm.label for ampm in amorpm">
-            </select>
-        </div>
-
-        <div class="floatLeft paddingRight10">
-            <span>and</span>
-        </div>
-
-        <div class="floatLeft paddingRight10">
-            <div>
-                <input type="textbox" value="12:00"/>                
-            </div>
-        </div>
-
-        <div class="floatLeft marginRight10">         
-            <select class="selectSmall "
-                ng-model="notificationFilter.ampmSelected"
-                ng-options="ampm as ampm.label for ampm in amorpm">
-            </select>
-        </div>           
+        <span class="marginRight8">and</span>
+        
+        <input type="textbox" value="12:00" class="hour" />
+        
+        <select class="selectSmall ampm"
+            ng-model="notificationFilter.ampmSelected"
+            ng-options="ampm as ampm.label for ampm in amorpm">
+        </select>
+            
        
     </div>
     <div class="cf"> 
-        <div class="displayInline paddingRight10" >
+        <div class="displayInline paddedCheckbox">
             <input type="checkbox"/>Sunday
         </div>
-        <div class="displayInline paddingRight10" >
+        <div class="displayInline paddedCheckbox">
             <input type="checkbox"/>Monday
         </div>
-        <div class="displayInline paddingRight10" >
+        <div class="displayInline paddedCheckbox">
             <input type="checkbox"/>Tuesday
         </div>
-        <div class="displayInline paddingRight10" >
+        <div class="displayInline paddedCheckbox">
             <input type="checkbox"/>Wednesday
         </div>
-        <div class="displayInline paddingRight10" >
+        <div class="displayInline paddedCheckbox">
             <input type="checkbox"/>Thursday
         </div>
-        <div class="displayInline paddingRight10" >
+        <div class="displayInline paddedCheckbox">
             <input type="checkbox"/>Friday
         </div>
-        <div class="displayInline paddingRight10" >
+        <div class="displayInline paddedCheckbox">
             <input type="checkbox"/>Saturday
         </div>
     </div>
 
-    <div>
+    <div class="marginTop23">
         <button class="mdcActionButton">Save</button>  
     </div>
 </div>

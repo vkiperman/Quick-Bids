@@ -298,6 +298,14 @@
 	margin-left: -151px;
 }
 
+.marginRight8 {
+	margin-right: 8px;
+}
+
+.marginRight10 {
+	margin-right: 10px;
+}
+
 .marginRight20 {
 	margin-right: 20px;
 }
@@ -317,6 +325,18 @@
 .selectSmall {width: 118px;}
 
 .selectMedium {width: 128px;}
+
+.selectWide {width: 156px;}
+
+.ampm {
+	width: 66px;
+	margin-right: 8px;
+}
+
+.hour {
+	width: 80px;
+	margin-right: 8px;
+}
 
 .inputLarge {width: 202px;}
 
@@ -483,11 +503,14 @@
 	padding-right:3px;
 }
 
+.paddedCheckbox {padding-right:20px;}
+
 dl .dollar.absolute {top:-3px;}
 
 
 /* HTML selectors */
 [type=date] {width:89px;}
+[type=radio],
 [type=checkbox] {vertical-align:top;}
 
 label + label {
