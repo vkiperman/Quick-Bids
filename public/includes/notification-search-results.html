@@ -1,7 +1,7 @@
 <div class="mdcModuleContainer mdcModulePadding paddingHorizontal_0 noBorder cf">
 	<h3 class="paddingBottomSmall">Saved Notifications</h3>
 
-    <table ng-table="tableParams"  class="widthFull" template-pagination="{{ pagerTemplate }}">
+    <table ng-table="tableParams"  class="widthFull">
         <tr ng-repeat="notification in $data">
             <td data-title="'Report'" sortable="'report'">
                 {{notification.report}}
@@ -25,7 +25,7 @@
                 {{notification.date | date : 'short'}}
             </td>
             <td data-title="''">
-                <a href="javascript:;">Edit|Test</a>
+                <a href="javascript:;">Edit | Test</a>
             </td>            
         </tr>
     </table>

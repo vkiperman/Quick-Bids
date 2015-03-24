@@ -1,7 +1,7 @@
 <div class="mdcModuleContainer mdcModulePadding paddingHorizontal_0 noBorder cf">
 	<h3 class="paddingBottomSmall">Overall Statistics</h3>
     
-    <div class="columnThreeQuarters">
+    <div class="columnThreeQuarters font12">
         for <strong>Nissan/Mazda of Elk Grove</strong>
     </div>
     <div class="columnQuarter paddingBottom10">        
@@ -13,7 +13,7 @@
     </div>
 
     
-    <table ng-table="tableParams" class="widthFull" template-pagination="{{ pagerTemplate }}">
+    <table ng-table="tableParams" class="widthFull">
         <tr ng-repeat="statistics in $data" ng-click="showReport($event)">
             <td data-title="'Time Frame'" sortable="'timeframe'">
                 {{statistics.timeframe}}

@@ -5,10 +5,11 @@
 
 		return {
 			restrict: 'E',
-			templateUrl: '/includes/report-dashboard-content.html',
+			//templateUrl: '/includes/report-dashboard-content.html',
+			templateUrl: '/includes/dashboard-content.html',
 
 			controller: function($scope, $rootScope){
-				$scope.reportDashboard = [
+				$scope.dashboard = [
 					{
 						value: 150,
 						title: 'Total Bid Request'

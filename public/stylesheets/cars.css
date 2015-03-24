@@ -10,7 +10,7 @@
 	overflow: hidden;
 	height: 0;
 }
-.dojoxGridView {
+.dojoxGridView { 
 	position: absolute;
 	overflow: hidden;
 }

@@ -11,22 +11,22 @@
 				$scope.dashboard = [
 					{
 						value: 150,
-						type: {title: 'Bid Request', description: '(Pending)'},
+						title: 'Bid Request (Pending)',
 						age: 'Oldest 2/25/15 12:35 PM'
 					},
 					{
 						value: 100,
-						type: {title: 'Open Bids'},
+						title: 'Open Bids',
 						age: 'Oldest 2/25/15 12:45 PM'
 					},
 					{
 						value: 10,
-						type: {title: 'Counter Offers'},
+						title: 'Counter Offers',
 						age: 'Oldest 2/25/15 12:53 PM'
 					},
 					{
 						value: 15,
-						type: {title: 'Expired Bids'},
+						title: 'Expired Bids',
 						age: 'Oldest 2/25/15 12:47 PM'
 					},
 				]

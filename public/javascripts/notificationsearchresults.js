@@ -58,7 +58,8 @@
 		                }
 		            }, 
 		            {
-		                total: $scope.notification.length, // length of notifications
+		            	counts: [],
+		                total: 1,//$scope.notification.length, // length of notifications
 		                getData: function($defer, params) {
 		                    // use build-in angular filter
 		                    var orderedData = params.sorting() ? $filter('orderBy')($scope.notification, params.orderBy()) : $scope.notification;

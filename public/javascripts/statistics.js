@@ -88,15 +88,15 @@
 
 	            $scope.tableParams = new NgTableParams({
 		                page: 1,
-		                count: 25,
+		                count: 6,
 		                sorting: {
 		                    totalrequests: 'asc'
 		                }
 		            }, 
 		            {
-		                total: $scope.statistics.length, // length of statisticss
+		            	counts: [], // hide page counts control
+		                total: 1,//$scope.statistics.length, // length of statisticss
 		                getData: function($defer, params) {
-		                	console.log(params);
 		                    // use build-in angular filter
 		                    var orderedData = params.sorting() ? $filter('orderBy')($scope.statistics, params.orderBy()) : $scope.statistics;
 
