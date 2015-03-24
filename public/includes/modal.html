@@ -2,10 +2,10 @@
 
 	<underlay></underlay>
 
-	<div class="mdcModal mdcModalStandard dijitDialogFixed modal"
-	    style="left: {{scrollLeft}}px; top: {{modalTop + 25}}px;">
+	<div class="mdcModal mdcModalStandard dijitDialogFixed modal"	    
+	    ng-style="modalPosition">
 	    <div class="mdcModalTitleBar">
-	        <span class="mdcModalTitle">{{title}}</span>
+	        <span class="mdcModalTitle">{{title}}, {{underlayPosition.top}}</span>
 	        <span title="Cancel" ng-click="cancelManager($event)" class="mdcModalCloseIcon">
 	            <span title="Cancel" class="mdcModalCloseText" >&times;</span>
 	        </span>
