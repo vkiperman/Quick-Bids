@@ -1,9 +1,11 @@
 var express = require('express');
+var fs = require('fs');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var chalk = require('chalk');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -30,6 +32,45 @@ app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
+});
+
+var path = require('path');
+var jsDirectory = './public/javascripts/';
+
+fs.watch(jsDirectory, {recursive: true}, function(event, filename){
+    var isEmpty = false;
+    if(null === filename) return;
+
+    if(path.extname(filename) !== '.js') return;
+
+    fs.readFile(jsDirectory + filename, 'utf8', function(err, data){
+      isEmpty = (data === '');
+
+      var directiveName = filename.replace(/\.js/, '');
+      var moduleName = directiveName.charAt(0).toUpperCase() + directiveName.substring(1);
+      var templateName = directiveName.replace(/([A-Z])/g, function(a,b,c,d){return '-'+a.toLowerCase()});
+
+      var jsScaffold = fs.readFileSync('./temp/directive.js', 'utf8')
+        .replace(/%MODULENAME%/m, moduleName)
+        .replace(/%DIRECTIVENAME%/m, directiveName)
+        .replace(/%TEMPLATENAME%/m, templateName + '.html');
+      
+      if(isEmpty){
+        fs.writeFile(jsDirectory + filename, jsScaffold, function(err){
+          console.log(
+            chalk.green( 
+              chalk.bgWhite(
+                '\tCreated ' + chalk.blue(filename)
+              )
+            )
+          );
+
+          fs.openSync('./public/includes/' + templateName + '.html', 'w');
+          fs.writeFileSync('./public/includes/' + templateName + '.html', '<div></div>');
+        });
+      }
+
+    });
 });
 
 // error handlers
