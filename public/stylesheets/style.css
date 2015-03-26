@@ -283,6 +283,7 @@
 	padding: 0;
 	padding-right: 30px;
 	margin-right: 30px;
+    min-height: 95px;
 }
 
 .dashboardList li:last-child {
