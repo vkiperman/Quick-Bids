@@ -144,7 +144,7 @@
 	border-bottom: 1px solid #CCC;
 }
 
-.mdcComponent dl{
+.mdcComponent dl, ul.vehicleOptions {
 	display: table;
 	width: 100%;
 	border-top: 1px solid #ccc;
@@ -167,12 +167,21 @@
 	width: 50%;
 }
 
+ul.vehicleOptions li {
+	padding: 7px 0 6px;
+	border-bottom: 1px dotted #E1E1E1;
+    list-style: none;
+    background: none;
+    margin: 0;
+}
+
 .mdcComponent dl dt:after{
 	content: ':';
 }
 
 .mdcComponent dl dt:last-of-type,
-.mdcComponent dl dd:last-of-type{
+.mdcComponent dl dd:last-of-type,
+ul.vehicleOptions li:last-of-type {
 	border-bottom: none;
 }
 
@@ -283,6 +292,9 @@
 	padding: 0;
 	padding-right: 30px;
 	margin-right: 30px;
+}
+
+body[ng-app="Dashboard"] .dashboardList li {
     min-height: 95px;
 }
 
@@ -617,4 +629,21 @@ iframe{border:none;}
 	.dollar:before {
 		margin-top: 1px;
 	}
+}
+
+.alert-message {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-size: larger;
+    margin: 30px 0;
+    padding: 20px 20px 20px 60px
+}
+
+.alert-message span {
+    font-weight: 700
+}
+
+.alert-message.notification {
+    color: #236b8e;
+    background: url(http:///www.cars.com/images/core/notification.png) no-repeat 20px 20px #ebf5fa
 }

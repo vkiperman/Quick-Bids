@@ -28,8 +28,8 @@
 					},
 					{
 						value: 20,
-						title: 'Bids Expiring Today'//,
-						// age: 'Oldest 2/25/15 12:47 PM'
+						title: 'Bids Expiring Today',
+						age: 'Oldest 2/25/15 12:47 PM'
 					},
 				]
 			},

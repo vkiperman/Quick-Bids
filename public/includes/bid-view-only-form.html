@@ -1,0 +1,45 @@
+<div class="paddingLeft15 mdcComponent">
+	<div class="gradientTop borderModule paddingModule marginModule">
+		<h4>Bid Placed</h4>
+		<form>
+			<div class="paddingBottom10 mdcSeparatorBottom">
+				<label>Current Bid</label>
+
+				<!-- <input type="number" ng-model="currentBid" class="fullWidth" /> -->
+
+				<div class="fullWidth">
+        			$400
+				</div>
+
+				<label class="marginTopSmall2">Recon </label>
+				<!-- <input type="number" ng-model="totalReconAdjust" class="fullWidth" /> -->
+
+				<div class="fullWidth">
+        			$200
+				</div>
+			</div>
+
+			<div class="paddingTop15">
+				<label class="marginBottomNone">Final Value</label>
+				<!-- if less than zero show error -->
+				<strong class="strongText" ng-class="{red:(currentBid - totalReconAdjust) < 0}">$200</strong>
+			</div>
+
+			<div class="paddingTop15">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</form>
+	</div>
+
+	<modal ng-show="showRequestForm"
+		title="Request Additional Information"
+		show-manager="false">
+		<request-additional-information></request-additional-information>
+	</modal>
+
+	<modal ng-show="showDeclineForm"
+		title="Decline to Bid"
+		show-manager="false">
+		<decline-to-bid></decline-to-bid>
+	</modal>
+</div>

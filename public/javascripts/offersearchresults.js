@@ -20,7 +20,8 @@
 						year: 2015,
 						make: 'Mercedes-Benz',
 						model: 'AMG SLS Black Series',
-						trim: 'GT Final Edition'
+						trim: 'GT Final Edition',
+                        action: ''
 					},
 					{
 						status: 'Open',
@@ -30,7 +31,8 @@
 						year: 2013,
 						make: 'Mercedes-Benz',
 						model: 'AMG SLS Black Series',
-						trim: 'GT Final Edition'
+						trim: 'GT Final Edition',
+                        action: 'View/Edit'
 					},
 					{
 						status: 'Countered',
@@ -40,7 +42,8 @@
 						year: 2012,
 						make: 'Ford',
 						model: 'Explorer',
-						trim: 'XL'
+						trim: 'XL',
+                        action: 'View/Edit'
 					},
 					{
 						status: 'Accepted',
@@ -50,7 +53,8 @@
 						year: 2009,
 						make: 'Infiniti',
 						model: 'Q40',
-						trim: 'Sedan'
+						trim: 'Sedan',
+                        action: 'View/Edit'
 					}
 				];
 

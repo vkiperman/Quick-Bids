@@ -1,10 +1,21 @@
 <div class="paddingLeft15 mdcComponent">
 	<div class="gradientTop borderModule paddingModule marginModule">
-		<h4>Place Your Bid</h4>
+		<h4>Original Bid</h4>
 		<form>
 			<div class="paddingBottom10 mdcSeparatorBottom">
+                <dl>
+                    <dt>Bid Amount</dt>
+                    <dd>$500</dd>
+                    <dt>Recon</dt>
+                    <dd>$200</dd>
+                    <dt>Offer Sent</dt>
+                    <dd>$300</dd>
+                </dl>
+                <textarea ng-model="internalNotes" class="fullWidth marginTop10" rows="3" disabled></textarea>
+                
+                <h4 class="marginTop20">Counter Offer</h4>
+                
 				<label>Current Bid</label>
-
 				<!-- <input type="number" ng-model="currentBid" class="fullWidth" /> -->
 
 				<div class="dollar fullWidth">
@@ -30,18 +41,13 @@
 
 			<div class="paddingTop15">
 				<textarea ng-model="internalNotes" class="fullWidth" rows="3"></textarea>
+				
 				<div class="marginTopSmall">
-					<a href="javascript:;" class="cf" ng-click="showRequestForm=true">Request more info</a>
-				</div>
-				<div class="marginTopXXSmall">
-					<a href="javascript:;" ng-click="showDeclineForm=true">Decline to bid</a>
-				</div>
-				<div class="marginTopSmall">
-					<button class="mdcActionButton fullWidth">Place Bid</button>
+					<button class="mdcActionButton fullWidth">Send Counter Offer</button>
 				</div>
                 
 				<div class="marginTopSmall">
-					<button class="mdcActionButton secondary fullWidth">Place Bid &amp; Get Next</button>
+					<button class="mdcActionButton secondary fullWidth">Keep Original Offer</button>
 				</div>
 			</div>
 		</form>
