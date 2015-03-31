@@ -103,34 +103,29 @@
 
 		</div>
 		<div class="gradient borderModule paddingModule marginModule">
-			<ul class="dashboardList cf">
-				<li>
-					<p class="dashboardValue">150</p>
-					<p class="dashboardType">
-						Bid Request (Pending)
-					</p>
-					<p class="dashboardAge">Oldest 2/25/15 12:35 PM</p>
-				</li><li>
-					<p class="dashboardValue">100</p>
-					<p class="dashboardType">
-						Open Bids
-					</p>
-					<p class="dashboardAge">Oldest 2/25/15 12:45 PM</p>
-				</li><li>
-					<p class="dashboardValue">10</p>
-					<p class="dashboardType">
-						Counter Offers
-					</p>
-					<p class="dashboardAge">Oldest 2/25/15 12:53 PM</p>
-				</li><li>
-					<p class="dashboardValue">15</p>
-					<p class="dashboardType">
-						Expired Bids
-					</p>
-					<p class="dashboardAge">Oldest 2/25/15 12:47 PM</p>
-				</li>
-			</ul>
-		</div>
+            <ul class="dashboardList cf">
+                <li>
+                    <p class="dashboardValue">150</p>
+                    <p class="dashboardType">Total Bid Requests Waiting</p>
+                    <p class="dashboardAge">Oldest 2/25/15 12:35 PM</p>
+                    <div><button class="mdcActionButton">Get Next Bid</button></div>
+                </li><li>
+                    <p class="dashboardValue">15</p>
+                    <p class="dashboardType">Counter Bids</p>
+                    <p class="dashboardAge">Oldest 2/25/15 12:45 PM</p>
+                    <div class=""><button class="mdcActionButton">Get Next Counter Bid</button></div>
+                </li><li class="">
+                    <p class="dashboardValue">10</p>
+                    <p class="dashboardType">Active Bids</p>
+                    <p class="dashboardAge">Oldest 2/25/15 12:53 PM</p>
+                    
+                </li><li class="">
+                    <p class="dashboardValue">20</p>
+                    <p class="dashboardType">Bids Expiring Today</p>
+                    <p class="dashboardAge">Oldest 2/25/15 12:47 PM</p>
+                </li>
+            </ul>
+        </div>
 
 		<div class="mdcModuleContainer mdcModulePadding arrowheadDown cf">
 			<h3 class="paddingBottomSmall">Search Bid Requests</h3>
@@ -247,187 +242,184 @@
 		<div class="mdcModuleContainer mdcModulePadding paddingHorizontal_0 noBorder cf">
 			<h3 class="paddingBottomSmall">Bids and Offers Results</h3>
 
-			<table class="widthFull ng-table">
-				<thead>
-					<tr>
-						<th title=" " class="header  sortable sort-asc">
-							<div class="ng-table-header">
-								<span class=" sort-indicator">Status</span>
-							</div>
-						</th>
-						<th title=" " class="header sortable">
-							<div class="ng-table-header">
-								<span class=" sort-indicator">Date &amp; Time</span>
-							</div>
-						</th>
-						<th title=" " class="header sortable">
-							<div class="ng-table-header">
-								<span class=" sort-indicator">Photo</span>
-							</div>
-						</th>
-						<th title=" " class="header sortable">
-							<div class="ng-table-header">
-								<span class=" sort-indicator">Mileage</span>
-							</div>
-						</th>
-						<th title=" " class="header sortable">
-							<div class="ng-table-header">
-								<span class=" sort-indicator">Year</span>
-							</div>
-						</th>
-						<th title=" " class="header sortable"> 
-							<div class="ng-table-header"> 
-								<span class=" sort-indicator">Make</span> 
-							</div>  
-						</th>
-						<th title=" " class="header sortable">
-							<div class="ng-table-header">
-								<span class=" sort-indicator">Model</span>
-							</div>
-						</th>
-						<th title=" " class="header sortable">
-							<div class="ng-table-header">
-								<span class=" sort-indicator">Trim</span>
-							</div>
-						</th>
-						<th title=" " class="header">
-							<div class="ng-table-header">
-								<span class=" sort-indicator">Action</span>
-							</div>
-						</th>
-					</tr>
-					<tr class="ng-table-filters ng-hide">
-						<th data-title-text="Status" class="filter">  </th>
-						<th data-title-text="Date &amp; Time" class="filter">  </th>
-						<th data-title-text="Photo" class="filter">  </th>
-						<th data-title-text="Mileage" class="filter">  </th>
-						<th data-title-text="Year" class="filter">  </th>
-						<th data-title-text="Make" class="filter">  </th>
-						<th data-title-text="Model" class="filter">  </th>
-						<th data-title-text="Trim" class="filter">  </th>
-						<th data-title-text="Action" class="filter">  </th>
-					</tr>
-					
-				</thead>
-				<tbody>
-					<tr>
-						<td data-title="'Status'" data-title-text="Status">
-							Accepted
-						</td>
-						<td data-title="'Date &amp; Time'" data-title-text="Date &amp; Time">
-							2/15/15 12:11 PM
-						</td>
-						<td data-title="'Photo'" class="paddingRight10" data-title-text="Photo">
-							<a href="javascript:;">16</a>
-						</td>
-						<td data-title="'Mileage'" class="paddingRight10" data-title-text="Mileage">
-							101,041
-						</td>
-						<td data-title="'Year'" data-title-text="Year">
-							2009
-						</td>
-						<td data-title="'Make'" data-title-text="Make">
-							Infiniti
-						</td>
-						<td data-title="'Model'" data-title-text="Model">
-							Q40
-						</td>
-						<td data-title="'Trim'" data-title-text="Trim">
-							Sedan
-						</td>
-						<td data-title="'Action'" data-title-text="Action">
-							<a href="javascript:;">View/Edit</a>
-						</td>
-					</tr>
-					<tr>
-						<td data-title="'Status'" data-title-text="Status">
-							Countered
-						</td>
-						<td data-title="'Date &amp; Time'" data-title-text="Date &amp; Time">
-							12/15/14 12:45 PM
-						</td>
-						<td data-title="'Photo'" class="paddingRight10" data-title-text="Photo">
-							<a href="javascript:;">35</a>
-						</td>
-						<td data-title="'Mileage'" class="paddingRight10" data-title-text="Mileage">
-							39,000
-						</td>
-						<td data-title="'Year'" data-title-text="Year">
-							2012
-						</td>
-						<td data-title="'Make'" data-title-text="Make">
-							Ford
-						</td>
-						<td data-title="'Model'" data-title-text="Model">
-							Explorer
-						</td>
-						<td data-title="'Trim'" data-title-text="Trim">
-							XL
-						</td>
-						<td data-title="'Action'" data-title-text="Action">
-							<a href="javascript:;">View/Edit</a>
-						</td>
-					</tr>
-					<tr>
-						<td data-title="'Status'" data-title-text="Status">
-							Open
-						</td>
-						<td data-title="'Date &amp; Time'" data-title-text="Date &amp; Time">
-							1/13/15 12:33 PM
-						</td>
-						<td data-title="'Photo'" class="paddingRight10" data-title-text="Photo">
-							<a href="javascript:;">42</a>
-						</td>
-						<td data-title="'Mileage'" class="paddingRight10" data-title-text="Mileage">
-							49,000
-						</td>
-						<td data-title="'Year'" data-title-text="Year">
-							2013
-						</td>
-						<td data-title="'Make'" data-title-text="Make">
-							Mercedes-Benz
-						</td>
-						<td data-title="'Model'" data-title-text="Model">
-							AMG SLS Black Series
-						</td>
-						<td data-title="'Trim'" data-title-text="Trim">
-							GT Final Edition
-						</td>
-						<td data-title="'Action'" data-title-text="Action">
-							<a href="javascript:;">View/Edit</a>
-						</td>
-					</tr>
-					<tr>
-						<td data-title="'Status'" data-title-text="Status">
-							Pending
-						</td>
-						<td data-title="'Date &amp; Time'" data-title-text="Date &amp; Time">
-							2/15/15 12:35 PM
-						</td>
-						<td data-title="'Photo'" class="paddingRight10" data-title-text="Photo">
-							<a href="javascript:;">32</a>
-						</td>
-						<td data-title="'Mileage'" class="paddingRight10" data-title-text="Mileage">
-							50,000
-						</td>
-						<td data-title="'Year'" data-title-text="Year">
-							2015
-						</td>
-						<td data-title="'Make'" data-title-text="Make">
-							Mercedes-Benz
-						</td>
-						<td data-title="'Model'" data-title-text="Model">
-							AMG SLS Black Series
-						</td>
-						<td data-title="'Trim'" data-title-text="Trim">
-							GT Final Edition
-						</td>
-						<td data-title="'Action'" data-title-text="Action">
-							<a href="javascript:;">View/Edit</a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+			<table class="widthFull ng-table" template-pagination="/includes/pager.html">
+                <thead>
+                    <tr>
+                        <th title=" " class="header  sortable sort-asc">
+                            <div class="ng-table-header"> <span class=" sort-indicator">Status</span> </div>
+                        </th>
+                        <th title=" " class="header  sortable">
+                            <div class="ng-table-header"> <span class=" sort-indicator">Date &amp; Time</span> </div>
+                        </th>
+                        <th title=" " class="header  sortable">
+                            <div class="ng-table-header"> <span class=" sort-indicator">Photo</span> </div>
+                        </th>
+                        <th title=" " class="header  sortable">
+                            <div class="ng-table-header"> <span class=" sort-indicator">Mileage</span> </div>
+                        </th>
+                        <th title=" " class="header  sortable">
+                            <div class="ng-table-header"> <span class=" sort-indicator">Year</span> </div>
+                        </th>
+                        <th title=" " class="header  sortable">
+                            <div class="ng-table-header"> <span class=" sort-indicator">Make</span> </div>
+                        </th>
+                        <th title=" " class="header  sortable">
+                            <div class="ng-table-header"> <span class=" sort-indicator">Model</span> </div>
+                        </th>
+                        <th title=" " class="header  sortable">
+                            <div class="ng-table-header"> <span class=" sort-indicator">Trim</span> </div>
+                        </th>
+                        <th title=" " class="header ">
+                            <div class="ng-table-header"> <span class=" sort-indicator">Action</span> </div>
+                        </th>
+                        <th title=" " class="header ">
+                            <div class="ng-table-header"> <span class=" sort-indicator"></span> </div>
+                        </th>
+                    </tr>
+                    <tr class="ng-table-filters ng-hide">
+                        <th data-title-text="Status" class="filter"> </th>
+                        <th data-title-text="Date &amp; Time" class="filter"> </th>
+                        <th data-title-text="Photo" class="filter"> </th>
+                        <th data-title-text="Mileage" class="filter"> </th>
+                        <th data-title-text="Year" class="filter"> </th>
+                        <th data-title-text="Make" class="filter"> </th>
+                        <th data-title-text="Model" class="filter"> </th>
+                        <th data-title-text="Trim" class="filter"> </th>
+                        <th data-title-text="Action" class="filter"> </th>
+                        <th data-title-text="" class="filter"> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-title="'Status'" data-title-text="Status">
+                            Accepted
+                        </td>
+                        <td data-title="'Date &amp; Time'" data-title-text="Date &amp; Time">
+                            2/15/15 12:11 PM
+                        </td>
+                        <td data-title="'Photo'" data-title-text="Photo">
+                            <a href="javascript:;">16</a>
+                        </td>
+                        <td data-title="'Mileage'" data-title-text="Mileage">
+                            101,041
+                        </td>
+                        <td data-title="'Year'" data-title-text="Year">
+                            2009
+                        </td>
+                        <td data-title="'Make'" data-title-text="Make">
+                            Infiniti
+                        </td>
+                        <td data-title="'Model'" data-title-text="Model">
+                            Q40
+                        </td>
+                        <td data-title="'Trim'" data-title-text="Trim">
+                            Sedan
+                        </td>
+                        <td data-title="'Action'" data-title-text="Action">
+                            <a href="javascript:;">View/Edit</a>
+                        </td>
+                        <td data-title="''" data-title-text="">
+                            <a href="javascript:;">Condition Report</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-title="'Status'" data-title-text="Status">
+                            Countered
+                        </td>
+                        <td data-title="'Date &amp; Time'" data-title-text="Date &amp; Time">
+                            12/15/14 12:45 PM
+                        </td>
+                        <td data-title="'Photo'" data-title-text="Photo">
+                            <a href="javascript:;">35</a>
+                        </td>
+                        <td data-title="'Mileage'" data-title-text="Mileage">
+                            39,000
+                        </td>
+                        <td data-title="'Year'" data-title-text="Year">
+                            2012
+                        </td>
+                        <td data-title="'Make'" data-title-text="Make">
+                            Ford
+                        </td>
+                        <td data-title="'Model'" data-title-text="Model">
+                            Explorer
+                        </td>
+                        <td data-title="'Trim'" data-title-text="Trim">
+                            XL
+                        </td>
+                        <td data-title="'Action'" data-title-text="Action">
+                            <a href="javascript:;">View/Edit</a>
+                        </td>
+                        <td data-title="''" data-title-text="">
+                            <a href="javascript:;">Condition Report</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-title="'Status'" data-title-text="Status">
+                            Open
+                        </td>
+                        <td data-title="'Date &amp; Time'" data-title-text="Date &amp; Time">
+                            1/13/15 12:33 PM
+                        </td>
+                        <td data-title="'Photo'" data-title-text="Photo">
+                            <a href="javascript:;">42</a>
+                        </td>
+                        <td data-title="'Mileage'" data-title-text="Mileage">
+                            49,000
+                        </td>
+                        <td data-title="'Year'" data-title-text="Year">
+                            2013
+                        </td>
+                        <td data-title="'Make'" data-title-text="Make">
+                            Mercedes-Benz
+                        </td>
+                        <td data-title="'Model'" data-title-text="Model">
+                            AMG SLS Black Series
+                        </td>
+                        <td data-title="'Trim'" data-title-text="Trim">
+                            GT Final Edition
+                        </td>
+                        <td data-title="'Action'" data-title-text="Action">
+                            <a href="javascript:;">View/Edit</a>
+                        </td>
+                        <td data-title="''" data-title-text="">
+                            <a href="javascript:;">Condition Report</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-title="'Status'" data-title-text="Status">
+                            Pending
+                        </td>
+                        <td data-title="'Date &amp; Time'" data-title-text="Date &amp; Time">
+                            2/15/15 12:35 PM
+                        </td>
+                        <td data-title="'Photo'" data-title-text="Photo">
+                            <a href="javascript:;">32</a>
+                        </td>
+                        <td data-title="'Mileage'" data-title-text="Mileage">
+                            50,000
+                        </td>
+                        <td data-title="'Year'" data-title-text="Year">
+                            2015
+                        </td>
+                        <td data-title="'Make'" data-title-text="Make">
+                            Mercedes-Benz
+                        </td>
+                        <td data-title="'Model'" data-title-text="Model">
+                            AMG SLS Black Series
+                        </td>
+                        <td data-title="'Trim'" data-title-text="Trim">
+                            GT Final Edition
+                        </td>
+                        <td data-title="'Action'" data-title-text="Action">
+                            <a href="javascript:;"></a>
+                        </td>
+                        <td data-title="''" data-title-text="">
+                            <a href="javascript:;">Condition Report</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
 			<div class=" ng-isolate-scope">
 				<div>

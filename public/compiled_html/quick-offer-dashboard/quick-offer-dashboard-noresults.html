@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/./dojo/dojo-release-1.6.1/dijit/themes/tundra/tundra.css">
+    <link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/./mdcStyles.css">
+    <link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/css/global.css">
+    <link rel="stylesheet" type="text/css" media="print" href="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/css/global-print.css">
+
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/DropDownMenu.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/cars.css">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+
+    <script type="text/javascript" src="/javascripts/angular.min.js">
+    </script>
+
+    <title>My Dealer Center</title>
+
+</head>
+
+<body id="portalThemeNode" class="tundra bids">
+
+    <div id="headermenu" class="relative">
+        <div id="header-content">
+            <div id="logoContainer" class="floatLeft">
+                <div id="logo" onclick="homeRedirect('...')">
+                </div>
+            </div>
+            <div id="menuContainer" class="nav Hidden floatRight width820px">
+
+                <div style="width820px">
+                    <!-- start the menubar -->
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText">Home</div>
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText">Reporting</div>
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">Inventory</div>
+
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">Reviews</div>
+
+                    </div>
+                    <div class="mdcDropDownMenu">
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">Admin</div>
+
+                    </div>
+
+
+                    <div class="mdcDropDownMenu mdcPinRight">
+                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren">
+                            <img class="mdcProfileItem" src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif" width="22" height="16" alt="Profile">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!--menu container -->
+        </div>
+        <!--header-content -->
+    </div>
+    <!--headerMenu -->
+
+    <div id="content">
+        <div class="cf customerBanner">
+            <div class="floatLeft" id="custInfocontainer">
+                <h1>
+		            <span class="pageTitle">
+		                <b>Quick Offer Dashboard</b> 
+		                <span id="pageSubHeading"></span>
+		            </span>
+		            
+		            <br>
+		            <span id="custTitle" class="custTitle">
+		            	Nissan / Mazda of Elk Grove | 102602
+		            </span>
+		            
+		        </h1>
+                <a href="javascript:;">Change Organization</a>
+
+                <p id="pageInstructions" class="marginBottomNone"></p>
+
+            </div>
+            <div class="floatRight">
+                <iframe src="/chat.html" scrolling="no" class="chat-iframe"></iframe>
+
+                <span id="supportLinkSpan" style="display: none;" class="marginBottomNone">
+		            <a href="https://inventoryeditor-dq01.cars.com/wps/myportal/mdc/Home/ContactUs"
+		                target="contactus">Contact Us</a> to submit your request
+		        </span>
+            </div>
+
+        </div>
+        <div class="gradient borderModule paddingModule marginModule">
+            <ul class="dashboardList cf">
+                <li>
+                    <p class="dashboardValue">150</p>
+                    <p class="dashboardType">Total Bid Requests Waiting</p>
+                    <p class="dashboardAge">Oldest 2/25/15 12:35 PM</p>
+                    <div>
+                        <button class="mdcActionButton">Get Next Bid</button>
+                    </div>
+                </li>
+                <li>
+                    <p class="dashboardValue">15</p>
+                    <p class="dashboardType">Counter Bids</p>
+                    <p class="dashboardAge">Oldest 2/25/15 12:45 PM</p>
+                    <div>
+                        <button class="mdcActionButton">Get Next Counter Bid</button>
+                    </div>
+                </li>
+                <li>
+                    <p class="dashboardValue">10</p>
+                    <p class="dashboardType">Active Bids</p>
+                    <p class="dashboardAge">Oldest 2/25/15 12:53 PM</p>
+
+                </li>
+                <li>
+                    <p class="dashboardValue">20</p>
+                    <p class="dashboardType">Bids Expiring Today</p>
+                    <p class="dashboardAge">Oldest 2/25/15 12:47 PM</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mdcModuleContainer mdcModulePadding arrowheadDown cf">
+            <h3 class="paddingBottomSmall">Search Bid Requests</h3>
+
+            <div class="cf paddingBottom10">
+                <div class="floatLeft marginRight50">
+                    <label>Dealerships</label>
+                    <select class="selectSmall">
+                        <option value="0" selected="selected" label="All">All</option>
+                        <option value="1" label="Region A">Region A</option>
+                        <option value="2" label="Region B">Region B</option>
+                        <option value="3" label="Region C">Region C</option>
+                    </select>
+                </div>
+
+                <div class="floatLeft marginRight50">
+
+                    <div class="floatLeft marginRight16">
+                        <label>Bid Status</label>
+                        <select class="selectMedium">
+                            <option value="0" selected="selected" label="Select">Select</option>
+                            <option value="1" label="Bid 1">Bid 1</option>
+                            <option value="2" label="Bid 2">Bid 2</option>
+                            <option value="3" label="Bid 3">Bid 3</option>
+                            <option value="4" label="Bid 1">Bid 1</option>
+                            <option value="5" label="Bid 2">Bid 2</option>
+                            <option value="6" label="Bid 3">Bid 3</option>
+                        </select>
+                    </div>
+
+                    <div class="floatLeft">
+                        <label>Submission Date</label>
+                        <div class="floatLeft marginRight16">
+                            <input type="date" value="">
+                        </div>
+                        <div class="floatLeft">
+                            <input type="date" value="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="floatLeft cf">
+
+                    <div class="floatLeft marginRight16">
+                        <label>Bidder</label>
+                        <select class="selectMedium">
+                            <option value="0" selected="selected" label="Select">Select</option>
+                            <option value="1" label="George Washington">George Washington</option>
+                            <option value="2" label="John Adams">John Adams</option>
+                            <option value="3" label="Thomas Jefferson">Thomas Jefferson</option>
+                            <option value="4" label="James Madison">James Madison</option>
+                            <option value="5" label="James Monroe">James Monroe</option>
+                            <option value="6" label="John Quincy Adams">John Quincy Adams</option>
+                        </select>
+                    </div>
+
+                    <div class="floatLeft">
+                        <label>Bid Date</label>
+                        <div class="floatLeft marginRight16">
+                            <input type="date" value="">
+                        </div>
+                        <div class="floatLeft">
+                            <input type="date" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ng-hide">
+                <div class="columnQuarter">
+                    <label>Customer Last Name</label>
+                    <input class="inputLarge">
+                </div>
+                <div class="columnQuarter">
+                    <label>Customer First Name</label>
+                    <input class="inputLarge">
+                </div>
+                <div class="columnQuarter">
+                    <label>Customer Phone Number</label>
+                    <input class="inputLarge">
+                </div>
+                <div class="columnQuarter">
+                    <label>Customer Email Address</label>
+                    <input class="inputLarge">
+                </div>
+            </div>
+
+            <div class="paddingBottom10">
+                <a href="javascript:;">
+					Hide Advanced Search Options
+				</a>
+            </div>
+
+            <div>
+                <button class="mdcActionButton">Filter</button>
+            </div>
+
+            <div class="paddingTop10 cf ng-hide">
+                <h4>Find Individual Bid by</h4>
+                <div class="columnQuarter">
+                    <label>Bid ID</label>
+                    <input class="inputLarge">
+                </div>
+                <div class="columnHalf">
+                    <label>VIN</label>
+                    <div>
+                        <input class="inputLarge marginRight20   ">
+                        <button class="secondary mdcActionButton">Find</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mdcModuleContainer mdcModulePadding paddingHorizontal_0 noBorder cf">
+            <h3 class="paddingBottomSmall">Bids and Offers Results</h3>
+
+            <p class="noResults">There were no results matching your search.</p>
+
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <div>
+            <a href="javascript:;">Logout</a>
+            <span> | </span>
+            <a href="http://www.cars.com/go/about/privacy.jsp">Privacy Statement</a>
+            <span> | </span>
+            <a href="http://www.cars.com/go/about/tos.jsp">Terms of Service</a>
+
+        </div>
+
+        <div>
+            <p>
+                © 2015 Cars.com, LLC™. All Rights Reserved. 175 West Jackson Blvd., Suite 800 Chicago, IL 60604
+            </p>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

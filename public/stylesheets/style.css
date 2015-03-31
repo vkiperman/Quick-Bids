@@ -647,3 +647,8 @@ iframe{border:none;}
     color: #236b8e;
     background: url(http:///www.cars.com/images/core/notification.png) no-repeat 20px 20px #ebf5fa
 }
+
+.noResults {
+    border-top: 1px solid #ccc;
+    padding-top: 8px;
+}
