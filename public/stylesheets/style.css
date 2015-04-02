@@ -179,6 +179,10 @@ ul.vehicleOptions li {
 	content: ':';
 }
 
+.mdcComponent dl dt.noColon:after {
+    content:none;
+}
+
 .mdcComponent dl dt:last-of-type,
 .mdcComponent dl dd:last-of-type,
 ul.vehicleOptions li:last-of-type {
@@ -651,4 +655,50 @@ iframe{border:none;}
 .noResults {
     border-top: 1px solid #ccc;
     padding-top: 8px;
+}
+
+#printConditionReport {
+	clear: both;
+	width: 90%;
+	margin: auto;
+}
+
+#printConditionReport h1 {
+    color: #333;
+    font-size: large;
+    float: left;
+    width: 70%;
+}
+#printConditionReport .mdcActionButton {
+    float: right;
+}
+
+#printConditionReport h2 {
+    color: #333;
+    font-size: 12px;
+    letter-spacing: normal;
+    margin-top: 1em;
+}
+
+#printConditionReport dt.noColon {
+    color: black;
+}
+
+dl.printConditionList {
+    border:none;
+    font-size: 14px;
+    margin-bottom: 20px;
+    width: 60%;
+}
+dl.printConditionList dt {
+    border: none;
+    clear: left;
+    width: 15%
+}
+dl.printConditionList dd {
+    border: none;
+}
+dl.printConditionList dt, dl.printConditionList dd {
+    padding: 0;
+    margin: 4px 0;
 }
