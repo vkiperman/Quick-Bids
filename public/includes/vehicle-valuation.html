@@ -1,8 +1,19 @@
 <div class="mdcComponent paddingLeft15 paddingRight15 mdcSeparatorLeft">
 	<h4>Vehicle Valuation</h4>
 
-	<div data-section="black_book_value">
+	<div data-section="market_iq_summary">
 		<div class="paddingTop14 cf">
+			<h5 class="headingText floatLeft">Market IQ Summary</h5>
+			<a href="javascript:;" class="floatRight">View Full Details</a>
+		</div>
+		<dl>
+			<dt ng-repeat-start="item in mmarketIqSummary">{{ item.name }}</dt>
+			<dd ng-repeat-end>{{item.value}}</dd>
+		</dl>
+	</div>
+    
+	<div data-section="black_book_value">
+		<div class="paddingTop30 cf">
 			<h5 class="headingText">Black Book Value</h5>
 			<div class="columnHalf">
 				<h5 class="headingText">As of 2/2/15</h5>
@@ -19,10 +30,14 @@
 			</dd>
 		</dl>
 
-		<div class="paddingTop15 paddingBottom15 mdcSeparatorBottom">
-			<a href="javascript:;">Change Trim</a> | 
+		<div class="paddingTop15 paddingBottom15">
 			<a href="javascript:;">Refresh</a> | 
 			<a href="javascript:;">Save</a>
+		</div>
+        
+        <div class="paddingTop5 paddingBottom15 mdcSeparatorBottom">
+			<label class="floatLeft marginRight20">Trim</label>
+            <select><option>Trim selections populated</option></select>
 		</div>
 
 		<div class="paddingTop15 paddingBottom2 mdcSeparatorBottom cf" ng-show="bbOptions">
@@ -37,17 +52,6 @@
 				{{bbOptions ? 'Collapse' : 'Expand'}} Black Book options
 			</a>
 		</div>
-	</div>
-
-	<div data-section="market_iq_summary">
-		<div class="paddingTop30 cf">
-			<h5 class="headingText floatLeft">Market IQ Summary</h5>
-			<a href="javascript:;" class="floatRight">View Full Details</a>
-		</div>
-		<dl>
-			<dt ng-repeat-start="item in mmarketIqSummary">{{ item.name }}</dt>
-			<dd ng-repeat-end>{{item.value}}</dd>
-		</dl>
 	</div>
 
 	<div data-section="manheim">

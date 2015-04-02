@@ -7,6 +7,8 @@
 		return {
 			restrict: 'E',
 			templateUrl: '/includes/bid-form.html',
+            // templateUrl: '/includes/bid-counter-form.html',
+            // templateUrl: '/includes/bid-view-only-form.html',
 
 			controller: function($scope){
 				$scope.currentBid = 0;

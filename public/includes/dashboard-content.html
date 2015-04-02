@@ -4,6 +4,7 @@
 			<p class="dashboardValue">{{ item.value }}</p>
 			<p class="dashboardType">{{ item.title }}</p>
 			<p class="dashboardAge" ng-if="item.age">{{ item.age }}</p>
+            <div ng-if="item.button"><button class="mdcActionButton">{{ item.button }}</button></div>
 		</li>
 	</ul>
 </div>

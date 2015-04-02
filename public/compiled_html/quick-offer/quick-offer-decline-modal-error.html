@@ -98,7 +98,7 @@
 		        
 		        <span id="supportLinkSpan" style="display: none;" class="marginBottomNone">
 		            <a href="https://inventoryeditor-dq01.cars.com/wps/myportal/mdc/Home/ContactUs"
-		                target="contactus">Contact Us</a> to submit your request
+		                target="contactus">Contact Us</a> to submit your request		            
 		        </span>
 			</div>
 
@@ -186,7 +186,7 @@
 					</div>
 					<div class="columnHalf">
 						<div class="mdcComponent paddingLeft15 paddingRight15 mdcSeparatorLeft">
-                            <h4>Vehicle Valuation</h4>
+							<h4>Vehicle Valuation</h4>
 
                             <div data-section="market_iq_summary">
                                 <div class="paddingTop14 cf">
@@ -311,6 +311,58 @@
                                 </div>
 							</div>
 						</form>
+					</div>
+
+					<!-- modals follow -->
+					<div>
+						<div class="dijitDialogUnderlayWrapper displayBlock" style="top:0px">
+						    <div class="dijitDialogUnderlay mdcModalStandard_underlay"></div>
+						    <iframe src="javascript:;" class="dijitBackgroundIframe"></iframe>
+						</div>
+						<!-- left positoin are set dynamically -->
+						<div class="mdcModal mdcModalStandard dijitDialogFixed modal" style="left: 364px; top: 25px;">
+						    <div class="mdcModalTitleBar">
+						        <span class="mdcModalTitle">Decline to Bid</span>
+						        <span title="Cancel" class="mdcModalCloseIcon">
+						            <span title="Cancel" class="mdcModalCloseText">×</span>
+						        </span>
+						    </div>
+						    <div class="mdcModalPaneContent">
+						        
+								<div>
+									<div class="cf">
+									    <div class="marginTopLarge">
+									        <p>
+									        	If you feel that not enough information was provided about the vehicle, you can request additional information.
+									        </p>
+
+									        <a href="javascript:;">Request additional information</a>
+
+									        <div class="marginTopMedium">
+										        <label class="red">Please select your reason for declining to bid</label>
+
+												<select class="width60 error">
+													<option value="0" selected="selected" label="Select">Select</option>
+													<option value="1" label="Invalid contact information">Invalid contact information</option>
+													<option value="2" label="Invalid VIN">Invalid VIN</option>
+													<option value="3" label="Heavy damage">Heavy damage</option>
+													<option value="4" label="Salvaged title">Salvaged title</option>
+													<option value="5" label="Mileage discrepency">Mileage discrepency</option>
+													<option value="6" label="Inoperable">Inoperable</option>
+													<option value="7" label="Not interested in this vehicle">Not interested in this vehicle</option>
+												</select>
+
+											</div>
+									    </div>
+								    </div>
+
+								    <div class="marginTop23">
+								        <button class="mdcActionButton">Decline</button>
+								        <button class="mdcActionButton secondary">Cancel</button>
+								    </div>
+								</div>
+						    </div>
+						</div>
 					</div>
 
 				</div>
@@ -652,20 +704,20 @@
 					<div class="ng-hide">				
 						<div class="paddingTop28">
 							<div class="columnThird">
-								<div class="paddingRight10">
-									<img src="" height="200" class="fullWidth">	
+								<div class="paddingRight6">
+									<img src="/images/placeholder.png" height="200" class="fullWidth" alt="placeholder image">
 									<p class="marginTop23">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 								</div>
 							</div>
 							<div class="columnThird">
-								<div class="paddingRight10">
-									<img src="" height="200" class="fullWidth">	
+								<div class="paddingHorizontal3">
+									<img src="/images/placeholder.png" height="200" class="fullWidth" alt="placeholder image">
 									<p class="marginTop23">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 								</div>
 							</div>
 							<div class="columnThird">
-								<div class="paddingRight10">
-									<img src="" height="200" class="fullWidth">	
+								<div class="paddingLeft6">
+									<img src="/images/placeholder.png" height="200" class="fullWidth" alt="placeholder image">
 									<p class="marginTop23">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 								</div>
 							</div>

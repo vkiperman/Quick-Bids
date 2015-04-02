@@ -84,7 +84,7 @@
 		            </span>
 		            
 		        </h1>       
-		        <a href="javascript:;">Change Organization</a>
+		        
 		        
 		        <p id="pageInstructions">
 		            <!-- place holder for special instructions -->
@@ -166,79 +166,83 @@
 						<div class="mdcComponent paddingLeft15 paddingRight15 mdcSeparatorLeft">
 							<h4>Vehicle Valuation</h4>
 
-							<div data-section="black_book_value">
-								<div class="paddingTop14 cf">
-									<h5 class="headingText">Black Book Value</h5>
-									<div class="columnHalf">
-										<h5 class="headingText">As of 2/2/15</h5>
-									</div>
-									<strong class="columnQuarter titleText">Book Value</strong>
-									<strong class="columnQuarter titleText">Adjusted</strong>
-								</div>
+                            <div data-section="market_iq_summary">
+                                <div class="paddingTop14 cf">
+                                    <h5 class="headingText floatLeft">Market IQ Summary</h5>
+                                    <a href="javascript:;" class="floatRight">View Full Details</a>
+                                </div>
+                                <dl>
+                                    <dt>Adjusted Market</dt>
+                                    <dd>$8,765</dd><dt>Adjusted Retail</dt>
+                                    <dd>$7,654</dd><dt>Adjusted Mileage</dt>
+                                    <dd>98,123 miles</dd><dt>Distance</dt>
+                                    <dd>200 miles</dd><dt>Comp. Set</dt>
+                                    <dd>4</dd><dt>Recent Sales</dt>
+                                    <dd>3</dd><dt>Turn Time</dt>
+                                    <dd>33</dd><dt>Day Supply</dt>
+                                    <dd>40</dd>
+                                </dl>
+                            </div>
 
-								<dl>
-									<dt>X-Clean</dt>
-									<dd>
-										<div class="columnHalf">None</div>
-										<div class="columnHalf">None</div>
-									</dd><dt>Clean</dt>
-									<dd>
-										<div class="columnHalf">Clear</div>
-										<div class="columnHalf">Clear</div>
-									</dd><dt>Average</dt>
-									<dd>
-										<div class="columnHalf">Yes</div>
-										<div class="columnHalf">Yes</div>
-									</dd><dt>Rough</dt>
-									<dd>
-										<div class="columnHalf">46154</div>
-										<div class="columnHalf">46000</div>
-									</dd>
-								</dl>
+                            <div data-section="black_book_value">
+                                <div class="paddingTop30 cf">
+                                    <h5 class="headingText">Black Book Value</h5>
+                                    <div class="columnHalf">
+                                        <h5 class="headingText">As of 2/2/15</h5>
+                                    </div>
+                                    <strong class="columnQuarter titleText">Book Value</strong>
+                                    <strong class="columnQuarter titleText">Adjusted</strong>
+                                </div>
 
-								<div class="paddingTop15 paddingBottom15 mdcSeparatorBottom">
-									<a href="javascript:;">Change Trim</a> | 
-									<a href="javascript:;">Refresh</a> | 
-									<a href="javascript:;">Save</a>
-								</div>
+                                <dl>
+                                    <dt>X-Clean</dt>
+                                    <dd>
+                                        <div class="columnHalf">None</div>
+                                        <div class="columnHalf">None</div>
+                                    </dd><dt>Clean</dt>
+                                    <dd>
+                                        <div class="columnHalf">Clear</div>
+                                        <div class="columnHalf">Clear</div>
+                                    </dd><dt>Average</dt>
+                                    <dd>
+                                        <div class="columnHalf">Yes</div>
+                                        <div class="columnHalf">Yes</div>
+                                    </dd><dt>Rough</dt>
+                                    <dd>
+                                        <div class="columnHalf">46154</div>
+                                        <div class="columnHalf">46000</div>
+                                    </dd>
+                                </dl>
 
-								<div class="paddingTop15 paddingBottom2 mdcSeparatorBottom cf">
-									<label class="floatLeft"><input type="checkbox">w/o Auto Trans?</label>
-									<strong class="floatRight">$650</strong>
-								</div>
+                                <div class="paddingTop15 paddingBottom15">
+                                    <a href="javascript:;">Refresh</a> | 
+                                    <a href="javascript:;">Save</a>
+                                </div>
 
-								<div class="paddingTop19 paddingBottom19 mdcSeparatorBottom flowCenter">
-									<a href="javascript:;" class="minus">
-										Collapse Black Book options
-									</a>
-								</div>
-							</div>
+                                <div class="paddingTop5 paddingBottom15 mdcSeparatorBottom">
+                                    <label class="floatLeft marginRight20">Trim</label>
+                                    <select><option value="Trim selections populated">Trim selections populated</option></select>
+                                </div>
 
-							<div data-section="market_iq_summary">
-								<div class="paddingTop30 cf">
-									<h5 class="headingText floatLeft">Market IQ Summary</h5>
-									<a href="javascript:;" class="floatRight">View Full Details</a>
-								</div>
-								<dl>
-									<dt>Adjusted Market</dt>
-									<dd>$8,765</dd><dt>Adjusted Retail</dt>
-									<dd>$7,654</dd><dt>Adjusted Mileage</dt>
-									<dd>98,123 miles</dd><dt>Distance</dt>
-									<dd>200 miles</dd><dt>Comp. Set</dt>
-									<dd>4</dd><dt>Recent Sales</dt>
-									<dd>3</dd><dt>Turn Time</dt>
-									<dd>33</dd><dt>Day Supply</dt>
-									<dd>40</dd>
-								</dl>
-							</div>
+                                <div class="paddingTop15 paddingBottom2 mdcSeparatorBottom cf ng-hide">
+                                    <label class="floatLeft"><input type="checkbox">w/o Auto Trans?</label>
+                                    <strong class="floatRight">$650</strong>
+                                </div>
 
-							<div data-section="manheim">
-								<div class="paddingTop30 cf">
-									<h5 class="headingText">Manheim Market Report</h5>
-									<button class="mdcActionButton secondary">View Now</button>
-								</div>
-							</div>
-						</div>
+                                <div class="paddingTop19 paddingBottom19 mdcSeparatorBottom flowCenter">
+                                    <a href="javascript:;" class="plus">
+                                        Expand Black Book options
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div data-section="manheim">
+                                <div class="paddingTop30 cf">
+                                    <h5 class="headingText">Manheim Market Report</h5>
+                                    <button class="mdcActionButton secondary">View Now</button>
+                                </div>
+                            </div>
+                        </div>
 					</div>
 				</div>
 			</div>
@@ -279,6 +283,9 @@
 								<div class="marginTopSmall">
 									<button class="mdcActionButton fullWidth">Place Bid</button>
 								</div>
+                                <div class="marginTopSmall">
+                                    <button class="mdcActionButton secondary fullWidth">Place Bid &amp; Get Next</button>
+                                </div>
 							</div>
 						</form>
 					</div>

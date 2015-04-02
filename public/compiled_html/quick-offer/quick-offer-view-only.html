@@ -103,6 +103,11 @@
 			</div>
 
 		</div>
+        
+        <div class="alert-message notification"> 
+            <span>View Only</span>
+            <p>You are viewing this bid in a read-only state because it is {locked/completed}.</p>
+        </div>
 
 		<div class="mdcSection mdcModulePadding cf">
 			<h3 class="paddingBottomSmall floatLeft">2013 Chevrolet Silverado 1500 Hybrid 4D 5 3/4 ft&nbsp;</h3>
@@ -270,51 +275,38 @@
 			</div>
 			<div class="columnQuarter">
 				<div class="paddingLeft15 mdcComponent">
-					<div class="gradientTop borderModule paddingModule marginModule">
-						<h4>Place Your Bid</h4>
-						<form>
-							<div class="paddingBottom10 mdcSeparatorBottom">
-								<label>Current Bid</label>
+                    <div class="gradientTop borderModule paddingModule marginModule">
+                        <h4>Bid Placed</h4>
+                        <form class="ng-pristine ng-valid">
+                            <div class="paddingBottom10 mdcSeparatorBottom">
+                                <label>Current Bid</label>
 
-								<div class="dollar fullWidth">
-				        			<input type="number" min="0">
-								</div>
+                                <!-- <input type="number" ng-model="currentBid" class="fullWidth" /> -->
 
-								<label class="marginTopSmall2">Recon</label>
-								 
-
-								<div class="dollar fullWidth">
-				        			<input type="number" min="0">
-								</div>
-							</div>
-
-							<div class="paddingTop15">
-								<label class="marginBottomNone">Final Value</label>
-								<!-- if less than zero show error -->
-								<strong class="strongText">
-									$0.00</strong>
-							</div>
-
-							<div class="paddingTop15">
-								<textarea class="fullWidth" rows="3"></textarea>
-								<div class="marginTopSmall">
-									<a href="javascript:;" class="cf">Request more info</a>
-								</div>
-								<div class="marginTopXXSmall">
-									<a href="javascript:;">Decline to bid</a>
-								</div>
-								<div class="marginTopSmall">
-									<button class="mdcActionButton fullWidth">Place Bid</button>
-								</div>
-                                <div class="marginTopSmall">
-                                    <button class="mdcActionButton secondary fullWidth">Place Bid &amp; Get Next</button>
+                                <div class="fullWidth">
+                                    $400
                                 </div>
-							</div>
-						</form>
-					</div>
 
-				</div>
+                                <label class="marginTopSmall2">Recon </label>
+                                <!-- <input type="number" ng-model="totalReconAdjust" class="fullWidth" /> -->
 
+                                <div class="fullWidth">
+                                    $200
+                                </div>
+                            </div>
+
+                            <div class="paddingTop15">
+                                <label class="marginBottomNone">Final Value</label>
+                                <!-- if less than zero show error -->
+                                <strong class="strongText" ng-class="{red:(currentBid - totalReconAdjust) &lt; 0}">$200</strong>
+                            </div>
+
+                            <div class="paddingTop15">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 			</div>
 		</div>
 
