@@ -595,11 +595,64 @@ td{
 
 iframe{border:none;}
 
-
 .ng-table th.flowRight {text-align:right;}
 
 .ng-table th.paddingRight10 {padding-right: 10px;}
 .ng-table th.flowCenter {text-align:center;}
+
+
+/* show/hide */
+.show-hide-animation.ng-hide-add,
+.show-hide-animation.ng-hide-remove {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+
+  /* remember to add this */
+  display:block!important;
+  opacity:1;
+}
+.show-hide-animation.ng-hide {
+  opacity:0;
+}
+
+.show-hide-animation.ng-hide-remove,
+.show-hide-animation.ng-hide-add {
+  /* remember, the .hg-hide class is added to element
+     when the active class is added causing it to appear
+     as hidden. Therefore set the styling to display=block
+     so that the hide animation is visible */
+  display:block!important;
+}
+
+.show-hide-animation.ng-hide-add {
+  -webkit-animation:.6s hide;
+  animation:.6s hide;
+}
+
+.show-hide-animation.ng-hide-remove {
+  -webkit-animation:.6s show;
+  animation:.6s show;
+}
+
+@keyframes hide {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-webkit-keyframes hide {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@keyframes show {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@-webkit-keyframes show {
+  from { opacity:0; }
+  to { opacity:1; }
+}
 
 
 /*! ngTable v0.5.3 by Vitalii Savchuk(esvit666@gmail.com) - https://github.com/esvit/ng-table - New BSD License */

@@ -54,7 +54,7 @@
 		</div>
 	</div>
 
-	<div ng-show="toggleAdvanced">
+	<div ng-show="toggleAdvanced" class="show-hide-animation">
 		<div class="columnQuarter">
 			<label>Customer Last Name</label>
 			<input ng-model="bidFilter.customer.lastName" class="inputLarge" />
@@ -81,7 +81,7 @@
 
 	<div><button class="mdcActionButton">Filter</button></div>
 
-	<div ng-show="toggleAdvanced" class="paddingTop10 cf">
+	<div ng-show="toggleAdvanced" class="paddingTop10 show-hide-animation cf">
 		<h4>Find Individual Bid by</h4>
 		<div class="columnQuarter">
 			<label>Bid ID</label>
