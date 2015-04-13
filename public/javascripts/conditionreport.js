@@ -33,7 +33,7 @@
 
 					angular.forEach($scope.vehicleReportCard, function(e, i){
 						angular.forEach(e, function(key){
-							aggregate += key.cost || 0;
+							aggregate += (+key.cost) || 0;
 						});
 					});
 

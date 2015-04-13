@@ -17,39 +17,12 @@
 
 				$scope.showRequestForm = false;
 				$scope.showRequestDecline = false;
+
+				$scope.currency = 9876;
 			},
 
 			controllerAs: 'BidFormCtrl'
 
-		};
-
-	});
-
-	app.directive('special', function(){
-
-		return {
-			restrict: 'A',
-			require: 'ngModel',
-	        link: function(scope, element, attr, ngModel){
-	        	var typedVal;
-
-	            ngModel.$formatters.push(function(value){
-	            	var words = value.split(' ');
-	            	if(!value) return '';
-	            	for (var i = 0; i < words.length; i++){
-	            		words[i] = words[i][0].toUpperCase() + words[i].substr(1);
-	            	}
-
-    				return words.join(' ');
-	            });
-
-	            ngModel.$parsers.push(function(value){
-	            	ngModel.$setViewValue(value);
-					ngModel.$render();
-	            	return value;
-	            });
-
-	        }
 		};
 
 	});

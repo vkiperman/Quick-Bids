@@ -533,6 +533,14 @@ body[ng-app="Dashboard"] .dashboardList li {
 	height:19px;
 }
 
+.inputFit{
+	position: absolute;
+	top: -3px;
+	box-sizing: border-box;
+  	height: 21px;
+	margin: 0;
+}
+
 .paddingRight6{padding-right:6px;}
 .paddingLeft6{padding-left:6px;}
 .paddingHorizontal3{

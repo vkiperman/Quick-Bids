@@ -5,20 +5,11 @@
 			<div class="paddingBottom10 mdcSeparatorBottom">
 				<label>Current Bid</label>
 
-				<!-- <input type="number" ng-model="currentBid" class="fullWidth" /> -->
-
-				<div class="dollar fullWidth">
-        			<input type="number" min="0"
-						ng-model="currentBid" />
-				</div>
+				<input currency ng-model="currentBid" class="fullWidth" />
 
 				<label class="marginTopSmall2">Recon </label>
-				<!-- <input type="number" ng-model="totalReconAdjust" class="fullWidth" /> -->
 
-				<div class="dollar fullWidth">
-        			<input type="number" min="0"
-						ng-model="totalReconAdjust" />
-				</div>
+				<input currency ng-model="totalReconAdjust" class="fullWidth" />
 			</div>
 
 			<div class="paddingTop15">
@@ -29,7 +20,7 @@
 			</div>
 
 			<div class="paddingTop15">
-				<textarea ng-model="internalNotes" special
+				<textarea ng-model="internalNotes"
 					placeholder="Internal Notes"
 					class="fullWidth" rows="3"></textarea>
 				<div class="marginTopSmall">
