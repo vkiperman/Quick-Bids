@@ -16,22 +16,31 @@
 		return {
 			restrict: 'A',
 			require: 'ngModel',
+			scope: {max: '='},
 	        link: function(scope, element, attr, ngModel){
+	        	var showValue,
+		        	input = element[0],
+	        		inputMax = scope.max || (1e+6 - .01);
 
-
-	            ngModel.$formatters.unshift(function(modelValue) {
+	            ngModel.$formatters.unshift(function toView(modelValue) {
 		        	return $filter('currency')(modelValue);
 		        });
 
-		        ngModel.$parsers.unshift(function(viewValue) {
-		        	var selectionEnd = element[0].selectionEnd;
-		        	viewValue = viewValue.replace(/[^\d\.]/g, '');
+		        ngModel.$parsers.unshift(function toModel(viewValue) {
+		        	var selectionEnd = input.selectionEnd,
+		        		specialsRegExp = /[^\d\.]/g,
+		        		specials = viewValue.match(specialsRegExp) || [];
+
+		        	viewValue = viewValue.replace(specialsRegExp, '');
+		        	viewValue = Math.min(+viewValue, inputMax);
 
 		        	ngModel.$setViewValue($filter('currency')(viewValue), 'change');
 		        	ngModel.$render();
-		        	element[0].selectionEnd = selectionEnd;
-		        	console.log(viewValue);
-		        	return viewValue;
+
+		        	input.selectionEnd = selectionEnd + (input.value.toString().match(specialsRegExp).length - specials.length);
+
+					ngModel.$setValidity('hasError', true);
+		        	return showValue = viewValue;
 		        });
 
 	        }

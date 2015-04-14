@@ -3,6 +3,10 @@
 
 	app.directive('basicHeading', ['$interval', 'dateFilter', function($interval, dateFilter){
 
+		var getFilteredTime = function getFilteredTime(futureTime){
+			return dateFilter(( futureTime - new Date().getTime() ), 'mm:ss');
+		}
+
 		return {
 			restrict: 'E',
 			templateUrl: '/includes/basic-heading.html',
@@ -11,7 +15,10 @@
 				var intervalId;
 
 				function updateTime() {
-					scope.countDown = dateFilter(( scope.futureTime - new Date().getTime() ), 'mm:ss');
+					if(scope.countDown === '00:00'){
+						return $interval.cancel(intervalId);
+					}
+					scope.countDown = getFilteredTime( scope.futureTime );
 				}
 
 				element.on('$destroy', function() {
@@ -20,13 +27,14 @@
 
 				intervalId = $interval(function() {
 			    	updateTime();
-				}, 999);
+				}, 1000);
 			},
 
 			controller: function($scope){
-				var now = new Date();
-				$scope.futureTime = now.setMinutes(now.getMinutes() + 15);
-				$scope.countDown = '15:00';
+				var now = new Date(),
+					duration = 15;
+				$scope.futureTime = now.setMinutes(now.getMinutes() + duration);
+				$scope.countDown = getFilteredTime( $scope.futureTime );
 			}
 
 		};

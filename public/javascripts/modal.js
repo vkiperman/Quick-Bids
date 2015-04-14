@@ -41,7 +41,7 @@
                 $scope.$watch(function(){
                     return $scope[$scope.isModalVisible];
                 }, function(newVal, oldVal){
-                    console.log(newVal, oldVal);
+                    //console.log(newVal, oldVal);
                 });
 			},
 

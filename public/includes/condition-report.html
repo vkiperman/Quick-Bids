@@ -38,7 +38,7 @@
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">
 
-				<input currency class="fullWidth inputFit"
+				<input currency class="fullWidth inputFit" max="1e+3-.01"
 					ng-model="item.cost" ng-change="aggregate()" />
 			</div>
 		</dd>
@@ -56,13 +56,8 @@
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">
 				
-				<input currency class="fullWidth inputFit"
+				<input currency class="fullWidth inputFit" max="9999.99"
 					ng-model="item.cost" ng-change="aggregate()" />
-
-				<!-- <div class="dollar fullWidth marginBottomNone absolute">
-        			<input type="number" min="0"
-						ng-model="item.cost" ng-change="aggregate()" />
-				</div> -->
 			</div>
 		</dd>
 	</dl>
@@ -77,16 +72,10 @@
 		<dt class="width40" ng-repeat-start="item in vehicleReportCard.interior">{{item.name}}</dt>
 		<dd class="width60" ng-repeat-end>
 			<div class="columnHalf">{{item.value}}</div>
-			<div class="width42 floatRight relative">
+			<div class="width42 floatRight relative">				
 				
-				
-				<input currency class="fullWidth inputFit"
+				<input currency class="fullWidth inputFit" max="9999.99"
 					ng-model="item.cost" ng-change="aggregate()" />
-
-				<!-- <div class="dollar fullWidth marginBottomNone absolute">
-        			<input type="number" min="0"
-						ng-model="item.cost" ng-change="aggregate()" />
-				</div> -->
 			</div>
 		</dd>
 	</dl>
@@ -103,13 +92,8 @@
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">				
 				
-				<input currency class="fullWidth inputFit"
+				<input currency class="fullWidth inputFit" max="9999.99"
 					ng-model="item.cost" ng-change="aggregate()" />
-
-				<!-- <div class="dollar fullWidth marginBottomNone absolute">
-        			<input type="number" min="0"
-						ng-model="item.cost" ng-change="aggregate()" />
-				</div> -->
 			</div>
 		</dd>
 	</dl>
@@ -126,13 +110,8 @@
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">				
 				
-				<input currency class="fullWidth inputFit"
+				<input currency class="fullWidth inputFit" max="9999.99"
 					ng-model="item.cost" ng-change="aggregate()" />
-
-				<!-- <div class="dollar fullWidth marginBottomNone absolute">
-        			<input type="number" min="0"
-						ng-model="item.cost" ng-change="aggregate()" />
-				</div> -->
 			</div>
 		</dd>
 	</dl>
