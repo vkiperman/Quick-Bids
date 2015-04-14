@@ -39,7 +39,6 @@
 
 		        	input.selectionEnd = selectionEnd + (input.value.toString().match(specialsRegExp).length - specials.length);
 
-					ngModel.$setValidity('hasError', true);
 		        	return showValue = viewValue;
 		        });
 
