@@ -37,7 +37,9 @@
 				$scope.isDropDownMenu = function(menuName){
 					//console.log($scope.dropDownMenu === menuName);
 					return $scope.dropDownMenu === menuName;
-				}
+				};
+
+				$scope.navigateTo = function(uri){location.assign(uri)};
 
 				$http.get('/includes/navigation.json')
 					.success(function(data, status, headers, config){
