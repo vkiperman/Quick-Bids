@@ -1,111 +1,107 @@
 <div class="mdcComponent paddingRight15 mdcSeparatorRight cf">
 	<h4>Bid Information</h4>
 
-	<!-- TODO: convert to "Tabs" directive -->
 	<div>
-		<div class="tabs cf">
-			<div class="tab"
-				ng-class="{active:currentTab===0,inactive:currentTab!==0}"
-				ng-click="setTab(0)">Vehicle</div>
-			<div class="tab"
-				ng-class="{active:currentTab===1,inactive:currentTab!==1}"
-				ng-click="setTab(1)">Customer</div>
+		<div class="floatRight paddingTop11"><a href="javascript:;">View Photos</a></div>
+		<tabs class="tabs"> 
+			<pane title="Vehicle">
+				<div>
+					<div ng-show="verified">
+						<div class="paddingTop28">
+							<div class="cf">
+								<h5 class="headingText columnThird" ng-click="verified=false">Vehicle Info</h5>
+								<strong class="columnThird titleText">Customer</strong>
+								<strong class="columnThird titleText">Verify</strong>
+							</div>
 
-			<div class="floatRight paddingTop11"><a href="javascript:;">View Photos</a></div>
-		</div>
+							<dl class="thirds">
+								<dt ng-repeat-start="item in vehicleInfo">{{item.name}}</dt>
+								<dd ng-repeat-end class="cf">
+									<div class="columnHalf">{{item.value}}</div>
+									<div class="columnHalf"
+										ng-class="{notVerified:(item.value!=item.verify),verified:(item.value==item.verify)}">
+										{{item.verify}}
+									</div>
+								</dd>
+							</dl>
 
-		<div ng-show="isCurrentTab(0)">
+						</div>
 
-			<div ng-show="verified">
-				<div class="paddingTop28">
-					<div class="cf">
-						<h5 class="headingText columnThird" ng-click="verified=false">Vehicle Info</h5>
-						<strong class="columnThird titleText">Customer</strong>
-						<strong class="columnThird titleText">Verify</strong>
+						<div class="paddingTop30">
+							<div class="cf">
+								<h5 class="headingText columnThird">Condition Summary</h5>
+								<strong class="columnThird titleText"><br>Customer</strong>
+								<strong class="columnThird titleText"><br>Verify</strong>
+							</div>
+
+							<dl class="thirds">
+								<dt ng-repeat-start="item in conditionSummary">{{item.name}}</dt>
+								<dd ng-repeat-end class="cf">
+									<div class="columnHalf">{{item.value}}</div>
+									<div class="columnHalf"
+										ng-class="{notVerified:(item.value!=item.verify),verified:(item.value==item.verify)}">
+										{{item.verify}}
+									</div>
+								</dd>
+							</dl>
+
+						</div>
 					</div>
 
-					<dl class="thirds">
-						<dt ng-repeat-start="item in vehicleInfo">{{item.name}}</dt>
-						<dd ng-repeat-end class="cf">
-							<div class="columnHalf">{{item.value}}</div>
-							<div class="columnHalf"
-								ng-class="{notVerified:(item.value!=item.verify),verified:(item.value==item.verify)}">
-								{{item.verify}}
-							</div>
-						</dd>
-					</dl>
+					<div ng-hide="verified">
+						<div class="paddingTop28">
+							<h5 class="headingText" ng-click="verified=true">Vehicle Info</h5>
 
-				</div>
+							<dl>
+								<dt ng-repeat-start="item in vehicleInfo">{{item.name}}</dt>
+								<dd ng-repeat-end class="cf">{{item.value}}</dd>
+							</dl>
 
-				<div class="paddingTop30">
-					<div class="cf">
-						<h5 class="headingText columnThird">Condition Summary</h5>
-						<strong class="columnThird titleText"><br>Customer</strong>
-						<strong class="columnThird titleText"><br>Verify</strong>
+						</div>
+
+						<div class="paddingTop30">
+							<h5 class="headingText">Condition Summary</h5>
+
+							<dl>
+								<dt ng-repeat-start="item in conditionSummary">{{item.name}}</dt>
+								<dd ng-repeat-end class="cf">{{ item.value }}</dd>
+							</dl>
+
+						</div>
+		                
+		                <div class="paddingTop11"><a href="javascript:;">View Full Condition Report</a></div>
+		                
+		                <div class="paddingTop30">
+							<h5 class="headingText">Vehicle Options</h5>
+
+							<ul class="vehicleOptions">
+		                        <li>Some Option</li>
+		                        <li>6.5L Turbo Diesel</li>
+		                    </ul>
+
+						</div>
 					</div>
-
-					<dl class="thirds">
-						<dt ng-repeat-start="item in conditionSummary">{{item.name}}</dt>
-						<dd ng-repeat-end class="cf">
-							<div class="columnHalf">{{item.value}}</div>
-							<div class="columnHalf"
-								ng-class="{notVerified:(item.value!=item.verify),verified:(item.value==item.verify)}">
-								{{item.verify}}
-							</div>
-						</dd>
-					</dl>
-
 				</div>
-			</div>
+			</pane>
+			<pane title="Customers" selected="true">
+				<div>				
+					<div>
+						<div class="paddingTop28">
+							<h5 class="headingText">Customer Info</h5>
 
-			<div ng-hide="verified">
-				<div class="paddingTop28">
-					<h5 class="headingText" ng-click="verified=true">Vehicle Info</h5>
+							<dl>
+								<dt ng-repeat-start="item in customerInfo">{{item.name}}</dt>
+								<dd ng-repeat-end class="cf">{{ item.value }}</dd>
+							</dl>
 
-					<dl>
-						<dt ng-repeat-start="item in vehicleInfo">{{item.name}}</dt>
-						<dd ng-repeat-end class="cf">{{item.value}}</dd>
-					</dl>
-
+						</div>
+					</div>
 				</div>
+			</pane>
 
-				<div class="paddingTop30">
-					<h5 class="headingText">Condition Summary</h5>
-
-					<dl>
-						<dt ng-repeat-start="item in conditionSummary">{{item.name}}</dt>
-						<dd ng-repeat-end class="cf">{{ item.value }}</dd>
-					</dl>
-
-				</div>
-                
-                <div class="paddingTop11"><a href="javascript:;">View Full Condition Report</a></div>
-                
-                <div class="paddingTop30">
-					<h5 class="headingText">Vehicle Options</h5>
-
-					<ul class="vehicleOptions">
-                        <li>Some Option</li>
-                        <li>6.5L Turbo Diesel</li>
-                    </ul>
-
-				</div>
-			</div>
-		</div>
-
-		<div ng-show="isCurrentTab(1)">
-			<div class="paddingTop28">
-				<h5 class="headingText">Customer Info</h5>
-
-				<dl>
-					<dt ng-repeat-start="item in customerInfo">{{item.name}}</dt>
-					<dd ng-repeat-end class="cf">{{ item.value }}</dd>
-				</dl>
-
-			</div>
-		</div>
+		</tabs>
 	</div>
-
+	
 	<div class="paddingTop28">
 		<div class="columnHalf flowCenter">
 			<img width="162" src="/images/carfax.png" class="paddingBottom10" />

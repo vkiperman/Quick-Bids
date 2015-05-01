@@ -8,7 +8,7 @@
 			restrict: 'E',
 			templateUrl: '/includes/bid-information.html',
 
-			scope: {currentTab: '=currentTab'},
+			scope: {/*currentTab: '=currentTab'*/}, 
 
 			controller: function($scope){
 				$scope.verified = false;
@@ -69,7 +69,7 @@
 					}
 				];
 
-				$scope.setTab = function(currentTab){
+				/*$scope.setTab = function(currentTab){
 					if($scope.currentTab !== currentTab){
 						$scope.currentTab = currentTab;
 					}
@@ -77,7 +77,7 @@
 
 				$scope.isCurrentTab = function(match){
 					return $scope.currentTab === match;
-				}
+				}*/
 			}
 
 		};
