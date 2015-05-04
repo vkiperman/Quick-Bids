@@ -1,116 +1,29 @@
 <div class="mdcComponent paddingRight15 mdcSeparatorRight cf">
-	<h4>Bid Information</h4>
+	<h4>{{heading}}</h4>
 
 	<div>
 		<div class="floatRight paddingTop11"><a href="javascript:;">View Photos</a></div>
 		<tabs class="tabs"> 
 			<pane title="Vehicle">
 				<div>
-					<div ng-show="verified">
-						<div class="paddingTop28">
-							<div class="cf">
-								<h5 class="headingText columnThird" ng-click="verified=false">Vehicle Info</h5>
-								<strong class="columnThird titleText">Customer</strong>
-								<strong class="columnThird titleText">Verify</strong>
-							</div>
+					
+					<vehicle-info></vehicle-info>
 
-							<dl class="thirds">
-								<dt ng-repeat-start="item in vehicleInfo">{{item.name}}</dt>
-								<dd ng-repeat-end class="cf">
-									<div class="columnHalf">{{item.value}}</div>
-									<div class="columnHalf"
-										ng-class="{notVerified:(item.value!=item.verify),verified:(item.value==item.verify)}">
-										{{item.verify}}
-									</div>
-								</dd>
-							</dl>
-
-						</div>
-
-						<div class="paddingTop30">
-							<div class="cf">
-								<h5 class="headingText columnThird">Condition Summary</h5>
-								<strong class="columnThird titleText"><br>Customer</strong>
-								<strong class="columnThird titleText"><br>Verify</strong>
-							</div>
-
-							<dl class="thirds">
-								<dt ng-repeat-start="item in conditionSummary">{{item.name}}</dt>
-								<dd ng-repeat-end class="cf">
-									<div class="columnHalf">{{item.value}}</div>
-									<div class="columnHalf"
-										ng-class="{notVerified:(item.value!=item.verify),verified:(item.value==item.verify)}">
-										{{item.verify}}
-									</div>
-								</dd>
-							</dl>
-
-						</div>
-					</div>
-
-					<div ng-hide="verified">
-						<div class="paddingTop28">
-							<h5 class="headingText" ng-click="verified=true">Vehicle Info</h5>
-
-							<dl>
-								<dt ng-repeat-start="item in vehicleInfo">{{item.name}}</dt>
-								<dd ng-repeat-end class="cf">{{item.value}}</dd>
-							</dl>
-
-						</div>
-
-						<div class="paddingTop30">
-							<h5 class="headingText">Condition Summary</h5>
-
-							<dl>
-								<dt ng-repeat-start="item in conditionSummary">{{item.name}}</dt>
-								<dd ng-repeat-end class="cf">{{ item.value }}</dd>
-							</dl>
-
-						</div>
-		                
-		                <div class="paddingTop11"><a href="javascript:;">View Full Condition Report</a></div>
-		                
-		                <div class="paddingTop30">
-							<h5 class="headingText">Vehicle Options</h5>
-
-							<ul class="vehicleOptions">
-		                        <li>Some Option</li>
-		                        <li>6.5L Turbo Diesel</li>
-		                    </ul>
-
-						</div>
-					</div>
+					<condition-summary></condition-summary>
+	                
+					<vehicle-options></vehicle-options>
+					
 				</div>
 			</pane>
 			<pane title="Customers" selected="true">
-				<div>				
-					<div>
-						<div class="paddingTop28">
-							<h5 class="headingText">Customer Info</h5>
-
-							<dl>
-								<dt ng-repeat-start="item in customerInfo">{{item.name}}</dt>
-								<dd ng-repeat-end class="cf">{{ item.value }}</dd>
-							</dl>
-
-						</div>
-					</div>
+				<div>
+					<customer-detail></customer-detail>
 				</div>
 			</pane>
 
 		</tabs>
 	</div>
 	
-	<div class="paddingTop28">
-		<div class="columnHalf flowCenter">
-			<img width="162" src="/images/carfax.png" class="paddingBottom10" />
-			<a href="javascript:;">Update CarFax credentials</a>
-		</div>
-		<div class="columnHalf flowCenter">
-			<img width="162" src="/images/autocheck.png" class="paddingBottom10" />
-			<a href="javascript:;">Update Autocheck SID</a>
-		</div>
-	</div>
+	<external-resources></external-resources>
 
 </div>
