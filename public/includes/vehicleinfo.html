@@ -1,0 +1,29 @@
+<div class="paddingTop28">
+	<div ng-hide="verified">
+		<h5 class="headingText" ng-click="verified=true">Vehicle Info</h5>
+
+		<dl>
+			<dt ng-repeat-start="item in vehicleInfo">{{item.name}}</dt>
+			<dd ng-repeat-end class="cf">{{item.value}}</dd>
+		</dl>
+	</div>
+
+	<div ng-show="verified">
+		<div class="cf">
+			<h5 class="headingText columnThird" ng-click="verified=false">Vehicle Info</h5>
+			<strong class="columnThird titleText">Customer</strong>
+			<strong class="columnThird titleText">Verify</strong>
+		</div>
+
+		<dl class="thirds">
+			<dt ng-repeat-start="item in vehicleInfo">{{item.name}}</dt>
+			<dd ng-repeat-end class="cf">
+				<div class="columnHalf">{{item.value}}</div>
+				<div class="columnHalf"
+					ng-class="{notVerified:(item.value!=item.verify),verified:(item.value==item.verify)}">
+					{{item.verify}}
+				</div>
+			</dd>
+		</dl>
+	</div>
+</div>
