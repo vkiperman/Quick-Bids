@@ -50,6 +50,11 @@
 	position: absolute; z-index: 950;
 }
 
+.boxShadow{
+	-webkit-box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.3);
+	-moz-box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.3);
+	box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.3);
+}
 .bids .modal {
 	-webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.4);
 	-moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.4);
@@ -272,6 +277,8 @@ ul.vehicleOptions li:last-of-type {
 }
 
 .gradientTop {
+	-webkit-transition:all .6s;
+    transition:all .6s;
 	background: #eef1f3; /* Old browsers */
 	background: -moz-linear-gradient(top,  #eef1f3 0%, #ffffff 34px); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eef1f3), color-stop(34px,#ffffff)); /* Chrome,Safari4+ */
@@ -478,6 +485,7 @@ body[ng-app="Dashboard"] .dashboardList li {
 	font-weight: bold;
 	float: left;
 	margin-left: 10px;
+	height: 16px;
 }
 
 .tabs .tab.active{
