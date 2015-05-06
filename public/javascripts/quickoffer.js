@@ -10,9 +10,9 @@
 		'BidInformation',
 		'VehicleValuation',
 		'VehicleReportCard'
-	])
+	]);
 
-	.directive('currency', function($filter){
+	QuickOffer.directive('currency', function($filter){
 
 		return {
 			restrict: 'A',
