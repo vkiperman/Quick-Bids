@@ -79,6 +79,7 @@
                 	// this works in all browsers
                 	if(parentBottom < Math.round(boxHeight) + OFFSET_TOP ){                		
                 		element.css({position: 'absolute', top: (parentHeight - height) + 'px'});
+                		element.find('div').eq(0).removeClass('boxShadow');
 
                 	} else if(parentTop <= PARENT_OFFSET_TOP){
                 		element.css({position: 'fixed', top: OFFSET_TOP + 'px'});
