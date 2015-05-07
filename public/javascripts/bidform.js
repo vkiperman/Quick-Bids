@@ -45,6 +45,8 @@
 				$scope.scrollPhase = 1;
 			},
 
+			scope: {fixScroll: '@'},
+
 			replace: true,
 
 			link: function(scope, element, attrs, ctrl){
@@ -84,36 +86,39 @@
                 element.css({width: elementWidth + 'px'});
                 parentElement.css({position: 'relative'});
 
-                windowEl.on('scroll', scope.$apply.bind(scope, function(){
-                	var elementRect = element[0].getBoundingClientRect(),
-                		parentRect = parentElement[0].getBoundingClientRect();
-                		
-                	top = elementRect.top;
-	                height = elementRect.height;
-                	parentTop = parentRect.top;
-                	parentBottom = parentRect.bottom;
-	                parentHeight = parentRect.height;
-	                boxHeight = height + 
-	                		parseInt(getStyle(element[0], 'padding-top')) +
-                			parseInt(getStyle(element[0], 'padding-bottom')) +  
-	                		parseInt(getStyle(element[0], 'border-top-width')) +
-	                		parseInt(getStyle(element[0], 'border-bottom-width')) +
-                			parseInt(getStyle(element[0], 'margin-top')) +
-                			parseInt(getStyle(element[0], 'margin-bottom'));
+                if(scope.fixScroll){
 
-                	// this works in all browsers
-                	if(parentBottom < Math.round(boxHeight) + OFFSET_TOP){
-                		scope.scrollPhase = 3;
+	                windowEl.on('scroll', scope.$apply.bind(scope, function(){
+	                	var elementRect = element[0].getBoundingClientRect(),
+	                		parentRect = parentElement[0].getBoundingClientRect();
 
-                	} else if(parentTop <= PARENT_OFFSET_TOP){
-                		scope.scrollPhase = 2;
+	                	top = elementRect.top;
+		                height = elementRect.height;
+	                	parentTop = parentRect.top;
+	                	parentBottom = parentRect.bottom;
+		                parentHeight = parentRect.height;
+		                boxHeight = height + 
+		                		parseInt(getStyle(element[0], 'padding-top')) +
+	                			parseInt(getStyle(element[0], 'padding-bottom')) +  
+		                		parseInt(getStyle(element[0], 'border-top-width')) +
+		                		parseInt(getStyle(element[0], 'border-bottom-width')) +
+	                			parseInt(getStyle(element[0], 'margin-top')) +
+	                			parseInt(getStyle(element[0], 'margin-bottom'));
 
-                	} else {
-                		scope.scrollPhase = 1;
+	                	// this works in all browsers
+	                	if(parentBottom < Math.round(boxHeight) + OFFSET_TOP){
+	                		scope.scrollPhase = 3;
 
-                	}
+	                	} else if(parentTop <= PARENT_OFFSET_TOP){
+	                		scope.scrollPhase = 2;
 
-                }));
+	                	} else {
+	                		scope.scrollPhase = 1;
+
+	                	}
+
+	                }));
+				}
 			},
 
 			controllerAs: 'BidFormCtrl'
