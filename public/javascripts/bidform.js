@@ -41,6 +41,8 @@
 				$scope.showRequestDecline = false;
 
 				$scope.currency = 9876;
+
+				$scope.scrollPhase = 1;
 			},
 
 			replace: true,
@@ -50,6 +52,7 @@
                 	elementWidth = element[0].offsetWidth,
                 	originalTop = element[0].getBoundingClientRect().top,
                 	parentElement = element.parent().parent(),
+                	formContainer = element.find('div').eq(0),
                 	OFFSET_TOP = 20,
                 	PARENT_OFFSET_TOP = parseInt(getStyle(parentElement[0], 'padding-top')),
                 	top,
@@ -57,17 +60,39 @@
             		parentTop,
             		parentBottom,
                 	parentHeight,
-                	boxHeight;
+                	boxHeight,
+
+                	setPosition = function(positionValue, topValue, classAction){
+                		element.css({
+                			position: positionValue,
+                			top: topValue + 'px'
+                		});
+                		formContainer[classAction]('boxShadow');
+                	},
+                	phaseWatcher = function(newValue, oldValue) {
+						var params = [
+							['static', 0, 'removeClass'],
+							['fixed', OFFSET_TOP, 'addClass'],
+							['absolute', parentHeight - height, 'removeClass']
+						];
+
+						setPosition.apply(null, params[newValue-1]);
+				    };
+
+				scope.$watch('scrollPhase', phaseWatcher);
 
                 element.css({width: elementWidth + 'px'});
                 parentElement.css({position: 'relative'});
 
                 windowEl.on('scroll', scope.$apply.bind(scope, function(){
-                	top = element[0].getBoundingClientRect().top;
-	                height = element[0].getBoundingClientRect().height;
-                	parentTop = parentElement[0].getBoundingClientRect().top;
-                	parentBottom = parentElement[0].getBoundingClientRect().bottom;
-	                parentHeight = parentElement[0].getBoundingClientRect().height;
+                	var elementRect = element[0].getBoundingClientRect(),
+                		parentRect = parentElement[0].getBoundingClientRect();
+                		
+                	top = elementRect.top;
+	                height = elementRect.height;
+                	parentTop = parentRect.top;
+                	parentBottom = parentRect.bottom;
+	                parentHeight = parentRect.height;
 	                boxHeight = height + 
 	                		parseInt(getStyle(element[0], 'padding-top')) +
                 			parseInt(getStyle(element[0], 'padding-bottom')) +  
@@ -77,17 +102,15 @@
                 			parseInt(getStyle(element[0], 'margin-bottom'));
 
                 	// this works in all browsers
-                	if(parentBottom < Math.round(boxHeight) + OFFSET_TOP ){                		
-                		element.css({position: 'absolute', top: (parentHeight - height) + 'px'});
-                		element.find('div').eq(0).removeClass('boxShadow');
+                	if(parentBottom < Math.round(boxHeight) + OFFSET_TOP){
+                		scope.scrollPhase = 3;
 
                 	} else if(parentTop <= PARENT_OFFSET_TOP){
-                		element.css({position: 'fixed', top: OFFSET_TOP + 'px'});
-                		element.find('div').eq(0).addClass('boxShadow');
+                		scope.scrollPhase = 2;
 
                 	} else {
-                		element.css({position: 'static'});
-                		element.find('div').eq(0).removeClass('boxShadow');
+                		scope.scrollPhase = 1;
+
                 	}
 
                 }));
