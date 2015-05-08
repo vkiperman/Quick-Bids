@@ -10,6 +10,8 @@
 			controller: ['$scope', function($scope) {
 				var panes = $scope.panes = [];
 
+				$scope._directive_name = 'tabs';
+
 				$scope.select = function(pane) {
 					angular.forEach(panes, function(pane) {
 						pane.selected = false;
@@ -32,6 +34,11 @@
 			restrict: 'E',
 			transclude: true,
 			scope: { title: '@' },
+
+			controller: ['$scope', function($scope){
+
+				$scope._directive_name = 'pane';
+			}],
 
 			link: function(scope, element, attrs, tabsCtrl) {
 				tabsCtrl.addPane(scope);
