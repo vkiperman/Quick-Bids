@@ -103,6 +103,22 @@
 .plus {background-image: url(/images/plus_small.gif);}
 .minus {background-image: url(/images/minus_small.gif);}
 
+.trigger{
+	display: inline-block;
+	cursor:pointer;
+	background-image: url(/images/minus_small.gif);
+	background-repeat: no-repeat;
+	background-position: -2px;
+	padding-left: 13px !important;
+
+	-webkit-box-sizing: border-box; /* Safari 3.0 - 5.0, Chrome 1 - 9, Android 2.1 - 3.x */
+	-moz-box-sizing: border-box;    /* Firefox 1 - 28 */
+	box-sizing: border-box;
+}
+.trigger.collapsed{
+	background-image: url(/images/plus_small.gif);
+}
+
 .mdcSection {
 	border-top:  1px solid #E1E1E1;
 	padding: 18px 10px;
