@@ -43,9 +43,15 @@
 				$scope.currency = 9876;
 
 				$scope.scrollPhase = 1;
-			},
 
-			scope: {fixScroll: '@'},
+				$scope.$on('totalReconAdjustChange', function(event, value){
+					$scope.totalReconAdjust = value;
+				});
+				$scope.$watch('totalReconAdjust', function(newVal, oldVal){
+					$scope.$broadcast('totalReconAdjustChange', newVal);
+					$scope.$emit('totalReconAdjustChange', newVal);
+				});
+			},
 
 			replace: true,
 
@@ -81,6 +87,7 @@
 						setPosition.apply(null, params[newValue-1]);
 				    };
 
+				scope.fixScroll = scope.$eval(attrs.fixScroll);
 				scope.$watch('scrollPhase', phaseWatcher);
 
                 element.css({width: elementWidth + 'px'});
