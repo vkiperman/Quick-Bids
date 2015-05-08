@@ -4,8 +4,8 @@
 			<label>Recon Adjustment Total</label>
 
 			<input currency class="fullWidth"
-				ng-keydown="lockReconAdjustment=true"
-				ng-model="totalReconAdjust" />
+				ng-model="totalReconAdjust"
+				ng-keydown="lockReconAdjustment=true" />
 		</div>
 	</div>
 
@@ -20,21 +20,24 @@
 		</label>
 	</div>
 
+	<!-- Accordion -->
 	<dl class="headedList">
-		<dt class="width40">Vehicle History</dt>
+		<dt class="width40 trigger"
+			ng-class="{collapsed: !vehicleReportCard.vehicleHistory.visible}"
+			ng-click="vehicleReportCard.vehicleHistory.visible=!vehicleReportCard.vehicleHistory.visible">Vehicle History
+		</dt>
 		<dd class="width60">
 			<div class="columnHalf"><strong>Customer Response</strong></div>
 			
 			<div class="width42 floatRight">
-				<strong>
-					{{(lockReconAdjustment ? totalReconAdjustFrozen : totalReconAdjust) | currency}}
-				</strong>
+				<strong>{{sum('vehicleHistory') | currency}}</strong>
 			</div>
 
 		</dd>
 
-		<dt class="width40" ng-repeat-start="item in vehicleReportCard.vehicleHistory">{{item.name}}</dt>
-		<dd class="width60" ng-repeat-end>
+		<dt class="width40" ng-show="vehicleReportCard.vehicleHistory.visible"
+			ng-repeat-start="item in vehicleReportCard.vehicleHistory">{{item.name}}</dt>
+		<dd class="width60" ng-show="vehicleReportCard.vehicleHistory.visible" ng-repeat-end>
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">
 
@@ -45,14 +48,19 @@
 	</dl>
 
 	<dl class="headedList">
-		<dt class="width40">Exterior</dt>
+		<dt class="width40 trigger"
+			ng-class="{collapsed: !vehicleReportCard.exterior.visible}"
+			ng-click="vehicleReportCard.exterior.visible=!vehicleReportCard.exterior.visible">Exterior</dt>
 		<dd class="width60">
 			<div class="columnHalf"><strong>Customer Response</strong></div>
-			<div class="width42 floatRight"><strong>Cost in US$</strong></div>
+			<div class="width42 floatRight">
+				<strong>{{sum('exterior') | currency}}</strong>
+			</div>
 		</dd>
 
-		<dt class="width40" ng-repeat-start="item in vehicleReportCard.exterior">{{item.name}}</dt>
-		<dd class="width60" ng-repeat-end>
+		<dt class="width40" ng-show="vehicleReportCard.exterior.visible"
+			ng-repeat-start="item in vehicleReportCard.exterior">{{item.name}}</dt>
+		<dd class="width60" ng-show="vehicleReportCard.exterior.visible" ng-repeat-end>
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">
 				
@@ -63,14 +71,19 @@
 	</dl>
 
 	<dl class="headedList">
-		<dt class="width40">Interior</dt>
+		<dt class="width40 trigger" 
+			ng-class="{collapsed: !vehicleReportCard.interior.visible}"
+			ng-click="vehicleReportCard.interior.visible=!vehicleReportCard.interior.visible">Interior</dt>
 		<dd class="width60">
 			<div class="columnHalf"><strong>Customer Response</strong></div>
-			<div class="width42 floatRight"><strong>Cost in US$</strong></div>
+			<div class="width42 floatRight">
+				<strong>{{sum('interior') | currency}}</strong>
+			</div>
 		</dd>
 
-		<dt class="width40" ng-repeat-start="item in vehicleReportCard.interior">{{item.name}}</dt>
-		<dd class="width60" ng-repeat-end>
+		<dt class="width40" ng-show="vehicleReportCard.interior.visible"
+			ng-repeat-start="item in vehicleReportCard.interior">{{item.name}}</dt>
+		<dd class="width60" ng-show="vehicleReportCard.interior.visible" ng-repeat-end>
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">				
 				
@@ -81,14 +94,19 @@
 	</dl>
 
 	<dl class="headedList">
-		<dt class="width40">Mechanical</dt>
+		<dt class="width40 trigger" 
+			ng-class="{collapsed: !vehicleReportCard.mechanical.visible}"
+			ng-click="vehicleReportCard.mechanical.visible=!vehicleReportCard.mechanical.visible">Mechanical</dt>
 		<dd class="width60">
 			<div class="columnHalf"><strong>Customer Response</strong></div>
-			<div class="width42 floatRight"><strong>Cost in US$</strong></div>
+			<div class="width42 floatRight">
+				<strong>{{sum('mechanical') | currency}}</strong>
+			</div>
 		</dd>
 
-		<dt class="width40" ng-repeat-start="item in vehicleReportCard.mechanical">{{item.name}}</dt>
-		<dd class="width60" ng-repeat-end>
+		<dt class="width40" ng-show="vehicleReportCard.mechanical.visible"
+			ng-repeat-start="item in vehicleReportCard.mechanical">{{item.name}}</dt>
+		<dd class="width60" ng-show="vehicleReportCard.mechanical.visible" ng-repeat-end>
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">				
 				
@@ -99,14 +117,19 @@
 	</dl>
 
 	<dl class="headedList">
-		<dt class="width40">Condition of Tires</dt>
+		<dt class="width40 trigger" 
+			ng-class="{collapsed: !vehicleReportCard.tires.visible}"
+			ng-click="vehicleReportCard.tires.visible=!vehicleReportCard.tires.visible">Condition of Tires</dt>
 		<dd class="width60">
 			<div class="columnHalf"><strong>Customer Response</strong></div>
-			<div class="width42 floatRight"><strong>Cost in US$</strong></div>
+			<div class="width42 floatRight">
+				<strong>{{sum('tires') | currency}}</strong>
+			</div>
 		</dd>
 
-		<dt class="width40" ng-repeat-start="item in vehicleReportCard.tires">{{item.name}}</dt>
-		<dd class="width60" ng-repeat-end>
+		<dt class="width40" ng-show="vehicleReportCard.tires.visible"
+			ng-repeat-start="item in vehicleReportCard.tires">{{item.name}}</dt>
+		<dd class="width60" ng-show="vehicleReportCard.tires.visible" ng-repeat-end>
 			<div class="columnHalf">{{item.value}}</div>
 			<div class="width42 floatRight relative">				
 				
