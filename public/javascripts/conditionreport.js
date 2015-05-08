@@ -9,23 +9,23 @@
 			templateUrl: '/includes/condition-report.html',
 
 			controller: function($scope){
+				$scope.show0 = true;
+
 				$scope.totalReconAdjust = 0;
 				$scope.totalReconAdjustFrozen = 0;
 				$scope.lockReconAdjustment = false;
 
-				$scope.$watch(function(){
-						return $scope.$parent.totalReconAdjust;
-					}, function(newVal, oldVal){
-						$scope.totalReconAdjust = newVal;
+				$scope.$on('totalReconAdjustChange', function(event, value){
+					$scope.totalReconAdjust = value;
 				});
 
 				$scope.$watch('totalReconAdjust', function(newVal, oldVal){
-					$scope.$parent.totalReconAdjust = newVal;
+					$scope.$broadcast('totalReconAdjustChange', newVal);
+					$scope.$emit('totalReconAdjustChange', newVal);
 				});
 
 				$scope.focusManual = function(event){
 					$scope.lockReconAdjustment = true;
-					document.getElementById('manualInput').focus();
 				};
 
 				$scope.aggregate = function(){
@@ -43,6 +43,14 @@
 					$scope.totalReconAdjustFrozen = aggregate;
 
 				};
+
+				$scope.sum = function(coll){
+					var sum = 0;
+					angular.forEach($scope.vehicleReportCard[coll], function(item, value){
+						sum += (+item.cost);
+					});
+					return sum;
+				}
 
 				$scope.vehicleReportCard = {
 					vehicleHistory: [
@@ -77,7 +85,14 @@
 						{name:'Tires', value:'Recently replaced'},
 						{name:'Brakes', value:'Old'}
 					]
-				}
+				};
+
+				angular.forEach($scope.vehicleReportCard, function(report){
+					report.visible = true;
+					angular.forEach(report, function(item){
+						item.cost = 0;
+					});
+				});
 
 			}
 		};
