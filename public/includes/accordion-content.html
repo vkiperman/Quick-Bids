@@ -1,0 +1,9 @@
+ <div>
+ 	<div ng-click="toggle(scope)"
+ 		ng-bind-html="titleHTML"
+ 		class="trigger"
+ 		ng-class="{collapsed: !expanded}">
+ 		
+ 	</div>
+ 	<div ng-transclude ng-show="expanded"></div>
+ </div>
