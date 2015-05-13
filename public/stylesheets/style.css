@@ -293,8 +293,8 @@ ul.vehicleOptions li:last-of-type {
 }
 
 .gradientTop {
-	-webkit-transition:all .6s;
-    transition:all .6s;
+	-webkit-transition: all .6s;
+    transition: all .6s;
 	background: #eef1f3; /* Old browsers */
 	background: -moz-linear-gradient(top,  #eef1f3 0%, #ffffff 34px); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eef1f3), color-stop(34px,#ffffff)); /* Chrome,Safari4+ */
