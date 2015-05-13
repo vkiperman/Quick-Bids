@@ -3,6 +3,7 @@
 		'Tabs',
 		'BidForm',
 		'MarketIq',
+		'Fixscroll',
 		'HeaderMenu', 
 		'CustomerInfo',
 		'GlobalFooter', 
