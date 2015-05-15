@@ -1,0 +1,10 @@
+<div data-section="market_iq_summary">
+	<div class="paddingTop14 cf">
+		<h5 class="headingText floatLeft">Market IQ Summary</h5>
+		<a href="javascript:;" class="floatRight">View Full Details</a>
+	</div>
+	<dl>
+		<dt ng-repeat-start="item in marketIqSummary">{{ item.name }}</dt>
+		<dd ng-repeat-end>{{item.value}}</dd>
+	</dl>
+</div>
