@@ -18,7 +18,7 @@
 			restrict: 'E',
 			templateUrl: '/includes/conditionSummary.html',
 
-			link: function(scope/*, element, attrs, transclude*/){
+			link: function(scope/*, element, attrs, ctrl*/){
 
 			},
 
