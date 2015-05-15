@@ -31,16 +31,19 @@
 		return {
 			name: 'fixScroll',
 			scope: {
-				parentDepth: '='
+				parentDepth: '=',
+				fixedClass: '@'
 			},
 			restrict: 'A',
 
 			link: function(scope, element, attrs, ctrl){
-
+                var parentElement = element;
+				for(var i = 0; i < attrs.parentDepth; i++){
+					parentElement = parentElement.parent();
+				}
                 var windowEl = angular.element($window),
                 	elementWidth = element[0].getBoundingClientRect().width,
                 	originalTop = element[0].getBoundingClientRect().top,
-                	parentElement = element,
                 	formContainer = element.find('div').eq(0),
                 	OFFSET_TOP = 20,
                 	PARENT_OFFSET_TOP = parseInt(getStyle(parentElement[0], 'padding-top')),
@@ -53,14 +56,16 @@
 
                 	setPosition = function(styles, classAction){
                 		element.css(styles);
-                		formContainer[classAction]('boxShadow');
+                		if(scope.fixedClass){
+	                		formContainer[classAction](scope.fixedClass);
+	                	}
                 	},
                 	phaseWatcher = function(newValue, oldValue) {
 						var params = [
 							[
 								{
 		                			position: 'static',
-		                			top: '0px'
+		                			top: ''
 	                			},
 	                			'removeClass'
 	                		],
@@ -82,9 +87,6 @@
 
 						setPosition.apply(null, params[newValue-1]);
 				    };
-				for(var i = 0; i < attrs.parentDepth; i++){
-					parentElement = parentElement.parent();
-				}
 
 				scope.fixScroll = scope.$eval(attrs.fixScroll);
 				scope.$watch('scrollPhase', phaseWatcher);
