@@ -52,7 +52,7 @@ fs.watch(jsDirectory, {recursive: true}, function(event, filename){
 
       var jsScaffold = fs.readFileSync('./temp/directive.js', 'utf8')
         .replace(/%MODULENAME%/m, moduleName)
-        .replace(/%DIRECTIVENAME%/m, directiveName)
+        .replace(/%DIRECTIVENAME%/gm, directiveName)
         .replace(/%TEMPLATENAME%/m, templateName + '.html');
       
       if(isEmpty){
