@@ -8,52 +8,58 @@
 			<div id="menuContainer" class="nav Hidden floatRight width820px">
 			 
 			    <div style="width820px">
-			    <!-- start the menubar -->
-			    	<div class="mdcDropDownMenu" ng-repeat="tab in navTabs.navigation">
-                        <div href="{{tab.link}}"
-                        	ng-class="{mdcDropDownMenuWithChildren: tab.subnav, mdcMenuActive:dropDownMenu===tab.title}"
-                        	ng-click="tab.subnav?showDropDownMenu($event, tab.title):navigateTo(tab.link)"
-                        	class="mdcDropDownMenuText">{{tab.title}}</div>
+			    	<!-- start the menubar -->
+			    	<div ng-repeat="tab in navTabs.navigation">
+			    		<div ng-if="tab.title !== 'Profile'"
+			    			class="mdcDropDownMenu">
+	                        <div href="{{tab.link}}"
+	                        	ng-class="{mdcDropDownMenuWithChildren: tab.subnav, mdcMenuActive:dropDownMenu===tab.title}"
+	                        	ng-click="tab.subnav?showDropDownMenu($event, tab.title):navigateTo(tab.link)"
+	                        	class="mdcDropDownMenuText">{{tab.title}}</div>
 
-                        <div ng-if="tab.subnav"
-                        	class="mdcDropDownMenuItemContainer"
-					    	ng-show="isDropDownMenu(tab.title)">
+	                        <div ng-if="tab.subnav"
+	                        	class="mdcDropDownMenuItemContainer"
+						    	ng-show="isDropDownMenu(tab.title)">
 
-					    	<div class="mdcDropDownMenuItem"
-					    		ng-repeat="subNav in tab.subnav">
-					    		<a href="{{subNav.link}}" class="mdcDropDownMenuItemText">
-					    			{{subNav.title}}
-					    		</a>
-					    	</div>
-					    </div>
-                    </div>                         
-				     
-			                    
-			        <div class="mdcDropDownMenu mdcPinRight">                    
-                        <div class="mdcDropDownMenuText mdcDropDownMenuWithChildren"
-				        	ng-click="showDropDownMenu($event, 'profile')">
+						    	<div class="mdcDropDownMenuItem"
+						    		ng-repeat="subNav in tab.subnav">
+						    		<a href="{{subNav.link}}" class="mdcDropDownMenuItemText">
+						    			{{subNav.title}}
+						    		</a>
+						    	</div>
+						    </div>
+						</div>
+
+						<!-- profile -->
+			    		<div ng-if="tab.title === 'Profile'"
+			    			class="mdcDropDownMenu mdcPinRight">
+							<div class="mdcDropDownMenuText mdcDropDownMenuWithChildren"
+				        		ng-click="showDropDownMenu($event, tab.title)">
                             <img class="mdcProfileItem"
                             	src="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/images/one-pixel-clear.gif"
                             	width="22" height="16" alt="Profile" />
-                        </div>       
-                        <div class="mdcDropDownMenuItemContainer"
-					    	ng-show="dropDownMenu === 'profile'">
-                            <div class="mdcMenuItemSeparator">
-                                <span class="mdcProfileNameText mdcDropDownMenuItemText">test_supportAdmin@cars.com</span>
-                            </div>
-                            <div class="mdcDropDownMenuItem"><a href="javascript:;" class="mdcDropDownMenuItemText">My Profile</a></div>
-							<div><a href="'/cs/cp/logout'" class="mdcDropDownMenuItemText">Logout</a></div>
-                            <div>
-                            	<a href="'/wps/portal/dealercenter/?WCM_GLOBAL_CONTEXT=/wps/wcm/connect/DealerCenter/DealerCenter/Home/FAQ'"
-                            		class="mdcDropDownMenuItemText">
-                            		Help
-                            	</a>
-                            </div>
-	                    </div>
-	                </div>
-			    
-			    </div>
-			    
+                        	</div>
+				    		<div class="mdcDropDownMenuItemContainer"
+						    	ng-show="isDropDownMenu(tab.title)">
+
+
+						    	<div ng-repeat="item in tab.subnav"
+						    		class="{{ $first ? mdcMenuItemSeparator : mdcDropDownMenuItem }}">
+						    		
+						    		<span class="mdcProfileNameText mdcDropDownMenuItemText"
+						    			ng-if="$first">{{item.title}}</span>
+						    		
+						    		<a ng-if="!$first"
+						    			href="{{item.link}}"
+	                            		class="mdcDropDownMenuItemText">
+	                            		{{item.title}}
+	                            	</a>
+
+						    	</div>
+						    </div>
+			    		</div>
+                    </div>			    
+			    </div>			    
 			
 			</div> <!--menu container -->
 		</div> <!--header-content -->
