@@ -74,6 +74,18 @@
 	letter-spacing: 0.3px;
 }
 
+.mdcDropDownMenu {
+	position: relative;
+}
+
+.mdcDropDownMenuItemContainer{
+	white-space: nowrap;
+}
+
+.mdcPinRight .mdcDropDownMenuItemContainer{
+	right: 0;
+}
+
 .font12{
 	font-size:12px;
 }
