@@ -1,6 +1,6 @@
 (function(){
 
-	var app = angular.module('VehicleValuation', ['Marketiqsummary', 'BlackBookValue']);
+	var app = angular.module('VehicleValuation', ['Marketiqsummary', 'BlackBookValue', 'Manheim']);
 
 	app.directive('vehicleValuation', function(){
 
