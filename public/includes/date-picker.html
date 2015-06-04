@@ -1,0 +1,36 @@
+<span class="positionRelative datePicker">
+	
+	<input ng-model="calendar.displayDate" class="{{inputClass}}" 
+		ng-focus="startDatePicker()" readonly
+		type="text" />
+
+	<div ng-show="isDatePickerShowing" class="datePickerFlyOut" style="top:{{dateControlHeight}}px;z-index:{{zIndexProp}}">
+		<div class="floatLeft width15">
+			<div class="dateMonthAdvance" ng-click="calendar.advanceMonth(-1)">&#x25C4;</div>
+		</div>
+		<div class="floatLeft width70">
+			<div class="dateMonth">{{calendar.getUtilMonthName()}}, {{calendar.getUtilYear()}}</div>
+		</div>
+		<div class="floatLeft width15">
+			<div class="dateMonthAdvance" ng-click="calendar.advanceMonth(1)">&#x25BA;</div>
+		</div>
+		<table>
+			<tr>
+				<th>Su</th>
+				<th>M</th>
+				<th>T</th>
+				<th>W</th>
+				<th>Th</th>
+				<th>F</th>
+				<th>S</th>
+			</tr>
+			<tr ng-repeat="dates in datesArray">
+				<td ng-repeat="date in dates track by $index" 
+					ng-click="calendar.setDate($event, date)"
+					ng-class="{date: date, today: calendar.isToday(date), dateSelected: calendar.isSelected(date)}">
+					<span>{{date.getDate()}}</span>
+				</td>
+			</tr>
+		</table>
+	</div>
+</span>
