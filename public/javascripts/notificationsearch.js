@@ -8,7 +8,7 @@
 			restrict: 'E',
 			templateUrl: '/includes/notification-search.html',
 
-			controller: function($scope, $animate){
+			controller: ['$scope', '$animate', function($scope, $animate){
 				
 				$scope.reports = [					
 					{label:'Daily Bid Statistics',value:'a'},
@@ -36,7 +36,33 @@
 					frequencySelected: $scope.frequencies[0],
 					ampmSelected: $scope.amorpm[0]					
 				};
-			},
+
+				$scope.allDays = false;
+				$scope.weekdays = [
+					{name: 'Sunday', selected: false},
+					{name: 'Monday', selected: false},
+					{name: 'Tuesday', selected: false},
+					{name: 'Wednesday', selected: false},
+					{name: 'Thursday', selected: false},
+					{name: 'Friday', selected: false},
+					{name: 'Saturday', selected: false}
+				];
+				$scope.selectAllDays = function(all){					
+					angular.forEach($scope.weekdays, function(day){
+						day.selected = all;
+					});
+				};
+				$scope.changeDay = function(){
+					var go = true;
+					angular.forEach($scope.weekdays, function(day){
+						if(go){
+							go = day.selected;
+						}
+						$scope.allDays = go;
+					});
+				};
+
+			}],
 			controllerAs: 'notificationSearchCtrl'
 		}
 	});
