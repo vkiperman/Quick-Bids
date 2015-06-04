@@ -23,10 +23,12 @@
 			<div class="floatLeft">
 				<label>Submission Date</label>
 				<div class="floatLeft marginRight16">
-					<input type="date" value="" ng-model="bidFilter.bidStatusDateFrom" />
+					<!-- input type="date" value="" ng-model="bidFilter.bidStatusDateFrom" / -->
+					<date-picker input-class="date" original-date="{{bidFilter.bidStatusDateFrom}}" input-type="date"></date-picker>
 				</div>
 				<div class="floatLeft">
-					<input type="date" value="" ng-model="bidFilter.bidStatusDateTo" />
+					<!-- input type="date" value="" ng-model="bidFilter.bidStatusDateTo" / -->
+					<date-picker input-class="date" original-date="{{bidFilter.bidStatusDateTo}}" input-type="date"></date-picker>
 				</div>
 			</div>
 
@@ -45,10 +47,12 @@
 			<div class="floatLeft">
 				<label>Bid Date</label>
 				<div class="floatLeft marginRight16">
-					<input type="date" value="" ng-model="bidFilter.bidDateFrom" />
+					<!-- input type="date" value="" ng-model="bidFilter.bidDateFrom" / -->
+					<date-picker input-class="date" original-date="{{bidFilter.bidDateFrom}}" input-type="date"></date-picker>
 				</div>
 				<div class="floatLeft">
-					<input type="date" value="" ng-model="bidFilter.bidDateTo" />
+					<!-- input type="date" value="" ng-model="bidFilter.bidDateTo" / -->
+					<date-picker input-class="date" original-date="{{bidFilter.bidDateTo}}" input-type="date"></date-picker>
 				</div>
 			</div>
 		</div>

@@ -203,6 +203,7 @@
 	border-top: none !important;
 }
 
+.boldText,
 .mdcComponent dl dt {font-weight: bold;}
 
 .mdcComponent dl dt,
@@ -421,6 +422,7 @@ body[ng-app="Dashboard"] .dashboardList li {
 	width: 80px;
 	margin-right: 8px;
 }
+.date {width:89px;}
 
 .inputLarge {width: 202px;}
 
@@ -601,9 +603,74 @@ body[ng-app="Dashboard"] .dashboardList li {
 
 dl .dollar.absolute {top:-3px;}
 
+.positionRelative{position:relative;}
+.positionAbsolute{position:absolute;}
+
+
+.datePicker{}
+.datePickerFlyOut{
+	border: rgb(169, 169, 169) 1px solid;
+	background: rgba(255, 255, 255, .94);
+	left: 0;
+	z-index: 1;
+	padding: 8px;
+  	position: absolute;
+	-webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.3);
+	box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.3);
+}
+.datePickerFlyOut th,
+.datePickerFlyOut td{
+	text-align:center;
+	padding: 6px 9px;
+}
+.datePickerFlyOut td.date{
+	cursor: pointer;
+}
+.datePickerFlyOut td.today{
+	background-color: #E0E0E0;
+	font-weight: bold;
+	color: rgb(65,20,141);
+}
+
+.datePickerFlyOut td.date:hover {
+	background: #666;
+	color: #FFF;
+}
+.dateSelected{
+	background: rgb(65,20,141);
+	color: #FFF;
+	font-weight: bold;
+}
+.dateMonth,
+.dateMonthAdvance{
+	padding:3px 1px;
+}
+.dateMonth {
+	color: rgb(65,20,141);
+	font-weight: bold;
+	font-size: 14px;
+}
+.dateMonthAdvance{
+	cursor: pointer;
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+}
+
+.width15 {width:15%;text-align: center;}
+.width70 {width:70%;text-align: center;}
 
 /* HTML selectors */
 [type=date] {width:89px;}
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+[type="date"]::-webkit-input-placeholder { 
+    visibility: hidden !important;
+}
+
 [type=radio],
 [type=checkbox] {vertical-align:top;}
 
