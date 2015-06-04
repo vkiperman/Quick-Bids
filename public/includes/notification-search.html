@@ -47,27 +47,15 @@
         </select>            
        
     </div>
-    <div class="cf"> 
-        <label class="displayInline paddedCheckbox">
-            <input type="checkbox"/>Sunday
-        </label>
-        <label class="displayInline paddedCheckbox">
-            <input type="checkbox"/>Monday
-        </label>
-        <label class="displayInline paddedCheckbox">
-            <input type="checkbox"/>Tuesday
-        </label>
-        <label class="displayInline paddedCheckbox">
-            <input type="checkbox"/>Wednesday
-        </label>
-        <label class="displayInline paddedCheckbox">
-            <input type="checkbox"/>Thursday
-        </label>
-        <label class="displayInline paddedCheckbox">
-            <input type="checkbox"/>Friday
-        </label>
-        <label class="displayInline paddedCheckbox">
-            <input type="checkbox"/>Saturday
+    <div class="cf">
+        <div>
+            <label class="displayInline paddedCheckbox" ng-class="{boldText: !allDays}">
+                <input type="checkbox" ng-model="allDays" ng-change="selectAllDays(allDays)" />Select All Days
+            </label>
+        </div>
+
+        <label ng-repeat="day in weekdays" class="displayInline paddedCheckbox">
+            <input type="checkbox" ng-model="day.selected" ng-change="changeDay()" />{{day.name}}
         </label>
     </div>
 
