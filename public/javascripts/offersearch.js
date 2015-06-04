@@ -1,5 +1,5 @@
 (function(){
-	var OfferSearch = angular.module('OfferSearch', []);
+	var OfferSearch = angular.module('OfferSearch', ['DatePicker']);
 
 	OfferSearch.directive('offerSearch', function(){
 
@@ -41,12 +41,23 @@
 					regionSelected: $scope.regions[0],
 					bidStatusSelected: $scope.bidStatuses[0],
 					bidderSelected: $scope.bidders[0],
-					bidStatusDateFrom: new Date(),
-					bidStatusDateTo: new Date(),
-					bidDateFrom: new Date(),
-					bidDateTo: new Date(),
+
+					bidStatusDateFrom: new Date('06/08/2014'),
+					bidStatusDateTo: new Date('01/08/2015'),
+					bidDateFrom: new Date('02/08/2015'),
+					bidDateTo: new Date('06/08/2016'),
 					customer: {}
 				};
+
+				/*$scope.submissionDate = {
+					start: new Date('06/08/2015'),
+					end: new Date()
+				};
+
+				$scope.bidDate = {
+					start: new Date(),
+					end: new Date()
+				};*/
 			},
 			controllerAs: 'offerSearchCtrl'
 		}
