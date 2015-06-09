@@ -1,6 +1,6 @@
 //notificationsearch.js
 (function(){
-	var app = angular.module('NotificationSearch', []);
+	var app = angular.module('NotificationSearch', ['TimePicker']);
 
 	app.directive('notificationSearch', function(){
 
