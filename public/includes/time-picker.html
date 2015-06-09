@@ -1,0 +1,13 @@
+<span class="positionRelative timePicker">
+	<input type="text"
+		ng-model="originalTime"
+		ng-focus="startTimePicker()"
+		class="hour" />
+
+	<div ng-show="isTimePickerShowing" class="timePickerFlyOut" id="timePickerFlyOut_{{$id}}"
+		style="top:{{timeCollectionTop}}px; z-index:{{zIndexProp}}; width:{{timeControlWidth}}px">
+		<div ng-repeat="hour in hours" class="hourItem"
+			ng-class="{timeSelected:hour==originalTime}"
+			ng-click="setTime($event, hour, $index)">{{hour}}</div>
+	</div>
+</span>
