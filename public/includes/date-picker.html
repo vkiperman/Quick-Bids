@@ -6,13 +6,15 @@
 
 	<div ng-show="isDatePickerShowing" class="datePickerFlyOut" style="top:{{dateControlHeight}}px;z-index:{{zIndexProp}}">
 		<div class="floatLeft width15">
-			<div class="dateMonthAdvance" ng-click="calendar.advanceMonth(-1)">&#x25C4;</div>
+			<div class="dateMonthAdvance"
+				ng-click="calendar.advanceMonth(-1)">&#x25C4;</div>
 		</div>
 		<div class="floatLeft width70">
-			<div class="dateMonth">{{calendar.getUtilMonthName()}}, {{calendar.getUtilYear()}}</div>
+			<div class="dateMonth">{{calendar.utilDateObject | date : calendarHeaderFormat}}</div>
 		</div>
 		<div class="floatLeft width15">
-			<div class="dateMonthAdvance" ng-click="calendar.advanceMonth(1)">&#x25BA;</div>
+			<div class="dateMonthAdvance"
+				ng-click="calendar.advanceMonth(1)">&#x25BA;</div>
 		</div>
 		<table>
 			<tr>
@@ -27,10 +29,15 @@
 			<tr ng-repeat="dates in datesArray">
 				<td ng-repeat="date in dates track by $index" 
 					ng-click="calendar.setDate($event, date)"
-					ng-class="{date: date, today: calendar.isToday(date), dateSelected: calendar.isSelected(date)}">
-					<span>{{date.getDate()}}</span>
+					ng-class="{otherMonth: date.getMonth()!=calendar.utilDateObject.getMonth(), date: date, today: calendar.isToday(date), dateSelected: calendar.isSelected(date)}">
+					<span>{{date | date : 'd'}}</span>
 				</td>
 			</tr>
 		</table>
+
+		<div class="paddingTop8">
+			<div class="columnHalf"><a class="dateMonthAdvance" ng-click="calendar.selectToday($event, calendar.now)">Select Today</a></div>
+			<div class="columnHalf flowRight"><a class="dateMonthAdvance" ng-click="calendar.cancel($event)">Cancel</a></div>
+		</div>
 	</div>
 </span>
