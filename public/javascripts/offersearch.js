@@ -9,6 +9,8 @@
 
 			controller: function($scope, $animate){
 				$scope.toggleAdvanced = false;
+				$scope.displayDateFormat = 'MM/dd/yyyy';
+				$scope.calendarHeaderFormat = 'MMMM, yyyy';
 
 				$scope.regions = [
 					{label:'All',value:''},
@@ -42,9 +44,9 @@
 					bidStatusSelected: $scope.bidStatuses[0],
 					bidderSelected: $scope.bidders[0],
 
-					bidStatusDateFrom: new Date('06/08/2014'),
-					bidStatusDateTo: new Date('01/08/2015'),
-					bidDateFrom: new Date('02/08/2015'),
+					bidStatusDateFrom: new Date('06/12/2014'),
+					bidStatusDateTo: new Date('01/16/2015'),
+					bidDateFrom: new Date('02/09/2015'),
 					bidDateTo: new Date('06/08/2016'),
 					customer: {}
 				};
