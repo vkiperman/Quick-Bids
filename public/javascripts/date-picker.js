@@ -7,78 +7,69 @@
 		return {
 			// bindToController: true,
 			// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
-			controller: ['$scope', '$element', '$attrs', '$transclude', function($scope, $element, $attrs, $transclude) {
-				var i = 0;
+			controller: ['$scope', '$element', '$attrs', '$transclude', '$sce', function($scope, $element, $attrs, $transclude, $sce) {
+
+				$scope.calendarHeaderFormat = $scope.calendarHeaderFormat || 'MMM, yyyy';
 				$scope.zIndexProp = 1;
 				$scope.datesArray = [];
 				$scope.calendar = {
 					now: new Date(),
 					
+					originalDate: new Date($scope.originalDate.split('T')[0]),
 					displayDate: new Date($scope.originalDate.split('T')[0]),
 					displayDateObject: new Date($scope.originalDate.split('T')[0]),
 					utilDateObject: new Date($scope.originalDate.split('T')[0]),
-					months: [
-						{name: 'January'}, 
-						{name: 'February'}, 
-						{name: 'March'}, 
-						{name: 'April'}, 
-						{name: 'May'},
-						{name: 'June'},
-						{name: 'July'},
-						{name: 'August'}, 
-						{name: 'September'}, 
-						{name: 'October'}, 
-						{name: 'November'}, 
-						{name: 'December'}
-					],
-					getCurrentMonth: function(){
-						return this.displayDateObject.getMonth();
-					},
-					getCurrentMonthName: function(m){
-						return this.months[m || this.displayDateObject.getMonth()].name;
-					},
-					getCurrentYear: function(m){
-						return this.displayDateObject.getFullYear();
-					},
+
 					getUtilMonth: function(){
 						return this.utilDateObject.getMonth();
-					},
-					getUtilMonthName: function(m){
-						return this.months[m || this.utilDateObject.getMonth()].name;
 					},
 					getUtilYear: function(m){
 						return this.utilDateObject.getFullYear();
 					},
 
-					getDatesArray: function(y, m){
-						var now = this.getDate(),
-							day = 1,
+					getPrevMonthDates: function(y, m){
+						var day = 1,
 							datesArray = [],
 							year = y || this.getUtilYear(),
 							month = m || this.getUtilMonth(),
-							newDate, size;
+							firstDay = new Date(year, month, day).getDay();
+
+						for (var i = 1; i <= firstDay; i++){
+							datesArray.push(new Date( new Date(year, month, -firstDay+i) ));							
+						}
+
+						return datesArray;
+					},
+
+					getDatesArray: function(dateObject){
+						var day = 1,
+							datesArray = [],
+							year = (dateObject && dateObject.getFullYear()) || this.getUtilYear(),
+							month = (dateObject && dateObject.getMonth()) || this.getUtilMonth(),
+							newDate, size,
+							WEEK_LENGTH = 7;
 						
 						while (new Date(year, month, day).getMonth() === month){
-							newDate = new Date(year, month, day);
+							newDate = new Date(year, month, day++);
 							
 							if(datesArray.length === 0){
 								datesArray.push([]);
 								size = datesArray.length - 1;
-								datesArray[size][new Date(year, month, day).getDay() ] = newDate;
+
+								datesArray[size] = this.getPrevMonthDates(year, month);
+								datesArray[size].push(newDate);
 							} else {
 								size = datesArray.length - 1;
 								datesArray[size].push(newDate);
 							}
 
-							day++;
-
-							if( datesArray[size].length == 7 ) {
+							if( datesArray[size].length == WEEK_LENGTH ) {
 								datesArray.push([]);
 							}
 						}
 						// right-fill last array
-						while(datesArray[size].length < 7){
-							datesArray[size].push('');
+						while(datesArray[size].length < WEEK_LENGTH){
+							datesArray[size].push(new Date(year, month, day++));
 						}
 						
 						$scope.datesArray = datesArray;
@@ -95,27 +86,37 @@
 					isSelected: function(date){
 						return (new Date(this.displayDate).toString() == date);
 					},
-					getDate: function(){
+					/*getDate: function(){
 						return this.now;
+					},*/
+					advanceMonth: function(advanceBy){
+						this.utilDateObject.setMonth(this.utilDateObject.getMonth() + advanceBy);
+						this.getDatesArray();
+					},
+					resetDate: function(){
+						this.utilDateObject = new Date(this.displayDateObject);
 					},
 					setDate: function(event, date){
 						if(!date) return;
 						this.displayDateObject = new Date(date);
 					},
-					advanceMonth: function(advanceBy){
-						var newMonth;
-						this.utilDateObject.setMonth(this.utilDateObject.getMonth() + advanceBy);
-						newMonth = this.utilDateObject.getMonth();
-						this.getDatesArray(this.getUtilYear(), newMonth)
+					selectToday: function(event){
+						this.setDate(event, this.now);
+						$scope.startDatePicker();
 					},
-					resetDate: function(){
-						this.utilDateObject = new Date(this.displayDateObject);
+					gotoToday: function(event){
+						$scope.startDatePicker(this.now);
+					},
+					cancel: function(event){
+						this.displayDateObject = this.originalDate;
+						$scope.isDatePickerShowing = false;
 					}
 				};
 
 				$scope.isDatePickerShowing = false;
 				$scope.startDatePicker = function(){
 					var scope = $scope;
+					//$scope.calendar.getPrevMonthDates();
 					$scope.calendar.resetDate();
 					$scope.calendar.getDatesArray();
 					$scope.zIndexProp = 1000;
@@ -132,7 +133,7 @@
 
 				$scope.$watch('calendar.displayDateObject', 
 					function (newValue, oldValue) {
-						$scope.calendar.displayDate = $filter('date')(newValue, 'MM/dd/yyyy'); 
+						$scope.calendar.displayDate = $filter('date')(newValue, $scope.displayDateFormat); 
 					}
 				);
 				
@@ -159,6 +160,28 @@
 				//calendar.getDatesArray(calendar.now.getFullYear(), calendar.now.getMonth());
 
 			    $document.bind('click', scope.hideDatePicker);
+			    $document.bind('keydown', function(event){
+			    	var moveBy = {
+			    		'37': -1,
+			    		'38': -7,
+			    		'39': 1,
+			    		'40': 7
+			    	}[event.keyCode] || 0;
+
+			    	if(!scope.isDatePickerShowing) return;
+
+			    	if(event.keyCode == '13'){
+			    		scope.isDatePickerShowing = false;
+			    	}
+
+			    	if(moveBy){
+			    		calendar.setDate(event, 
+			    			calendar.displayDateObject.setDate(calendar.displayDateObject.getDate() + moveBy) );
+				        scope.startDatePicker();
+				    }
+				    
+			        scope.$apply();
+			    });
 			},
 			// multiElement: true,
 			// name: 'datePicker',
@@ -169,7 +192,9 @@
 			scope: {
 				originalDate: '@',
 				inputClass: '@',
-				inputType: '@'
+				inputType: '@',
+				displayDateFormat: '@',
+				calendarHeaderFormat: '@'
 			}, // {} = isolate, true = child, false/undefined = no change, 
 				// @ or @attr - bind a local scope property to the value of DOM attribute
 				// = or =attr - set up bi-directional binding between a local scope property and the parent scope property
