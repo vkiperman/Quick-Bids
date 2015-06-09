@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/css/global.css">
     <link rel="stylesheet" type="text/css" media="print" href="https://inventoryeditor.cars.com/MDC_Theme/themes/html/MDC_Theme/css/global-print.css">
     
-
+ 
 	<link rel="stylesheet" type="text/css" href="/stylesheets/DropDownMenu.css">
 	<link rel="stylesheet" type="text/css" href="/stylesheets/cars.css">
 
@@ -21,6 +21,44 @@
 	</script>
 	
 	<title>My Dealer Center</title>
+	
+	<!-- Added by Mark D. -->
+	<style type="text/css">
+		.headedList dt, .headedList dd {
+			border-top: 1px dotted #E1E1E1;
+			border-bottom: none !important;
+		}
+		.headedList dt:first-of-type,
+		.headedList dd:first-of-type {
+		    border-bottom: 1px solid #CCC !important;
+		    border-top: none;
+		}
+		.headedList dt:nth-child(3), .headedList dd:nth-child(4) {
+			border-top: none;
+		}
+		.headedList i {
+			display: block;
+			font-style: italic;
+		}
+		.report-thumbnail {
+			height: 50px;
+			width: 50px;
+			margin-right: 5px;
+			border:1px solid grey;
+			position: relative;
+			overflow: hidden;
+			float: left;
+		}
+		.report-thumbnail img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			    -ms-transform: translate(-50%, -50%);
+			        transform: translate(-50%, -50%);
+			height: 100px;
+		}
+	</style>
 
 </head>
 
@@ -96,7 +134,7 @@
 			<div class="floatRight">
 		        <!-- <iframe src="/chat.html" scrolling="no" class="chat-iframe"></iframe> -->
 		        
-		        <span id="supportLinkSpan" style="display: none;" class="marginBottomNone"> 
+		        <span id="supportLinkSpan" style="display: none;" class="marginBottomNone">
 		            <a href="https://inventoryeditor-dq01.cars.com/wps/myportal/mdc/Home/ContactUs"
 		                target="contactus">Contact Us</a> to submit your request
 		        </span>
@@ -186,7 +224,7 @@
 					</div>
 					<div class="columnHalf">
 						<div class="mdcComponent paddingLeft15 paddingRight15 mdcSeparatorLeft">
-							<h4>Vehicle Valuation</h4>
+                            <h4>Vehicle Valuation</h4>
 
                             <div data-section="market_iq_summary">
                                 <div class="paddingTop14 cf">
@@ -313,183 +351,6 @@
 						</form>
 					</div>
 
-					<div>
-						<div class="dijitDialogUnderlayWrapper displayBlock" style="top:0px">
-						    <div class="dijitDialogUnderlay mdcModalStandard_underlay"></div>
-						    <iframe src="javascript:;" class="dijitBackgroundIframe"></iframe>
-						</div>
-						<!-- left positoin are set dynamically -->
-						<div class="mdcModal mdcModalStandard dijitDialogFixed modal" style="left: 364px; top: 25px;">
-						    <div class="mdcModalTitleBar">
-						        <span class="mdcModalTitle">
-						        	Request Additional Information
-						        </span>
-						        <span title="Cancel" class="mdcModalCloseIcon">
-						            <span title="Cancel" class="mdcModalCloseText">×</span>
-						        </span>
-						    </div>
-						    <div class="mdcModalPaneContent">
-						        
-								<div>
-								    <div class="marginTopLarge cf">
-								        <div class="columnThird">
-								            <h5 class="headingText paddingBottom12">Customer Information:</h5>
-								            <p>
-								                Mike Ditka <br>
-								                Chicago, IL 60625 <br>
-								                mditka@dabears.com <br>
-								                312-345-6789
-								            </p>
-								        </div>
-								        <div class="columnTwoThird">
-								            <h5 class="headingText">Vehicle Information:</h5>
-
-								            <dl>
-								                <dt>Series</dt>
-								                <dd class="cf">Limited</dd><dt>Body Style</dt>
-								                <dd class="cf">4D Utility</dd><dt>Exterior Color</dt>
-								                <dd class="cf">Arctic Frost</dd><dt>Interior Type</dt>
-								                <dd class="cf">Cloth</dd><dt>Interior Color</dt>
-								                <dd class="cf">Charcoal</dd><dt>VIN</dt>
-								                <dd class="cf">19WWA5641XA011701</dd>
-								            </dl>
-								        </div>
-								    </div>
-
-								    <div class="marginTopLarge cf">
-								        <div class="columnThird"><h5 class="headingText paddingBottom12">Request Pictures of Vehicles</h5></div>
-								        <div class="columnTwoThird cf">
-								            <label>
-								                <input type="checkbox">
-								                Select All
-								            </label>
-								        </div>
-
-								        <div class="columnThird">
-								            <label>
-								                <input type="checkbox">
-								                Center Console
-								            </label>
-								            <label>
-								                <input type="checkbox">
-								                Dash
-								            </label>
-								            <label>
-								                <input type="checkbox">
-								                Odometer
-								            </label>
-								            <label>
-								                <input type="checkbox">
-								                Trunk
-								            </label>
-
-								        </div>
-								        <div class="columnThird">
-								            <label>
-								                <input type="checkbox">
-								                Front
-								            </label>
-								            <label>
-								                <input type="checkbox">
-								                Front Tire
-								            </label>
-								            <label>
-								                <input type="checkbox">
-								                Front Seat
-								            </label>
-								            <label>
-								                <input type="checkbox">
-								                Front Left Side (driver)
-								            </label>
-								        </div>
-								        <div class="columnThird">
-								            <label>
-								                <input type="checkbox">
-								                Back
-								            </label>
-								            <label>
-								                <input type="checkbox">
-								                Rear Tire
-								            </label>
-								            <label>
-								                <input type="checkbox">
-								                Rear Seat
-								            </label>
-								            <label>
-								                <input type="checkbox">
-								                Rear Right Side
-								            </label>
-								        </div>
-
-								    </div>
-								    <div class="marginTopSmall cf">
-								        <div class="columnThird"><h5 class="headingText paddingBottom12">Request Pictures of Damage</h5>
-								        </div>
-								        <div class="columnTwoThird cf">
-								            <label>
-								                <input type="checkbox">
-								                Select All
-								            </label>
-								        </div>
-
-								        <div class="columnThird">
-								            <label>
-								                <input type="checkbox">
-								                Body Damage
-								            </label>
-								            <label>
-								                <input type="checkbox">
-								                Paint Damage
-								            </label>
-								            <label>
-								                <input type="checkbox">
-								                Seat Damage
-								            </label>
-								        </div>
-								        <div class="columnThird">
-								            <label>
-								                <input type="checkbox">
-								                Glass Damage
-								            </label>
-								            <label>
-								                <input type="checkbox">
-								                Carpet Damage
-								            </label>
-								        </div>
-								        <div class="columnThird cf">
-								            <label>
-								                <input type="checkbox">
-								                Lights Damage
-								            </label>
-								            <label>
-								                <input type="checkbox">
-								                Interior Damage
-								            </label>
-								        </div>
-								    </div>
-								    <div class="marginTopSmall cf">
-								        <h5 class="headingText paddingBottom10">Ask Additional Question</h5>
-
-								        <div>
-								            <textarea rows="5" placeholder="Type your question here. Add another question below." class="fullWidth"></textarea>
-
-								            <a href="javascript:;" class="ng-hide">Remove</a>
-								            
-								        </div>
-
-								        <a href="javascript:;">Add question</a>
-
-								    </div>
-								    <div class="marginTopSmall cf">
-								        <button class="mdcActionButton">Request</button>
-								        <button class="mdcActionButton secondary">Cancel</button>
-								    </div>
-								</div>
-						
-						    </div>
-						</div>
-					</div>
-
 				</div>
 
 			</div>
@@ -509,317 +370,76 @@
 
 				<div>
 					<div class="tabs cf">
-						<div class="tab active">Condition Report</div>
+						<div class="tab inactive">Condition Report</div>
 						<div class="tab inactive">Photos</div>
-						<div class="tab inactive">Additional Info</div>
+						<div class="tab active">Additional Info</div>
 
 					</div>
 
 					<div class="cf">
 						<div class="paddingTop28">
-							<div class="cf">
-								<div class="FlowRight columnQuarter">
-									<label>Recon Adjustment Total</label>
-									
-									<div class="dollar fullWidth"><input type="number" min="0"></div>
-								</div>
-							</div>
-
-							<div class="columnHalf">
-								<a href="javascript:;">Print</a> | <a href="javascript:;">Save Values</a>
-							</div>
-
-							<div class="FlowRight columnQuarter">
-								<label>
-									<input type="checkbox">
-									Lock Recon Adjustment
-								</label>
-							</div>
 
 							<dl class="headedList">
-								<dt class="width40">Vehicle History</dt>
+								<dt class="width40">Damage Photos</dt>
 								<dd class="width60">
 									<div class="columnHalf"><strong>Customer Response</strong></div>
-									
-									<div class="width42 floatRight">
-										<strong>
-											$0.00
-										</strong>
-									</div>
 								</dd>
-
-								<dt class="width40">Status of title</dt>
+								<dt class="width40">{requested damage category}</dt>
 								<dd class="width60">
-									<div class="columnHalf">Clear</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
+									<div class="columnHalf">
+										<div class="report-thumbnail">
+											<img src="http://www.cars.com/search/images/ghostVehicleLarge.jpg">
 										</div>
 									</div>
 								</dd>
-
-								<dt class="width40">Title location</dt>
+								<dt class="width40">{requested damage category}</dt>
 								<dd class="width60">
-									<div class="columnHalf">I have the title</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd>
-
-								<dt class="width40">Is your vehicle operable?</dt>
-								<dd class="width60">
-									<div class="columnHalf">Yes</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd>
-
-								<dt class="width40">Has your car been in an accident?</dt>
-								<dd class="width60">
-									<div class="columnHalf">No</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd>
-
-								<dt class="width40">Have after-market parts been added or removed?</dt>
-								<dd class="width60">
-									<div class="columnHalf">No</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd>
-
-								<dt class="width40">
-									Has your car had previous paint or body work done?</dt>
-								<dd class="width60">
-									<div class="columnHalf">No</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
+									<div class="columnHalf">
+										<div class="report-thumbnail">
+											<img src="http://www.cars.com/search/images/ghostVehicleLarge.jpg">
 										</div>
 									</div>
 								</dd>
 							</dl>
-
+							
 							<dl class="headedList">
-								<dt class="width40">Exterior</dt>
+								<dt class="width40">Vehicle Photos</dt>
 								<dd class="width60">
 									<div class="columnHalf"><strong>Customer Response</strong></div>
-									<div class="width42 floatRight"><strong>Cost in US$</strong></div>
 								</dd>
-
-								<dt class="width40">Paint damage</dt>
+								<dt class="width40">{requested vehicle view}</dt>
 								<dd class="width60">
-									<div class="columnHalf">Chips</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
+									<div class="columnHalf">
+										<div class="report-thumbnail">
+											<img src="http://www.cars.com/search/images/ghostVehicleLarge.jpg">
 										</div>
 									</div>
 								</dd>
-
-								<dt class="width40">Body damage</dt>
+								<dt class="width40">{requested vehicle view}</dt>
 								<dd class="width60">
-									<div class="columnHalf">No</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd>
-
-								<dt class="width40">Glass damage</dt>
-								<dd class="width60">
-									<div class="columnHalf">No</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd>
-
-								<dt class="width40">Lights damage</dt>
-								<dd class="width60">
-									<div class="columnHalf">No</div>
-									<div class="width42 floatRight relative">
-										
-											
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
+									<div class="columnHalf">
+										<div class="report-thumbnail">
+											<img src="http://www.cars.com/search/images/ghostVehicleLarge.jpg">
 										</div>
 									</div>
 								</dd>
 							</dl>
-
+							
 							<dl class="headedList">
-								<dt class="width40">Interior</dt>
+								<dt class="width40">Questions</dt>
 								<dd class="width60">
 									<div class="columnHalf"><strong>Customer Response</strong></div>
-									<div class="width42 floatRight"><strong>Cost in US$</strong></div>
 								</dd>
-
-								<dt class="width40">Seat damage</dt>
+								<dt class="width40">{dealer entered question}</dt>
 								<dd class="width60">
-									<div class="columnHalf">Chips</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
+									<div class="columnHalf">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 									</div>
 								</dd>
-
-								<dt class="width40">Carpet damage</dt>
+								<dt class="width40">{dealer entered question}</dt>
 								<dd class="width60">
-									<div class="columnHalf">No</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd>
-
-								<dt class="width40">Odor</dt>
-								<dd class="width60">
-									<div class="columnHalf">No</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd>
-
-								<dt class="width40">Interior damage</dt>
-								<dd class="width60">
-									<div class="columnHalf">No</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd>
-							</dl>
-
-							<dl class="headedList">
-								<dt class="width40">Mechanical</dt>
-								<dd class="width60">
-									<div class="columnHalf"><strong>Customer Response</strong></div>
-									<div class="width42 floatRight"><strong>Cost in US$</strong></div>
-								</dd>
-
-								<dt class="width40">Engine Issues</dt>
-								<dd class="width60">
-									<div class="columnHalf">Knocks</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd>
-
-								<dt class="width40">Transmission issues</dt>
-								<dd class="width60">
-									<div class="columnHalf">Grinding or Shaking</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd>
-
-								<dt class="width40">Fluid Leaks</dt>
-								<dd class="width60">
-									<div class="columnHalf">Yes</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd>
-
-								<dt class="width40">AC/Heat issues</dt>
-								<dd class="width60">
-									<div class="columnHalf">Weak</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd>
-
-								<dt class="width40">Warning lights on</dt>
-								<dd class="width60">
-									<div class="columnHalf">Yes</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd>
-
-								<dt class="width40">Do you have spare keys?</dt>
-								<dd class="width60">
-									<div class="columnHalf">Yes</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd>
-							</dl>
-
-							<dl class="headedList">
-								<dt class="width40">Condition of Tires</dt>
-								<dd class="width60">
-									<div class="columnHalf"><strong>Customer Response</strong></div>
-									<div class="width42 floatRight"><strong>Cost in US$</strong></div>
-								</dd>
-
-								<dt class="width40">Tires</dt>
-								<dd class="width60">
-									<div class="columnHalf">Recently replaced</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
-									</div>
-								</dd><dt class="width40">Brakes</dt>
-								<dd class="width60">
-									<div class="columnHalf">Old</div>
-									<div class="width42 floatRight relative">
-
-										<div class="dollar fullWidth marginBottomNone absolute">
-						        			<input type="number" min="0">
-										</div>
+									<div class="columnHalf">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 									</div>
 								</dd>
 							</dl>
@@ -830,20 +450,20 @@
 					<div class="ng-hide">				
 						<div class="paddingTop28">
 							<div class="columnThird">
-								<div class="paddingRight6">
-									<img src="/images/placeholder.png" height="200" class="fullWidth" alt="placeholder image">
+								<div class="paddingRight10">
+									<img src="" height="200" class="fullWidth">	
 									<p class="marginTop23">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 								</div>
 							</div>
 							<div class="columnThird">
-								<div class="paddingHorizontal3">
-									<img src="/images/placeholder.png" height="200" class="fullWidth" alt="placeholder image">
+								<div class="paddingRight10">
+									<img src="" height="200" class="fullWidth">	
 									<p class="marginTop23">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 								</div>
 							</div>
 							<div class="columnThird">
-								<div class="paddingLeft6">
-									<img src="/images/placeholder.png" height="200" class="fullWidth" alt="placeholder image">
+								<div class="paddingRight10">
+									<img src="" height="200" class="fullWidth">	
 									<p class="marginTop23">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 								</div>
 							</div>
