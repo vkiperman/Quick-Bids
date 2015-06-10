@@ -22,7 +22,12 @@
     </script>
 
     <title>My Dealer Center</title>
-
+	<!-- Added by Mark D. -->
+	<style type="text/css">
+		.counter-seller {
+			margin-bottom: 1em;
+		}
+	</style>
 </head>
 
 <body id="portalThemeNode" class="tundra bids">
@@ -295,7 +300,13 @@
                                 <textarea ng-model="internalNotes" class="fullWidth marginTop10 ng-pristine ng-untouched ng-valid" rows="3" disabled=""></textarea>
 
                                 <h4 class="marginTop20">Counter Offer</h4>
-
+                                
+                                Seller Desired Amount
+                                <div class="counter-seller">${XX,XXX}</div>
+                                
+                                Seller Comments
+                                <div class="counter-seller">"I don't think that's a fair price; I'd rather have more for it."</div>
+                                
                                 <label>Current Bid</label>
                                 <!-- <input type="number" ng-model="currentBid" class="fullWidth" /> -->
 
@@ -351,6 +362,7 @@
                     <div class="tabs cf">
                         <div class="tab active">Condition Report</div>
                         <div class="tab inactive">Photos</div>
+						<div class="tab inactive">Additional Info</div>
 
                     </div>
 

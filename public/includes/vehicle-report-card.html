@@ -3,6 +3,7 @@
 		<h4>Vehicle Report Card</h4>
 
 		<div>
+<<<<<<< HEAD
 			<tabs class="tabs">
 				<pane title="Condition Report">
 					<div>
@@ -15,6 +16,28 @@
 					</div>
 				</pane>
 			</tabs>
+=======
+			<div class="tabs cf">
+				<div class="tab"
+					ng-class="{active:currentTab===0,inactive:currentTab!==0}"
+					ng-click="setTab(0)">Condition Report</div>
+				<div class="tab"
+					ng-class="{active:currentTab===1,inactive:currentTab!==1}"
+					ng-click="setTab(1)">Photos</div>
+				<div class="tab"
+					ng-class="{active:currentTab===2,inactive:currentTab!==2}"
+					ng-click="setTab(2)">Additional Info</div>
+
+			</div>
+
+			<div ng-show="isCurrentTab(0)" class="cf">
+				<condition-report></condition-report>
+			</div>
+
+			<div ng-show="isCurrentTab(1)">				
+				<photos></photos>
+			</div>
+>>>>>>> MarkBranch
 
 		</div>
 	</div>

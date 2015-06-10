@@ -172,6 +172,7 @@
 
 			    	if(event.keyCode == '13'){
 			    		scope.isDatePickerShowing = false;
+			    		(document.activeElement).blur();
 			    	}
 
 			    	if(moveBy){
