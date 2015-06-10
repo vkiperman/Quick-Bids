@@ -8,7 +8,7 @@
 			// bindToController: true,
 			// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
 			controller: ['$scope', '$element', '$attrs', '$transclude', '$sce', function($scope, $element, $attrs, $transclude, $sce) {
-
+				$scope.flyoutAlignment = $scope.flyoutAlignment || 'left';
 				$scope.calendarHeaderFormat = $scope.calendarHeaderFormat || 'MMM, yyyy';
 				$scope.zIndexProp = 1;
 				$scope.datesArray = [];
@@ -129,7 +129,7 @@
 
 				$scope.dateControl = $element.find('input')[0];
 
-				$scope.dateControlHeight = $scope.dateControl.clientHeight-1;
+				$scope.dateControlHeight = $scope.dateControl.offsetHeight-1;
 
 				$scope.$watch('calendar.displayDateObject', 
 					function (newValue, oldValue) {
@@ -195,7 +195,8 @@
 				inputClass: '@',
 				inputType: '@',
 				displayDateFormat: '@',
-				calendarHeaderFormat: '@'
+				calendarHeaderFormat: '@',
+				flyoutAlignment: '@'
 			}, // {} = isolate, true = child, false/undefined = no change, 
 				// @ or @attr - bind a local scope property to the value of DOM attribute
 				// = or =attr - set up bi-directional binding between a local scope property and the parent scope property
