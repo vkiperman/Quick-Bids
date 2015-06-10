@@ -30,10 +30,7 @@
 					$scope.hours.push([i+1, '30'].join(':'));
 					if($scope.hours[$scope.hours.length - 1] == $scope.originalTime)
 						$scope.newIndex = $scope.matchTimeSlot = $scope.hours.length - 1;
-
 				}
-
-				console.log($element.find('input')[0].getBoundingClientRect().top);
 
 				$scope.startTimePicker = function(){
 					var scope = $scope;
@@ -59,7 +56,7 @@
 					}
 
 					if(document.getElementById($scope.iid)){
-						$scope.hourItemsHeight = document.getElementById($scope.iid).getBoundingClientRect().height;
+						//$scope.hourItemsHeight = Math.max($scope.hourItemsHeight, document.getElementById($scope.iid).getBoundingClientRect().height);
 						setTimeout(function(){
 							document.getElementById(scope.iid).scrollTop = scope.hourItemHeight * scope.newIndex;
 						}, 1);
@@ -71,8 +68,8 @@
 			// controllerAs: 'timePickerCtrl',
 			link: function(scope, element, attrs, timePickerCtrl, transcludeFn){
 				scope.hideTimePicker = function(event){
-			    	var target = event.target;
 			    	if( !scope.isTimePickerShowing ) return;
+			    	var target = event.target;
 
 			    	while(target){
 			    		if( target === element[0] ) break;
@@ -81,12 +78,12 @@
 			        		scope.$apply();
 			    			break;
 			    		}
-
 			    		target = target.parentElement;
 			    	}
 			        scope.$apply();
 			    };
 
+			    $document.bind('mousedown', scope.hideTimePicker);
 			    $document.bind('keydown', function(event){
 			    	if(!scope.isTimePickerShowing) return;
 			    	event.preventDefault();
@@ -110,15 +107,18 @@
 			    	if(moveBy){
 			    		scope.setTime(event, scope.hours[newIndex], newIndex);
 			    		
-			    		document.getElementById(scope.iid).scrollTop = 
-			    			Math.min(scope.hourItemHeight * scope.newIndex, 
-			    				Math.max(currentScrollTop+scope.hourItemsHeight, scope.hourItemHeight * scope.newIndex ) );
+			    		if(scope.hourItemHeight * scope.newIndex < currentScrollTop ){
+			    			document.getElementById(scope.iid).scrollTop = scope.hourItemHeight * scope.newIndex;
+			    		}
+			    		if(scope.hourItemHeight * scope.newIndex >= currentScrollTop + scope.hourItemsHeight){
+			    			document.getElementById(scope.iid).scrollTop = 
+			    				(scope.hourItemHeight * (scope.newIndex + 1)) - scope.hourItemsHeight;
+			    		}
 				    }
 				    
 			        scope.$apply();
 			    });
 
-			    $document.bind('click', scope.hideTimePicker);
 			},
 			// multiElement: true,
 			// name: 'time-picker',
