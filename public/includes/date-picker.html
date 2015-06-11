@@ -2,9 +2,13 @@
 	
 	<input ng-model="calendar.displayDate" class="{{inputClass}} datePickerInput" 
 		ng-focus="startDatePicker()" readonly
+		style="z-index:{{zIndexProp+1}}"
+		ng-style="datePickerInputStyle"
+		ng-class="{active: isDatePickerShowing}"
 		type="text" />
 
-	<div ng-show="isDatePickerShowing" class="datePickerFlyOut" style="top:{{dateControlHeight}}px;z-index:{{zIndexProp}};{{flyoutAlignment}}:0">
+	<div ng-show="isDatePickerShowing" class="datePickerFlyOut"
+		ng-style="datePickerFlyOutStyle">
 		<div class="floatLeft width15">
 			<div class="dateMonthAdvance"
 				ng-click="calendar.advanceMonth(-1)">&#x25C4;</div>
