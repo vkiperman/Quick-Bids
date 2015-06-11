@@ -638,7 +638,13 @@ dl .dollar.absolute {top:-3px;}
 }
 
 .datePicker {display:inline-block;}
-.datePicker .datePickerInput {margin-right: 0;}
+.datePicker .datePickerInput {
+	margin-right: 0;
+	position: relative;
+}
+.datePickerInput.active{
+	border-bottom-color: rgb(255, 255, 255);
+}
 .datePickerFlyOut{
 	border: rgb(169, 169, 169) 1px solid;
 	background: rgba(255, 255, 255, .94);
@@ -708,6 +714,12 @@ input::-webkit-calendar-picker-indicator {
 
 [type=radio],
 [type=checkbox] {vertical-align:top;}
+
+[type=text]{
+	background-color: #FFF;
+	padding: 1px;
+	border: 1px solid rgb(169, 169, 169);
+}
 
 label + label {
 	margin-top: -9px;
