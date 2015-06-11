@@ -1,7 +1,7 @@
 (function(){
 	var OfferSearch = angular.module('OfferSearch', ['DatePicker']);
 
-	OfferSearch.directive('offerSearch', function(){
+	OfferSearch.directive('offerSearch', ['$filter', function($filter){
 
 		return {
 			restrict: 'E',
@@ -44,10 +44,10 @@
 					bidStatusSelected: $scope.bidStatuses[0],
 					bidderSelected: $scope.bidders[0],
 
-					bidStatusDateFrom: new Date('06/12/2014'),
-					bidStatusDateTo: new Date('01/16/2015'),
-					bidDateFrom: new Date('02/09/2015'),
-					bidDateTo: new Date('06/08/2016'),
+					bidStatusDateFrom: $filter('date')(new Date(2014, 5, 12)),
+					bidStatusDateTo: $filter('date')(new Date('01/16/2015')),
+					bidDateFrom: $filter('date')(new Date('02/09/2015')),
+					bidDateTo: $filter('date')(new Date('06/08/2016')),
 					customer: {}
 				};
 
@@ -63,6 +63,6 @@
 			},
 			controllerAs: 'offerSearchCtrl'
 		}
-	});
+	}]);
 
 })()
