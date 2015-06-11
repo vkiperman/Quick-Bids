@@ -12,6 +12,10 @@
 				$scope.calendarHeaderFormat = $scope.calendarHeaderFormat || 'MMM, yyyy';
 				$scope.zIndexProp = 1;
 				$scope.datesArray = [];
+				$scope.datePickerInputStyle = {};
+				$scope.datePickerFlyOutStyle = {};
+				$scope.datePickerFlyOutStyle[$scope.flyoutAlignment] = 0;
+
 				$scope.calendar = {
 					now: new Date(),
 					
@@ -86,9 +90,6 @@
 					isSelected: function(date){
 						return (new Date(this.displayDate).toString() == date);
 					},
-					/*getDate: function(){
-						return this.now;
-					},*/
 					advanceMonth: function(advanceBy){
 						this.utilDateObject.setMonth(this.utilDateObject.getMonth() + advanceBy);
 						this.getDatesArray();
@@ -115,25 +116,34 @@
 
 				$scope.isDatePickerShowing = false;
 				$scope.startDatePicker = function(){
+					
 					var scope = $scope;
-					//$scope.calendar.getPrevMonthDates();
 					$scope.calendar.resetDate();
 					$scope.calendar.getDatesArray();
-					$scope.zIndexProp = 1000;
+					$scope.datePickerInputStyle['z-index'] = 1001;
+					$scope.datePickerFlyOutStyle['z-index'] = 1000;
 					$scope.isDatePickerShowing = true;
 
 					setTimeout(function(){
-						scope.zIndexProp = 1;
+						scope.zIndexProp += 10;
+						scope.datePickerInputStyle['z-index'] = scope.zIndexProp+1;
+						scope.datePickerFlyOutStyle['z-index'] = scope.zIndexProp;
 					}, 10);
 				};
 
 				$scope.dateControl = $element.find('input')[0];
 
-				$scope.dateControlHeight = $scope.dateControl.offsetHeight-1;
+				$scope.datePickerFlyOutStyle.top = ($scope.dateControl.offsetHeight-1) + 'px';
 
 				$scope.$watch('calendar.displayDateObject', 
 					function (newValue, oldValue) {
 						$scope.calendar.displayDate = $filter('date')(newValue, $scope.displayDateFormat); 
+					}
+				);
+				$scope.$watch('isDatePickerShowing',
+					function (newValue, oldValue) {
+						console.log(newValue);
+						if(newValue == false) $scope.zIndexProp = 1;
 					}
 				);
 				
@@ -157,22 +167,24 @@
 			    	}
 			        scope.$apply();
 			    }
-				//calendar.getDatesArray(calendar.now.getFullYear(), calendar.now.getMonth());
 
 			    $document.bind('click', scope.hideDatePicker);
 			    $document.bind('keydown', function(event){
 			    	var moveBy = {
-			    		'37': -1,
-			    		'38': -7,
-			    		'39': 1,
-			    		'40': 7
-			    	}[event.keyCode] || 0;
+				    		'37': -1,
+				    		'38': -7,
+				    		'39': 1,
+				    		'40': 7
+				    	}[event.keyCode] || 0;
 
 			    	if(!scope.isDatePickerShowing) return;
 
-			    	if(event.keyCode == '13'){
-			    		scope.isDatePickerShowing = false;
-			    		(document.activeElement).blur();
+			    	switch(event.keyCode){
+			    		case 13:
+			    			(document.activeElement).blur();
+			    		case 9:
+			    			scope.isDatePickerShowing = false;
+			    			break;
 			    	}
 
 			    	if(moveBy){
