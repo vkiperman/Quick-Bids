@@ -30,21 +30,19 @@
         
         <span class="marginRight8">between</span>
             
-        <!-- input type="text" value="12:00" class="hour" / -->
-        <time-picker original-time="12:00" input-class="hour"></time-picker>
+        <time-picker original-time="12:00" input-class="hour" time-format="h:mm" display-format="clock"></time-picker>
                 
         <select class="selectSmall ampm"
-            ng-model="notificationFilter.ampmSelected"
+            ng-model="notificationFilter.ampmSelectedFrom"
             ng-options="ampm as ampm.label for ampm in amorpm">
         </select>
 
         <span class="marginRight8">and</span>
         
-        <!-- input type="text" value="12:00" class="hour" / -->
-        <time-picker original-time="1:30" input-class="hour"></time-picker>
+        <time-picker original-time="1:30" input-class="hour" time-format="h:mm"></time-picker>
         
         <select class="selectSmall ampm"
-            ng-model="notificationFilter.ampmSelected"
+            ng-model="notificationFilter.ampmSelectedTo"
             ng-options="ampm as ampm.label for ampm in amorpm">
         </select>            
        
