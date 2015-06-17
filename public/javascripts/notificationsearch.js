@@ -34,7 +34,8 @@
 				$scope.notificationFilter = {
 					reportSelected: $scope.reports[0],
 					frequencySelected: $scope.frequencies[0],
-					ampmSelected: $scope.amorpm[0]					
+					ampmSelectedFrom: $scope.amorpm[0],
+					ampmSelectedTo: $scope.amorpm[1]					
 				};
 
 				$scope.allDays = false;
