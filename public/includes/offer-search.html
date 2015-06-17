@@ -24,6 +24,9 @@
 				<label>Submission Date</label>
 				<div class="floatLeft marginRight16">
 					<date-picker input-class="date"
+						publish-channel="submission.date.from"
+						subscribe-channel="submission.date.to"
+						capture-date-type="maxDate"
 						original-date="{{bidFilter.bidStatusDateFrom}}"
 						display-date-format="{{displayDateFormat}}"
 						calendar-header-format="{{calendarHeaderFormat}}"
@@ -31,6 +34,9 @@
 				</div>
 				<div class="floatLeft">
 					<date-picker input-class="date"
+						publish-channel="submission.date.to"
+						subscribe-channel="submission.date.from"
+						capture-date-type="minDate"
 						original-date="{{bidFilter.bidStatusDateTo}}"
 						display-date-format="{{displayDateFormat}}"
 						calendar-header-format="{{calendarHeaderFormat}}"
@@ -54,6 +60,9 @@
 				<label>Bid Date</label>
 				<div class="floatLeft marginRight16">
 					<date-picker input-class="date"
+						publish-channel="bid.date.from"
+						subscribe-channel="bid.date.to"
+						capture-date-type="maxDate"
 						flyout-alignment="right"
 						original-date="{{bidFilter.bidDateFrom}}"
 						display-date-format="{{displayDateFormat}}"
@@ -62,6 +71,9 @@
 				</div>
 				<div class="floatLeft">
 					<date-picker input-class="date"
+						publish-channel="bid.date.to"
+						subscribe-channel="bid.date.from"
+						capture-date-type="minDate"
 						flyout-alignment="right"
 						original-date="{{bidFilter.bidDateTo}}"
 						display-date-format="{{displayDateFormat}}"
