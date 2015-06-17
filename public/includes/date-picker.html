@@ -31,10 +31,10 @@
 				<th>S</th>
 			</tr>
 			<tr ng-repeat="dates in datesArray">
-				<td ng-repeat="date in dates track by $index" 
-					ng-click="calendar.setDate($event, date)"
-					ng-class="{otherMonth: date.getMonth()!=calendar.utilDateObject.getMonth(), date: date, today: calendar.isToday(date), dateSelected: calendar.isSelected(date)}">
-					<span>{{date | date : 'd'}}</span>
+				<td ng-repeat="date in dates track by $index"
+					ng-click="calendar.withinSelectableRange(date) ? calendar.setDate($event, date) : null"
+					ng-class="{otherMonth: date.getMonth()!=calendar.utilDateObject.getMonth(), date: calendar.withinSelectableRange(date), today: calendar.isToday(date), dateSelected: calendar.isSelected(date), noDate: !calendar.withinSelectableRange(date) }">
+					<span>{{ date | date : 'd' }}</span>
 				</td>
 			</tr>
 		</table>

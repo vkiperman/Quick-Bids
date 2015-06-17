@@ -2,12 +2,23 @@
 
 	var app = angular.module('DatePicker', []);
 
-	app.directive('datePicker', ['$filter', '$document', function($filter, $document){
+	app.filter('getTime', function() {
+		return function(input) {
+			if(typeof input != 'object' || input == null) return null;
+			
+			return new Date(input).getTime();
+		};
+	});
+
+	app.directive('datePicker', ['$filter', '$document', '$rootScope', function($filter, $document, $rootScope){
 
 		return {
 			// bindToController: true,
 			// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
 			controller: ['$scope', '$element', '$attrs', '$transclude', '$sce', function($scope, $element, $attrs, $transclude, $sce) {
+				$scope.minDate = null;
+				$scope.maxDate = null;
+
 				$scope.flyoutAlignment = $scope.flyoutAlignment || 'left';
 				$scope.calendarHeaderFormat = $scope.calendarHeaderFormat || 'MMM, yyyy';
 				$scope.zIndexProp = 1;
@@ -16,6 +27,7 @@
 				$scope.datePickerFlyOutStyle = {};
 				$scope.datePickerFlyOutStyle[$scope.flyoutAlignment] = 0;
 
+				$scope.isDatePickerShowing = false;
 				$scope.calendar = {
 					now: new Date(),
 					
@@ -111,24 +123,45 @@
 					cancel: function(event){
 						this.displayDateObject = this.originalDate;
 						$scope.isDatePickerShowing = false;
+					},
+
+					withinSelectableRange: function(date){
+						var maxDate, minDate;
+						
+						if($scope.maxDate == null && $scope.minDate == null){
+							return true;
+						}
+
+						date = new Date(date).getTime();
+						minDate = $scope.minDate && new Date($scope.minDate).getTime();
+						maxDate = $scope.maxDate && new Date($scope.maxDate).getTime();
+
+						return (minDate && date >= minDate) || (maxDate && date <= maxDate);
 					}
 				};
 
-				$scope.isDatePickerShowing = false;
-				$scope.startDatePicker = function(){
-					
+				$scope.reIndex = 0;
+				$scope.startDatePicker = function(){					
 					var scope = $scope;
+
+					clearTimeout($scope.reIndex);
+
 					$scope.calendar.resetDate();
 					$scope.calendar.getDatesArray();
-					$scope.datePickerInputStyle['z-index'] = 1001;
-					$scope.datePickerFlyOutStyle['z-index'] = 1000;
+
+					if(!$scope.isDatePickerShowing){
+						$scope.datePickerInputStyle['z-index'] = 1001;
+						$scope.datePickerFlyOutStyle['z-index'] = 1000;
+
+						$scope.reIndex = setTimeout(function(){
+							scope.zIndexProp += 10;
+							scope.datePickerInputStyle['z-index'] = scope.zIndexProp+1;
+							scope.datePickerFlyOutStyle['z-index'] = scope.zIndexProp;
+
+						}, 100);
+					}
 					$scope.isDatePickerShowing = true;
 
-					setTimeout(function(){
-						scope.zIndexProp += 10;
-						scope.datePickerInputStyle['z-index'] = scope.zIndexProp+1;
-						scope.datePickerFlyOutStyle['z-index'] = scope.zIndexProp;
-					}, 10);
 				};
 
 				$scope.dateControl = $element.find('input')[0];
@@ -137,15 +170,27 @@
 
 				$scope.$watch('calendar.displayDateObject', 
 					function (newValue, oldValue) {
-						$scope.calendar.displayDate = $filter('date')(newValue, $scope.displayDateFormat); 
+						$scope.calendar.displayDate = $filter('date')(newValue, $scope.displayDateFormat);
+
+						if($scope.PUBLISH_CHANNEL) {
+							$rootScope.$broadcast($scope.PUBLISH_CHANNEL, newValue);
+						}
 					}
 				);
 				$scope.$watch('isDatePickerShowing',
 					function (newValue, oldValue) {
-						console.log(newValue);
 						if(newValue == false) $scope.zIndexProp = 1;
 					}
 				);
+
+				if($scope.SUBSCRIBE_CHANNEL){
+					$scope.$on($scope.SUBSCRIBE_CHANNEL, function(event, value){
+						if(!$scope.captureDateType) return;
+
+						//console.log('Event published on ' + event.name + ' channel.');
+						$scope[$scope.captureDateType] = value;
+					});
+				}
 				
 			}],
 			// controllerAs: 'date-pickerCtrl',
@@ -178,6 +223,7 @@
 				    	}[event.keyCode] || 0;
 
 			    	if(!scope.isDatePickerShowing) return;
+			    	event.preventDefault();
 
 			    	switch(event.keyCode){
 			    		case 13:
@@ -187,10 +233,13 @@
 			    			break;
 			    	}
 
-			    	if(moveBy){
-			    		calendar.setDate(event, 
-			    			calendar.displayDateObject.setDate(calendar.displayDateObject.getDate() + moveBy) );
+			    	calendar.displayDateObject.setDate(calendar.displayDateObject.getDate() + moveBy);
+			    	if(moveBy && scope.calendar.withinSelectableRange(calendar.displayDateObject) ){
+						calendar.setDate(event, calendar.displayDateObject );
 				        scope.startDatePicker();
+
+				    } else {
+				    	calendar.displayDateObject.setDate(calendar.displayDateObject.getDate() - moveBy);
 				    }
 				    
 			        scope.$apply();
@@ -208,7 +257,10 @@
 				inputType: '@',
 				displayDateFormat: '@',
 				calendarHeaderFormat: '@',
-				flyoutAlignment: '@'
+				flyoutAlignment: '@',
+				captureDateType: '@',
+				PUBLISH_CHANNEL: '@publishChannel',
+				SUBSCRIBE_CHANNEL: '@subscribeChannel'
 			}, // {} = isolate, true = child, false/undefined = no change, 
 				// @ or @attr - bind a local scope property to the value of DOM attribute
 				// = or =attr - set up bi-directional binding between a local scope property and the parent scope property
