@@ -4,10 +4,27 @@
 		ng-focus="startTimePicker()"
 		class="hour" />
 
-	<div ng-show="isTimePickerShowing" class="timePickerFlyOut" id="timePickerFlyOut_{{$id}}"
-		style="top:{{timeCollectionTop}}px; z-index:{{zIndexProp}}; width:{{timeControlWidth}}px">
+	<div ng-show="isTimePickerShowing && displayFormat=='default'"
+		class="timePickerFlyOut"		
+		id="timePickerFlyOut_{{$id}}"
+		ng-style="timePickerFlyOutStyle">
 		<div ng-repeat="hour in hours" class="hourItem"
-			ng-class="{timeSelected:hour==originalTime}"
-			ng-click="setTime($event, hour, $index)">{{hour}}</div>
+			ng-class="{timeSelected:isHour(hour)}"
+			ng-click="setTime($event, hour, $index)">{{hour | date : timeFormat}}</div>
+	</div>
+
+	<div ng-show="isTimePickerShowing && displayFormat=='clock'"
+		class="clockFlyout"
+		id="timePickerFlyOut_{{$id}}"
+		ng-style="clockFlyoutStyle">
+		<div class="clockFace">
+			<div ng-repeat="hour in hours" class="hourItem"
+				ng-class="{timeSelected:isHour(hour)}"
+				style="left:{{120 * ( ($index - 4) * (PI * 2) / 24 | cos) + 140 - 15}}px; top:{{120 * ( ($index - 4) * (PI * 2) / 24 | sin) + 140 - 15}}px;font-weight: {{($index%2)?'normal':'bold'}}"
+				ng-click="setTime($event, hour, $index)">{{hour | date : ($index%2)?':mm':'h'}}</div>
+
+			<div class="hourHand" ng-style="hourHandStyle"></div>
+			<div class="minuteHand" ng-style="minuteHandStyle"></div>
+		</div>
 	</div>
 </span>
