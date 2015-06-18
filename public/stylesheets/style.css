@@ -677,14 +677,19 @@ dl .dollar.absolute {top:-3px;}
 .minuteHand{
 	position: absolute;
 
-    -webkit-border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    -webkit-border-top-left-radius: 4px;
     -webkit-border-top-right-radius: 60%;
+    -webkit-border-bottom-left-radius: 4px;
+    -webkit-border-bottom-right-radius: 60%;
+
+    border-top-left-radius: 4px;
+    border-top-right-radius: 60%;
+    border-bottom-left-radius: 4px;
     border-bottom-right-radius: 60%;
 
 	-webkit-box-shadow: 0px 0px 0px 3px rgb(255, 255, 255);
-	-moz-box-shadow: 0px 0px 0px 3px rgba(255, 255, 255);
-	box-shadow: 0px 0px 0px 3px rgba(255, 255, 255);
+	-moz-box-shadow: 0px 0px 0px 3px rgb(255, 255, 255);
+	box-shadow: 0px 0px 0px 3px rgb(255, 255, 255);
 }
 .hourHand {
 	width: 70px;
@@ -692,8 +697,8 @@ dl .dollar.absolute {top:-3px;}
 	z-index: 11;
 	left: 136px;
 	top: 136px;
-	-webkit-transition: all 1s; /* Safari 3.1 to 6.0 */
-    transition: all 1s;
+	-webkit-transition: transform 1s; /* Safari 3.1 to 6.0 */
+    transition: transform 1s;
 
     -ms-transform-origin: 0 4px; /* IE 9 */
 	-webkit-transform-origin: 0 4px; /* Chrome, Safari, Opera */
@@ -705,8 +710,8 @@ dl .dollar.absolute {top:-3px;}
 	z-index: 10;
 	left: 137px;
 	top: 137px;
-	-webkit-transition: all .4s; /* Safari 3.1 to 6.0 */
-    transition: all .4s;
+	-webkit-transition: transform .4s; /* Safari 3.1 to 6.0 */
+    transition: transform .4s;
 
     -ms-transform-origin: 0 3px; /* IE 9 */
 	-webkit-transform-origin: 0 3px; /* Chrome, Safari, Opera */
