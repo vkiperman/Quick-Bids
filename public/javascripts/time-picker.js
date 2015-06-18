@@ -45,29 +45,26 @@
 				$scope.hourOrigin = '0 4px';
 				$scope.minuteOrigin = '0 3px';
 
-				$scope.getDegrees = function(n){
-					return (( n * 360 ) - 90) + 'deg'
+				$scope.getDegrees = function(newVal, oldVal){
+					var FC = 360, // full circle
+						SC = 180, // semi circle
+						QC = 90,  // quarer circle
+				    	deg = oldVal || 0,
+				    	rotation = deg % FC;
+				    newVal = (( newVal * FC ) - QC);
+				    if ( rotation < 0 ) { rotation += FC; }
+				    if ( rotation < SC && (newVal > (rotation + SC)) ) { deg -= FC; }
+				    if ( rotation >= SC && (newVal <= (rotation - SC)) ) { deg += FC; }
+				    deg += (newVal - rotation);
+
+					return deg;
 				};
 
 				h = new Date(originalTime).getHours();
 				m = new Date(originalTime).getMinutes()/60;
 
-				$scope.hourRotationDegrees = $scope.getDegrees((h + m)/12);
-				$scope.minuteRotationDegrees = $scope.getDegrees(m);
-				$scope.hourHandStyle = {
-					'-webkit-transform': 'rotate('+$scope.hourRotationDegrees+')',
-					'-moz-transform': 'rotate('+$scope.hourRotationDegrees+')',
-				    '-o-transform': 'rotate('+$scope.hourRotationDegrees+')',
-				    '-ms-transform': 'rotate('+$scope.hourRotationDegrees+')',
-				    'transform': 'rotate('+$scope.hourRotationDegrees+')'
-				};
-				$scope.minuteHandStyle = {
-					'-webkit-transform': 'rotate('+$scope.minuteRotationDegrees+')',
-					'-moz-transform': 'rotate('+$scope.minuteRotationDegrees+')',
-				    '-o-transform': 'rotate('+$scope.minuteRotationDegrees+')',
-				    '-ms-transform': 'rotate('+$scope.minuteRotationDegrees+')',
-				    'transform': 'rotate('+$scope.minuteRotationDegrees+')'
-				};
+				$scope.hourRotationDegrees = $scope.getDegrees((h + m)/12, $scope.hourRotationDegrees);
+				$scope.minuteRotationDegrees = $scope.getDegrees(m, $scope.minuteRotationDegrees);
 
 				for(var i = 0, time, time30; i < 12; i++){
 					time = new Date();
@@ -104,6 +101,28 @@
 					return ( $filter('date')(time, $scope.timeFormat) == $scope.originalTime );
 				}
 
+				$scope.$watch('hourRotationDegrees', function(newVal, oldVal){
+					var transformVal = ('rotate(' + newVal + 'deg)');
+					$scope.hourHandStyle = {
+						'-webkit-transform': transformVal,
+						'-moz-transform': 	 transformVal,
+					    '-o-transform': 	 transformVal,
+					    '-ms-transform': 	 transformVal,
+					    'transform': 		 transformVal
+					};
+				});
+
+				$scope.$watch('minuteRotationDegrees', function(newVal, oldVal){
+					var transformVal = ('rotate(' + newVal + 'deg)');
+					$scope.minuteHandStyle = {
+						'-webkit-transform': transformVal,
+						'-moz-transform': 	 transformVal,
+					    '-o-transform': 	 transformVal,
+					    '-ms-transform': 	 transformVal,
+					    'transform': 		 transformVal
+					};
+				});
+
 				$scope.$watch('originalTime', function(newVal, oldVal){
 					var h, m;
 					$scope.originalTime = $filter('date')(newVal, $scope.timeFormat);
@@ -113,22 +132,9 @@
 					h = new Date(newVal).getHours();
 					m = new Date(newVal).getMinutes()/60;
 
-					$scope.hourRotationDegrees = $scope.getDegrees((h + m)/12);
-					$scope.minuteRotationDegrees = $scope.getDegrees(m);
-					$scope.hourHandStyle = {
-						'-webkit-transform': 'rotate('+$scope.hourRotationDegrees+')',
-						'-moz-transform': 'rotate('+$scope.hourRotationDegrees+')',
-					    '-o-transform': 'rotate('+$scope.hourRotationDegrees+')',
-					    '-ms-transform': 'rotate('+$scope.hourRotationDegrees+')',
-					    'transform': 'rotate('+$scope.hourRotationDegrees+')'
-					};
-					$scope.minuteHandStyle = {
-						'-webkit-transform': 'rotate('+$scope.minuteRotationDegrees+')',
-						'-moz-transform': 'rotate('+$scope.minuteRotationDegrees+')',
-					    '-o-transform': 'rotate('+$scope.minuteRotationDegrees+')',
-					    '-ms-transform': 'rotate('+$scope.minuteRotationDegrees+')',
-					    'transform': 'rotate('+$scope.minuteRotationDegrees+')'
-					};
+					$scope.hourRotationDegrees = $scope.getDegrees((h + m)/12, $scope.hourRotationDegrees);
+					$scope.minuteRotationDegrees = $scope.getDegrees(m, $scope.minuteRotationDegrees);
+					
 				});
 
 				$scope.$watch('isTimePickerShowing', function(newVal, oldVal){
