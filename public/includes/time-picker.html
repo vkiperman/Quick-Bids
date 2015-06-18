@@ -20,7 +20,11 @@
 		<div class="clockFace">
 			<div ng-repeat="hour in hours" class="hourItem"
 				ng-class="{timeSelected:isHour(hour)}"
-				style="left:{{120 * ( ($index - 4) * (PI * 2) / 24 | cos) + 140 - 15}}px; top:{{120 * ( ($index - 4) * (PI * 2) / 24 | sin) + 140 - 15}}px;font-weight: {{($index%2)?'normal':'bold'}}"
+				ng-style="{
+					left:( 120 * ( ($index - 4) * (PI * 2) / 24 | cos) + 140 - 15 ) + 'px', 
+					top: ( 120 * ( ($index - 4) * (PI * 2) / 24 | sin) + 140 - 15 ) + 'px', 
+					'font-weight': ($index % 2) ? 'normal' : 'bold'
+				}"
 				ng-click="setTime($event, hour, $index)">{{hour | date : ($index%2)?':mm':'h'}}</div>
 
 			<div class="hourHand" ng-style="hourHandStyle"></div>
