@@ -386,6 +386,10 @@ body[ng-app="Dashboard"] .dashboardList li {
 	margin-left: -151px;
 }
 
+.marginBottom-5{
+	margin-bottom: -5px;
+}
+
 .marginRight8 {
 	margin-right: 8px;
 }
@@ -697,8 +701,8 @@ dl .dollar.absolute {top:-3px;}
 	z-index: 11;
 	left: 136px;
 	top: 136px;
-	-webkit-transition: transform 1s; /* Safari 3.1 to 6.0 */
-    transition: transform 1s;
+	-webkit-transition: all 1s; /* Safari 3.1 to 6.0 */
+    transition: all 1s;
 
     -ms-transform-origin: 0 4px; /* IE 9 */
 	-webkit-transform-origin: 0 4px; /* Chrome, Safari, Opera */
@@ -806,6 +810,43 @@ dl .dollar.absolute {top:-3px;}
 
 .width15 {width:15%;text-align: center;}
 .width70 {width:70%;text-align: center;}
+
+
+.headedList dt, .headedList dd {
+	border-top: 1px dotted #E1E1E1;
+	border-bottom: none !important;
+}
+.headedList dt:first-of-type,
+.headedList dd:first-of-type {
+    border-bottom: 1px solid #CCC !important;
+    border-top: none;
+}
+.headedList dt:nth-child(3), .headedList dd:nth-child(4) {
+	border-top: none;
+}
+.headedList i {
+	display: block;
+	font-style: italic;
+}
+.report-thumbnail {
+	height: 50px;
+	width: 50px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	border:1px solid grey;
+	position: relative;
+	overflow: hidden;
+	float: left;
+}
+.report-thumbnail img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	height: 100px;
+}
 
 /* HTML selectors */
 [type=date] {width:89px;}
