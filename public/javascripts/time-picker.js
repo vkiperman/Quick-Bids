@@ -48,7 +48,7 @@
 				$scope.getDegrees = function(newVal, oldVal){
 					var FC = 360, // full circle
 						SC = 180, // semi circle
-						QC = 90,  // quarer circle
+						QC = 90,  // quarter circle
 				    	deg = oldVal || 0,
 				    	rotation = deg % FC;
 				    newVal = (( newVal * FC ) - QC);
@@ -102,14 +102,40 @@
 				}
 
 				$scope.$watch('hourRotationDegrees', function(newVal, oldVal){
-					var transformVal = ('rotate(' + newVal + 'deg)');
+					var transformVal = ( 'rotate(' + newVal + 'deg)' )/*,
+						rotIndex = ( $scope.newIndex + 2 ) % 24,
+						rgbValue = 136,
+						bbc = rgbValue,
+						btc = rgbValue,
+						blc = rgbValue,
+						brc = rgbValue;
+					
+					if(rotIndex <= 6){
+						blc = Math.round(rotIndex/6 * rgbValue);
+						bbc = rgbValue - Math.round(rotIndex/6 * rgbValue);
+					} else if(rotIndex <= 12){
+						bbc = Math.round((rotIndex-6)/6 * rgbValue);
+						brc = rgbValue - Math.round((rotIndex-6)/6 * rgbValue);
+					} else if(rotIndex <= 18){
+						btc = rgbValue - Math.round((rotIndex - 12)/6 * rgbValue);
+						brc = Math.round((rotIndex - 12)/6 * rgbValue);
+					} else {
+						btc = Math.round((rotIndex - 18)/6 * rgbValue);
+						blc = rgbValue - Math.round((rotIndex - 18)/6 * rgbValue);
+					}*/;
+					
 					$scope.hourHandStyle = {
 						'-webkit-transform': transformVal,
 						'-moz-transform': 	 transformVal,
 					    '-o-transform': 	 transformVal,
 					    '-ms-transform': 	 transformVal,
-					    'transform': 		 transformVal
+					    'transform': 		 transformVal/*,
+					    'border-bottom-color': 'rgb('+bbc+', '+bbc+', '+bbc+')',
+					    'border-top-color': 'rgb('+btc+', '+btc+', '+btc+')',
+					    'border-left-color': 'rgb('+blc+', '+blc+', '+blc+')',
+					    'border-right-color': 'rgb('+brc+', '+brc+', '+brc+')'*/
 					};
+
 				});
 
 				$scope.$watch('minuteRotationDegrees', function(newVal, oldVal){
