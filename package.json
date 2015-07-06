@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-      "start": "set DEBUG=bids,express:* & node ./bin/www"
+    "start": "set DEBUG=bids,express:* & node ./bin/www"
   },
   "dependencies": {
     "angular": "^1.3.14",
@@ -17,5 +17,18 @@
     "morgan": "~1.5.1",
     "q": "^1.2.0",
     "serve-favicon": "~2.2.0"
+  },
+  "devDependencies": {
+    "angular-route": "^1.4.1",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.37",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-ie-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "karma-requirejs": "^0.2.2",
+    "phantomjs": "^1.9.17",
+    "requirejs": "^2.1.18"
   }
 }
