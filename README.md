@@ -9,6 +9,4 @@
 4. The local server is now started.
 5. In your browser load [http://localhost:3000](http://localhost:3000).
 
-Thank you.
-
 *-Vlad.*
