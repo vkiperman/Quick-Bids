@@ -9,8 +9,6 @@
 4. The local server is now started.
 5. In your browser load [http://localhost:3000](http://localhost:3000).
 
-If you have any questions, please don't hesitate to contact me at vkiperman@cars.com. I'm looking forward to working with you.
-
 Thank you.
 
 *-Vlad.*
