@@ -14,8 +14,6 @@
 			restrict: 'E',
 			templateUrl: '/includes/bid-information.html',
 
-			scope: {}, 
-
 			controller: function($scope){
 				$scope.heading = 'Bid Information';
 				$scope.verified = false;

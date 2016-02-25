@@ -1,18 +1,42 @@
 (function(){
 
-	var app = angular.module('Modal', ['Underlay']);
+	var app = angular.module('Modal', ['Underlay', 'ModalService']);
 
-	app.directive('modal', ['$document', '$log', '$window', function($document, $log, $window){
+	app.directive('modal', ['$document', '$log', '$window', 'modalService', 
+        function($document, $log, $window, modalService){
 
-        var windowHandler = function(scope, b) {
-                var scrollTop = (window.scrollY || window.pageYOffset);
+            function getScrollTop(){
+                return (window.scrollY || window.pageYOffset);
+            }
+            function windowHandler(scope) {
+                var scrollTop = getScrollTop(),
+                    scrollTopValue = scope.scrollTopSnapshot,
+                    modalElement = scope.element[0].children[0].children[1],
+                    modalHeight = Math.max(
+                        modalElement.offsetHeight,
+                        modalElement.clientHeight
+                    ),
+                    viewPortHeight = $window.innerHeight;
 
                 scope.underlayPosition.top = scrollTop + 'px';
                 scope.modalPosition.left = ( (window.innerWidth/2)-(619/2)-20 ) + 'px';
 
-                if(scope.$parent[scope.isModalVisible]) return;
+                if(scope.isModalVisible == 'true'){
+                    if(modalHeight + 50 <= viewPortHeight){
+                        scrollTopValue = Math.max(scrollTop, scope.scrollTopSnapshot);
+                    } else {
+                        if(scope.scrollTopSnapshot + modalHeight + 50 < scrollTop + viewPortHeight){
+                            scrollTopValue = ((scrollTop + viewPortHeight) - (modalHeight + 50));
+                        } else if(scrollTop < scope.scrollTopSnapshot){
+                            scrollTopValue = scrollTop;
+                        } else {
+                            scrollTopValue = scope.scrollTopSnapshot;
+                        }
+                        
+                    }
+                }
 
-                scope.modalPosition.top = (scrollTop + 25) + 'px';
+                scope.modalPosition.top = (scrollTopValue + 25) + 'px';
 
             };
 
@@ -22,26 +46,30 @@
 			transclude: true,
 
             scope: {
-                isModalVisible: '@ngShow',
+                modalShow: '@ngShow',
+                isModalVisible: '@',
                 title: '@'
             },
 
-			controller: function($scope){
-                //$scope.isModalVisible = false;
+			controller: function($scope, $element){
+                $scope.element = $element;
                 $scope.modalPosition = {left: '', top: ''};
                 $scope.underlayPosition = {top: ''};
+                $scope.scrollTopSnapshot = getScrollTop();
 
 				$scope.cancelManager = function(event){
-                    $scope[$scope.isModalVisible] = false;
-					$scope.$parent[$scope.isModalVisible] = false;
+                    $scope.isModalVisible = false;
 
-                    return false;
+                    //$scope[$scope.modalShow] = false;
+					$scope.$parent[$scope.modalShow] = false;
+
+                    //return false;
 				};
 
-                $scope.$watch(function(){
-                    return $scope[$scope.isModalVisible];
-                }, function(newVal, oldVal){
-                    //console.log(newVal, oldVal);
+                $scope.$watch('isModalVisible', function(newVal, oldVal){
+                    modalService.isModalVisible = newVal;
+                    $scope.scrollTopSnapshot = getScrollTop();
+                    windowHandler($scope);
                 });
 			},
 
@@ -49,10 +77,8 @@
 
                 var windowEl = angular.element($window);
 
-                windowEl.on('scroll', scope.$apply.bind(scope, windowHandler));
-                windowEl.on('resize', scope.$apply.bind(scope, windowHandler));
+                windowEl.on('scroll resize', scope.$apply.bind(scope, windowHandler));
                 windowHandler(scope);
-                
             },
 
 			controllerAs: 'ModalCtrl'

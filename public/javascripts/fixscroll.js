@@ -1,8 +1,8 @@
 (function(){
 
-	var app = angular.module('Fixscroll', []);
+	var app = angular.module('Fixscroll', ['ModalService']);
 
-	app.directive('fixScroll', ['$window', function($window){
+	app.directive('fixScroll', ['$window', 'modalService', function($window, modalService){
 
 		function getStyle(element, strCssRule){
 			var strValue = '';
@@ -53,6 +53,7 @@
             		parentBottom,
                 	parentHeight,
                 	boxHeight,
+                	oldScrollPhase,
 
                 	setPosition = function(styles, classAction){
                 		element.css(styles);
@@ -84,7 +85,7 @@
 	                			'removeClass'
 	                		]
 						];
-
+						oldScrollPhase = oldValue;
 						setPosition.apply(null, params[newValue-1]);
 				    };
 
@@ -92,12 +93,30 @@
 				scope.$watch('scrollPhase', phaseWatcher);
 
                 element.css({width: elementWidth + 'px'});
-                parentElement.css({position: 'relative'});
+
+                scope.$watch(
+                	function(){
+	                	return modalService.isModalVisible;
+	                },
+	        		function(newVal, oldVal){
+	        			var map = {'true': 'static', 'false': 'relative'};
+	        			parentElement.css({position: map[newVal]});
+	        			oldScrollPhase = scope.scrollPhase;
+	        			if(newVal == 'true'){
+		        			scope.scrollPhase = 1;
+		        		} else {
+		        			scope.scrollPhase = oldScrollPhase;
+		        		}
+            		}
+            	);
+                //parentElement.css({position: 'relative'});
 
                 if(scope.fixScroll){
 	                windowEl.on('scroll', scope.$apply.bind(scope, function(){
 	                	var elementRect = element[0].getBoundingClientRect(),
 	                		parentRect = parentElement[0].getBoundingClientRect();
+
+	                	if(modalService.isModalVisible == 'true') return;
 
 	                	top = elementRect.top;
 		                height = elementRect.height;

@@ -1,5 +1,5 @@
 (function(){
-	var app = angular.module('VehicleReportCard', ['ConditionReport', 'Photos']);
+	var app = angular.module('VehicleReportCard', ['ConditionReport', 'Photos', 'AdditionalInfo']);
 
 	app.directive('vehicleReportCard', [function(){
 

@@ -11,7 +11,7 @@
 			scope:{},
 
 			controller: function($scope){
-				$scope.vehicleInfo = $scope.$parent.$parent.$parent.vehicleInfo;
+				
 				$scope.questions = [{value:''}];
 
 				$scope.pictureVehicle = {

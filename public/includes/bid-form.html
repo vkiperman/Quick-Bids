@@ -40,12 +40,14 @@
 	</div>
 
 	<modal ng-show="showRequestForm"
+		is-modal-visible="{{showRequestForm}}"
 		title="Request Additional Information"
 		show-manager="false">
 		<request-additional-information></request-additional-information>
 	</modal>
 
 	<modal ng-show="showDeclineForm"
+		is-modal-visible="{{showDeclineForm}}"
 		title="Decline to Bid"
 		show-manager="false">
 		<decline-to-bid></decline-to-bid>

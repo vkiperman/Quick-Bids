@@ -18,7 +18,7 @@
 				$scope.totalReconAdjust = 0;
 				$scope.internalNotes = '';
 				$scope.showRequestForm = false;
-				$scope.showRequestDecline = false;
+				$scope.showDeclineForm = false;
 				$scope.currency = 9876;
 				$scope.$on('totalReconAdjustChange', function(event, value){
 					$scope.totalReconAdjust = value;

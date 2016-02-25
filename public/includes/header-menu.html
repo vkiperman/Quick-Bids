@@ -12,8 +12,7 @@
 		    	<div ng-repeat="tab in navTabs.navigation">
 		    		<div ng-if="tab.title !== 'Profile'"
 		    			class="mdcDropDownMenu">
-                        <div href="{{tab.link}}"
-                        	ng-class="{mdcDropDownMenuWithChildren: tab.subnav, mdcMenuActive:dropDownMenu===tab.title}"
+                        <div ng-class="{mdcDropDownMenuWithChildren: tab.subnav, mdcMenuActive:dropDownMenu===tab.title}"
                         	ng-click="tab.subnav?showDropDownMenu($event, tab.title):navigateTo(tab.link)"
                         	class="mdcDropDownMenuText">{{tab.title}}</div>
 

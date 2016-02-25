@@ -22,6 +22,10 @@
 
 			},
 
+			scope: {
+                outerClass: '@'
+            },
+
 			controller: function($scope){
 
 				$scope.vehicleInfo = [
@@ -44,7 +48,7 @@
 						name: 'VIN', value: '19WWA5641XA011701'
 					}
 				];
-				$scope.$parent.vehicleInfo = $scope.vehicleInfo;
+				//$scope.$parent.$parent.$parent.$parent.$parent.vehicleInfo = $scope.vehicleInfo;
 
 			}
 		};
